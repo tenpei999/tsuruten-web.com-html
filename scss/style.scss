@@ -1,0 +1,92 @@
+.c-bird {
+  display: flex;
+  &-1 {
+    position: relative;
+    z-index: 100;
+    opacity: 1;
+  }
+  &-2 {
+    position: absolute; 
+    top: -60px;
+    left: 45px;
+    opacity: 0;
+    animation:flapping1 0.5s 0s infinite;
+  }
+  &-3 {
+    position: absolute; 
+    top: 55px;
+    left: 100px;
+    opacity: 0;
+    animation:flapping2 0.5s 0s infinite;
+  }
+}
+@keyframes flapping1 {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes flapping2 {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// @keyframes flapping1 {
+//   12.5% {
+//     opacity: 0;
+//   }
+//   25% {
+//     opacity: 1;
+//   }
+//   37.5% {
+//     opacity: 0;
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+//   67.5% {
+//     opacity: 0;
+//   }
+//   75% {
+//     opacity: 1;
+//   }
+//   87.5% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes flapping2 {
+//   12.5% {
+//     opacity: 1;
+//   }
+//   25% {
+//     opacity: 0;
+//   }
+//   37.5% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 0;
+//   }
+//   67.5% {
+//     opacity: 1;
+//   }
+//   75% {
+//     opacity: 0;
+//   }
+//   87.5% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }

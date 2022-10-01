@@ -1,2 +1,2 @@
-
+.c-bird{display:flex}.c-bird-1{position:relative;z-index:100;opacity:1}.c-bird-2{position:absolute;top:-60px;left:45px;opacity:0;-webkit-animation:flapping1 .5s 0s infinite;animation:flapping1 .5s 0s infinite}.c-bird-3{position:absolute;top:55px;left:100px;opacity:0;-webkit-animation:flapping2 .5s 0s infinite;animation:flapping2 .5s 0s infinite}@-webkit-keyframes flapping1{50%{opacity:1}100%{opacity:0}}@keyframes flapping1{50%{opacity:1}100%{opacity:0}}@-webkit-keyframes flapping2{50%{opacity:0}100%{opacity:1}}@keyframes flapping2{50%{opacity:0}100%{opacity:1}}
 /*# sourceMappingURL=style.min.css.map */
