@@ -3,10 +3,12 @@ li {
 }
 
 .c-bird {
-  display: flex;
-  animation: bound 0.7s 0s ease-in-out infinite;
+  display: block;
+  width: 357px;
+  animation: bound 0.7s 0s ease-in-out infinite alternate, bound-x 8s 0s infinite;
   &-1 {
     position: relative;
+    top: -20px;
     z-index: 100;
     opacity: 1;
   }
@@ -19,8 +21,8 @@ li {
   }
   &-3 {
     position: absolute; 
-    top: 55px;
-    left: 100px;
+    top: 75px;
+    left: 120px;
     opacity: 0;
     animation:flapping2 0.5s 0s infinite;
   }
@@ -44,17 +46,29 @@ li {
 }
 
 @keyframes bound {
-	from  { transform: translateY(0vw) scale(1,1); }
-	10%  { transform: translateY(0.2vw) scale(1,1); }
-	20%  { transform: translateY(0.5vw) scale(1,1); }
-	48%  { transform: translateY(26vw) scale(1,1); }
-	48.5%  { transform: translateY(28vw) scale(0.9,1); }
-	49%  { transform: translateY(29vw) scale(0.9,0.8); }
-	50%  { transform: translateY(29.7vw) scale(1,0.5); }
-	51%  { transform: translateY(29vw) scale(0.9,0.8); }
-	51.5%  { transform: translateY(28vw) scale(0.9,1); }
-	52%  { transform: translateY(26vw) scale(1,1); }
-	90%  { transform: translateY(0.5vw) scale(1,1); }
-	100%  { transform: translateY(0.2vw) scale(1,1); }
-	to { transform: translateY(0vw) scale(1,1); }
+	from  { transform: translateY(0vw); }
+	10%  { transform: translateY(0.2vw); }
+	20%  { transform: translateY(0.5vw); }
+	48%  { transform: translateY(26vw); }
+	48.5%  { transform: translateY(28vw); }
+	49%  { transform: translateY(29vw); }
+	50%  { transform: translateY(29.7vw); }
+	51%  { transform: translateY(29vw); }
+	51.5%  { transform: translateY(28vw); }
+	52%  { transform: translateY(26vw); }
+	90%  { transform: translateY(0.5vw); }
+	100%  { transform: translateY(0.2vw); }
+	to { transform: translateY(0vw); }
+}
+
+@keyframes bound-x {
+	from  { transform: translateX(0vw) scale(1,1); }
+	16%  { transform: translateX(33vw) scale(1,1); }
+	33%  { transform: translateX(66vw) scale(1,1); }
+	49%  { transform: translateX(79vw) scale(1,1); }
+	50%  { transform: translateX(80vw) scale(-1,1); }
+	66%  { transform: translateX(66vw) scale(-1,1); }
+	83%  { transform: translateX(33vw) scale(-1,1); }
+	99%  { transform: translateX(1vw) scale(-1,1); }
+	to { transform: translateX(0vw) scale(-1,1); }
 }
