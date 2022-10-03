@@ -1,34 +1,41 @@
+main {
+  height: 100vh;
+}
+
 li {
   list-style: none;
 }
 
 .c-bird {
+  margin-top: 50vh;
   display: block;
   width: 357px;
-  -webkit-animation: bound 0.7s 0s ease-in-out infinite alternate, bound-x 8s 0s infinite;
-          animation: bound 0.7s 0s ease-in-out infinite alternate, bound-x 8s 0s infinite;
+  -webkit-animation: boundY 0.5s ease-in infinite alternate;
+          animation: boundY 0.5s ease-in infinite alternate;
 }
 .c-bird-1 {
   position: relative;
   top: -20px;
   z-index: 100;
   opacity: 1;
+  -webkit-animation: boundX 8s infinite;
+          animation: boundX 8s infinite;
 }
 .c-bird-2 {
   position: absolute;
   top: -60px;
   left: 45px;
   opacity: 0;
-  -webkit-animation: flapping1 0.5s 0s infinite;
-          animation: flapping1 0.5s 0s infinite;
+  -webkit-animation: flapping1 0.5s 0s infinite, boundX 8s infinite;
+          animation: flapping1 0.5s 0s infinite, boundX 8s infinite;
 }
 .c-bird-3 {
   position: absolute;
   top: 75px;
   left: 120px;
   opacity: 0;
-  -webkit-animation: flapping2 0.5s 0s infinite;
-          animation: flapping2 0.5s 0s infinite;
+  -webkit-animation: flapping2 0.5s 0s infinite, boundX 8s infinite;
+          animation: flapping2 0.5s 0s infinite, boundX 8s infinite;
 }
 
 @-webkit-keyframes flapping1 {
@@ -64,141 +71,45 @@ li {
     opacity: 1;
   }
 }
-@-webkit-keyframes bound {
+@-webkit-keyframes boundY {
   from {
     transform: translateY(0vw);
   }
-  10% {
-    transform: translateY(0.2vw);
-  }
-  20% {
-    transform: translateY(0.5vw);
-  }
-  48% {
-    transform: translateY(26vw);
-  }
-  48.5% {
-    transform: translateY(28vw);
-  }
-  49% {
-    transform: translateY(29vw);
-  }
-  50% {
-    transform: translateY(29.7vw);
-  }
-  51% {
-    transform: translateY(29vw);
-  }
-  51.5% {
-    transform: translateY(28vw);
-  }
-  52% {
-    transform: translateY(26vw);
-  }
-  90% {
-    transform: translateY(0.5vw);
-  }
-  100% {
-    transform: translateY(0.2vw);
-  }
   to {
-    transform: translateY(0vw);
+    transform: translateY(30vw);
   }
 }
-@keyframes bound {
+@keyframes boundY {
   from {
     transform: translateY(0vw);
   }
-  10% {
-    transform: translateY(0.2vw);
-  }
-  20% {
-    transform: translateY(0.5vw);
-  }
-  48% {
-    transform: translateY(26vw);
-  }
-  48.5% {
-    transform: translateY(28vw);
-  }
-  49% {
-    transform: translateY(29vw);
-  }
-  50% {
-    transform: translateY(29.7vw);
-  }
-  51% {
-    transform: translateY(29vw);
-  }
-  51.5% {
-    transform: translateY(28vw);
-  }
-  52% {
-    transform: translateY(26vw);
-  }
-  90% {
-    transform: translateY(0.5vw);
-  }
-  100% {
-    transform: translateY(0.2vw);
-  }
   to {
-    transform: translateY(0vw);
+    transform: translateY(30vw);
   }
 }
-@-webkit-keyframes bound-x {
+@-webkit-keyframes boundX {
   from {
     transform: translateX(0vw) scale(1, 1);
   }
-  16% {
-    transform: translateX(33vw) scale(1, 1);
-  }
-  33% {
-    transform: translateX(66vw) scale(1, 1);
-  }
   49% {
-    transform: translateX(79vw) scale(1, 1);
+    transform: translateX(80vw) scale(1, 1);
   }
   50% {
     transform: translateX(80vw) scale(-1, 1);
-  }
-  66% {
-    transform: translateX(66vw) scale(-1, 1);
-  }
-  83% {
-    transform: translateX(33vw) scale(-1, 1);
-  }
-  99% {
-    transform: translateX(1vw) scale(-1, 1);
   }
   to {
     transform: translateX(0vw) scale(-1, 1);
   }
 }
-@keyframes bound-x {
+@keyframes boundX {
   from {
     transform: translateX(0vw) scale(1, 1);
   }
-  16% {
-    transform: translateX(33vw) scale(1, 1);
-  }
-  33% {
-    transform: translateX(66vw) scale(1, 1);
-  }
   49% {
-    transform: translateX(79vw) scale(1, 1);
+    transform: translateX(80vw) scale(1, 1);
   }
   50% {
     transform: translateX(80vw) scale(-1, 1);
-  }
-  66% {
-    transform: translateX(66vw) scale(-1, 1);
-  }
-  83% {
-    transform: translateX(33vw) scale(-1, 1);
-  }
-  99% {
-    transform: translateX(1vw) scale(-1, 1);
   }
   to {
     transform: translateX(0vw) scale(-1, 1);
