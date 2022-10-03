@@ -10,41 +10,95 @@ li {
   margin-top: 50vh;
   display: block;
   width: 357px;
-  animation: boundY 0.5s ease-in infinite alternate;
+  animation: boundY 0.8s ease-in infinite alternate;
   &-1 {
     position: relative;
     top: -20px;
     z-index: 100;
     opacity: 1;
-    animation: boundX 8s infinite;
+    animation: boundX 16s infinite;
   }
   &-2 {
     position: absolute; 
     top: -60px;
     left: 45px;
     opacity: 0;
-    animation:flapping1 0.5s 0s infinite, boundX 8s infinite;
+    animation:flapping1 1.6s 0.8s infinite, boundX 16s infinite;
   }
   &-3 {
     position: absolute; 
     top: 75px;
     left: 120px;
     opacity: 0;
-    animation:flapping2 0.5s 0s infinite, boundX 8s infinite;
+    animation:flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
   }
 }
 
 @keyframes flapping1 {
-  50% {
+  5% {
     opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
 @keyframes flapping2 {
-  50% {
+  5% {
     opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 1;
@@ -61,4 +115,11 @@ li {
 	49%  { transform: translateX(80vw) scale(1,1); }
 	50%  { transform: translateX(80vw) scale(-1,1); }
 	to { transform: translateX(0vw) scale(-1,1); }
+}
+
+@keyframes opposite {
+  from {left: 120px; top: 75px}
+  49% {left: 120px; top: 75px;}
+  50% {left: -50px; top: 25px;}
+  to {left: -50px; top: 25px;}
 }

@@ -10,37 +10,64 @@ li {
   margin-top: 50vh;
   display: block;
   width: 357px;
-  -webkit-animation: boundY 0.5s ease-in infinite alternate;
-          animation: boundY 0.5s ease-in infinite alternate;
+  -webkit-animation: boundY 0.8s ease-in infinite alternate;
+          animation: boundY 0.8s ease-in infinite alternate;
 }
 .c-bird-1 {
   position: relative;
   top: -20px;
   z-index: 100;
   opacity: 1;
-  -webkit-animation: boundX 8s infinite;
-          animation: boundX 8s infinite;
+  -webkit-animation: boundX 16s infinite;
+          animation: boundX 16s infinite;
 }
 .c-bird-2 {
   position: absolute;
   top: -60px;
   left: 45px;
   opacity: 0;
-  -webkit-animation: flapping1 0.5s 0s infinite, boundX 8s infinite;
-          animation: flapping1 0.5s 0s infinite, boundX 8s infinite;
+  -webkit-animation: flapping1 1.6s 0.8s infinite, boundX 16s infinite;
+          animation: flapping1 1.6s 0.8s infinite, boundX 16s infinite;
 }
 .c-bird-3 {
   position: absolute;
   top: 75px;
   left: 120px;
   opacity: 0;
-  -webkit-animation: flapping2 0.5s 0s infinite, boundX 8s infinite;
-          animation: flapping2 0.5s 0s infinite, boundX 8s infinite;
+  -webkit-animation: flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
+          animation: flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
 }
 
 @-webkit-keyframes flapping1 {
-  50% {
+  5% {
     opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -48,24 +75,105 @@ li {
 }
 
 @keyframes flapping1 {
-  50% {
+  5% {
     opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes flapping2 {
-  50% {
+  5% {
     opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 1;
   }
 }
 @keyframes flapping2 {
-  50% {
+  5% {
     opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 1;
@@ -113,6 +221,42 @@ li {
   }
   to {
     transform: translateX(0vw) scale(-1, 1);
+  }
+}
+@-webkit-keyframes opposite {
+  from {
+    left: 120px;
+    top: 75px;
+  }
+  49% {
+    left: 120px;
+    top: 75px;
+  }
+  50% {
+    left: -50px;
+    top: 25px;
+  }
+  to {
+    left: -50px;
+    top: 25px;
+  }
+}
+@keyframes opposite {
+  from {
+    left: 120px;
+    top: 75px;
+  }
+  49% {
+    left: 120px;
+    top: 75px;
+  }
+  50% {
+    left: -50px;
+    top: 25px;
+  }
+  to {
+    left: -50px;
+    top: 25px;
   }
 }
 /*# sourceMappingURL=style.css.map */
