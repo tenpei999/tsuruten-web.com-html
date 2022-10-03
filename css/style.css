@@ -1,3 +1,4 @@
+@charset "UTF-8";
 main {
   height: 100vh;
 }
@@ -36,6 +37,21 @@ li {
   opacity: 0;
   -webkit-animation: flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
           animation: flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
+}
+.c-bird__shadow {
+  position: absolute;
+  left: 130px;
+  top: 1150px;
+  bottom: -95px; /*対象のheightと微調節*/
+  margin: auto;
+  width: 60px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  filter: blur(6px);
+  opacity: 0.9;
+  -webkit-animation: shadow 16s infinite, shadow-extend 0.8s ease-in-out infinite alternate;
+          animation: shadow 16s infinite, shadow-extend 0.8s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes flapping1 {
@@ -257,6 +273,66 @@ li {
   to {
     left: -50px;
     top: 25px;
+  }
+}
+@-webkit-keyframes shadow {
+  from {
+    transform: translateX(0vw) scale(1, 1);
+    filter: blur(4px);
+  }
+  49% {
+    transform: translateX(80vw) scale(1, 1);
+    filter: blur(4px);
+  }
+  50% {
+    transform: translateX(80vw) scale(1, 1);
+    filter: blur(4px);
+  }
+  to {
+    transform: translateX(0vw) scale(1, 1);
+    filter: blur(4px);
+  }
+}
+@keyframes shadow {
+  from {
+    transform: translateX(0vw) scale(1, 1);
+    filter: blur(4px);
+  }
+  49% {
+    transform: translateX(80vw) scale(1, 1);
+    filter: blur(4px);
+  }
+  50% {
+    transform: translateX(80vw) scale(1, 1);
+    filter: blur(4px);
+  }
+  to {
+    transform: translateX(0vw) scale(1, 1);
+    filter: blur(4px);
+  }
+}
+@-webkit-keyframes shadow-extend {
+  from {
+    width: 100px;
+    height: 50px;
+    filter: blur(4px);
+  }
+  to {
+    width: 150px;
+    height: 50px;
+    filter: blur(8px);
+  }
+}
+@keyframes shadow-extend {
+  from {
+    width: 100px;
+    height: 50px;
+    filter: blur(4px);
+  }
+  to {
+    width: 150px;
+    height: 50px;
+    filter: blur(8px);
   }
 }
 /*# sourceMappingURL=style.css.map */
