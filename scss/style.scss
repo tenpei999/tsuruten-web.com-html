@@ -1,5 +1,10 @@
+li {
+  list-style: none;
+}
+
 .c-bird {
   display: flex;
+  animation: bound 0.7s 0s ease-in-out infinite;
   &-1 {
     position: relative;
     z-index: 100;
@@ -20,6 +25,7 @@
     animation:flapping2 0.5s 0s infinite;
   }
 }
+
 @keyframes flapping1 {
   50% {
     opacity: 1;
@@ -37,56 +43,18 @@
   }
 }
 
-// @keyframes flapping1 {
-//   12.5% {
-//     opacity: 0;
-//   }
-//   25% {
-//     opacity: 1;
-//   }
-//   37.5% {
-//     opacity: 0;
-//   }
-//   50% {
-//     opacity: 1;
-//   }
-//   67.5% {
-//     opacity: 0;
-//   }
-//   75% {
-//     opacity: 1;
-//   }
-//   87.5% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes flapping2 {
-//   12.5% {
-//     opacity: 1;
-//   }
-//   25% {
-//     opacity: 0;
-//   }
-//   37.5% {
-//     opacity: 1;
-//   }
-//   50% {
-//     opacity: 0;
-//   }
-//   67.5% {
-//     opacity: 1;
-//   }
-//   75% {
-//     opacity: 0;
-//   }
-//   87.5% {
-//     opacity: 1;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// }
+@keyframes bound {
+	from  { transform: translateY(0vw) scale(1,1); }
+	10%  { transform: translateY(0.2vw) scale(1,1); }
+	20%  { transform: translateY(0.5vw) scale(1,1); }
+	48%  { transform: translateY(26vw) scale(1,1); }
+	48.5%  { transform: translateY(28vw) scale(0.9,1); }
+	49%  { transform: translateY(29vw) scale(0.9,0.8); }
+	50%  { transform: translateY(29.7vw) scale(1,0.5); }
+	51%  { transform: translateY(29vw) scale(0.9,0.8); }
+	51.5%  { transform: translateY(28vw) scale(0.9,1); }
+	52%  { transform: translateY(26vw) scale(1,1); }
+	90%  { transform: translateY(0.5vw) scale(1,1); }
+	100%  { transform: translateY(0.2vw) scale(1,1); }
+	to { transform: translateY(0vw) scale(1,1); }
+}
