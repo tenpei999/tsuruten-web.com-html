@@ -1,0 +1,14 @@
+/* Foundation */
+@use "Foundation";
+
+/* Layout 
+------------------------------*/
+@forward "Layout/main"; //メイン
+
+/* Component
+------------------------------*/
+
+/* Project
+------------------------------*/
+@forward "object/project/bird"; //header
+@forward "object/project/main-visual"; //メインビジュアル
