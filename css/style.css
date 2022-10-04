@@ -1,4 +1,12 @@
 @charset "UTF-8";
+li {
+  list-style: none;
+}
+
+.l-main {
+  height: 100vh;
+}
+
 main {
   height: 100vh;
 }
@@ -7,14 +15,14 @@ li {
   list-style: none;
 }
 
-.c-bird {
+.p-bird {
   margin-top: 50vh;
   display: block;
   width: 357px;
   -webkit-animation: boundY 0.8s ease-in infinite alternate;
           animation: boundY 0.8s ease-in infinite alternate;
 }
-.c-bird-1 {
+.p-bird-1 {
   position: relative;
   top: -20px;
   z-index: 100;
@@ -22,7 +30,7 @@ li {
   -webkit-animation: boundX 16s infinite;
           animation: boundX 16s infinite;
 }
-.c-bird-2 {
+.p-bird-2 {
   position: absolute;
   top: -60px;
   left: 45px;
@@ -30,7 +38,7 @@ li {
   -webkit-animation: flapping1 1.6s 0.8s infinite, boundX 16s infinite;
           animation: flapping1 1.6s 0.8s infinite, boundX 16s infinite;
 }
-.c-bird-3 {
+.p-bird-3 {
   position: absolute;
   top: 75px;
   left: 120px;
@@ -38,7 +46,7 @@ li {
   -webkit-animation: flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
           animation: flapping2 1.6s 0.8s infinite, boundX 16s infinite, opposite 16s infinite;
 }
-.c-bird__shadow {
+.p-bird__shadow {
   position: absolute;
   left: 130px;
   top: 1150px;
@@ -335,4 +343,11 @@ li {
     filter: blur(8px);
   }
 }
+/* Foundation */
+/* Layout 
+------------------------------*/
+/* Component
+------------------------------*/
+/* Project
+------------------------------*/
 /*# sourceMappingURL=style.css.map */
