@@ -1,0 +1,38 @@
+.p-main-visual {
+  min-width: 300px;
+  height: 2000px;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../../../img/gotenyama.jpg);
+  &__is-road {
+    animation: auto-scroll 10s ease-out forwards;
+  }
+  &__inner {
+    width: 100vw;
+    position: relative;
+  }
+  h1 {
+    position: absolute;
+    top: 5rem;
+    left: 20%;
+    font-size: 5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes auto-scroll {
+  from {
+    background-position-y: 0rem;
+  }
+  50% {
+    background-position-y: -70rem;
+    background-position-x: center;
+  }
+  to {
+    background-position-y: -70rem;
+    background-position-x: -35rem; 
+  }
+}
+
