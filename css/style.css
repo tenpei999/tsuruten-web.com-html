@@ -2,66 +2,149 @@ li {
   list-style: none;
 }
 
-.l-global-wrapper {
-  width: 100vw;
-}
-
 .l-main {
   height: 100%;
 }
 
-.p-main-visual {
-  min-width: 300px;
-  height: 2000px;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(../../../img/gotenyama.jpg);
+.c-margin-center {
+  margin: auto;
 }
-.p-main-visual__is-road {
-  -webkit-animation: auto-scroll 10s ease-out forwards;
-          animation: auto-scroll 10s ease-out forwards;
-}
-.p-main-visual__inner {
-  width: 100vw;
+
+.c-to-top .-image1 {
   position: relative;
+  opacity: 1;
+  -webkit-animation: run1 0.5s infinite;
+          animation: run1 0.5s infinite;
 }
-.p-main-visual h1 {
+.c-to-top .-image2 {
   position: absolute;
-  top: 5rem;
-  left: 20%;
-  font-size: 5rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-animation: run2 0.5s infinite;
+          animation: run2 0.5s infinite;
+}
+.c-to-top .-image3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-animation: run3 0.5s infinite;
+          animation: run3 0.5s infinite;
 }
 
-@-webkit-keyframes auto-scroll {
+@-webkit-keyframes run1 {
   from {
-    background-position-y: 0rem;
+    opacity: 1;
   }
-  50% {
-    background-position-y: -70rem;
-    background-position-x: center;
+  19% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
   }
   to {
-    background-position-y: -70rem;
-    background-position-x: -35rem;
+    opacity: 0;
   }
 }
 
-@keyframes auto-scroll {
+@keyframes run1 {
   from {
-    background-position-y: 0rem;
+    opacity: 1;
   }
-  50% {
-    background-position-y: -70rem;
-    background-position-x: center;
+  19% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
   }
   to {
-    background-position-y: -70rem;
-    background-position-x: -35rem;
+    opacity: 0;
   }
 }
+@-webkit-keyframes run2 {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes run2 {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes run3 {
+  from {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  41% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes run3 {
+  from {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  41% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.p-header__logo img {
+  margin: auto auto 1rem auto;
+}
+.p-header__form {
+  display: block;
+  width: 20rem;
+}
+.p-header__form--text {
+  width: 17.5rem;
+}
+.p-header__form--text {
+  padding-left: 0.5rem;
+  width: 2rem;
+}
+
 /* Foundation */
 /* Layout 
 ------------------------------*/

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>front-page | tsuruten-web.com | common</title>
-  <meta name="description" content="WebエンジニアTsuruのデモサイトです。">
+  <meta name="description" content="WebエンジニアTsuruのポートフォリオサイトです。">
   <link rel="icon" href="img/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css"/>
@@ -13,21 +13,32 @@
   <script src="js/main.js"></script>
 </head>
 <body>
-  <div class="l-global-wrapper">
   <header class="l-header p-header">
+    <div class="l-header__upper">
+      <h1 class="p-header__logo">
+        <img src="img/logo2.png" class="c-margin-center" alt="WebエンジニアTsuruポートフォリオサイトです。">
+      </h1>
+    </div>
+  <ul class="p-header__nav">
+    <p class="c-hamburger"><a href=""><span></span></a></p>
+    <nav>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+  </ul>
+    <div>
+      <form action="cgi-bin/example.cgi" method="post" class="p-header__form c-margin-center">
+        <input type="search" name="search" placeholder="キーワードを入力" class="p-header__form--text">
+        <input type="submit" name="submit" value="検索" class="p-header__form--submit">
+      </form>
+    </div>
   </header>
-    <main class="l-main p-main">
-      <section class="p-main-visual p-main-visual__is-road">
-        <div class="main-visual__inner">
-          <h1>
-            <p>
-              chun<br>chun
-            </p>
-          </h1>
-        </div>
-      </section>
-    </main>
-  </div>
-  <footer class="l-footer p-header"></footer>
 </body>
 </html>

@@ -3,12 +3,15 @@
 
 /* Layout 
 ------------------------------*/
-@forward "Layout/global-wrapper"; //global
+@forward "Layout/header"; //ヘッダー
 @forward "Layout/main"; //メイン
 
 /* Component
 ------------------------------*/
+@forward "object/Component/margin-center"; // センター
+@forward "object/Component/to-top"; //トップページリンク
 
 /* Project
 ------------------------------*/
-@forward "object/project/main-visual"; //メインビジュアル
+@forward "object/project/header"; //ヘッダー
+

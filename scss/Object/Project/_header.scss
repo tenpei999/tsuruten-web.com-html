@@ -1,0 +1,21 @@
+.p-header {
+  &__logo {
+    img {
+      margin: auto auto 1rem auto;
+    }
+  }
+  &__nav {
+  }
+  &__form {
+    display: block;
+    width: 20rem;
+    &--text {
+      width: 17.5rem;
+    }
+    &--text {
+      padding-left: 0.5rem;
+      width: 2rem;
+    }
+  }
+}
+
