@@ -1,4 +1,8 @@
 .l-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   &__upper {
+    margin: 0.5rem 5rem 0 5rem;
   }
 }

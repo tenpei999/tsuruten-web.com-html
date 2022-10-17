@@ -1,5 +1,25 @@
+ul {
+  list-style: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
 li {
   list-style: none;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+}
+
+.l-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.l-header__upper {
+  margin: 0.5rem 5rem 0 5rem;
 }
 
 .l-main {
@@ -130,19 +150,89 @@ li {
     opacity: 1;
   }
 }
-.p-header__logo img {
-  margin: auto auto 1rem auto;
+.p-header {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.p-header__logo {
+  margin: auto;
+  width: 50px;
+  height: 50px;
 }
 .p-header__form {
   display: block;
-  width: 20rem;
+  width: 15rem;
 }
 .p-header__form--text {
-  width: 17.5rem;
+  width: 10rem;
 }
-.p-header__form--text {
-  padding-left: 0.5rem;
-  width: 2rem;
+.p-header__form--submit {
+  margin-left: 0.3rem;
+  padding: 0.22rem;
+  width: 4.2rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+/* mixin */
+.p-hamburger {
+  position: fixed;
+  margin-top: 0;
+  top: 0.5%;
+  right: 0%;
+}
+.p-hamburger__button {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+@media screen and (min-width: 1220px) {
+  .p-hamburger__button {
+    display: none;
+  }
+}
+.p-hamburger__button::before, .p-hamburger__button::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: calc(50% - 20px/2);
+  display: block;
+  transition: transform 0.2s;
+}
+.p-hamburger__button::before {
+  top: 22px;
+}
+.p-hamburger__button::after {
+  top: 38px;
+}
+.p-hamburger__button > span {
+  width: 20px;
+  height: 2px;
+  font-size: 0;
+  background: linear-gradient(to right, #000, #000) repeat-x #000;
+  background-size: auto 2px;
+  position: absolute;
+  left: calc(50% - 20px/2);
+  top: 50%;
+  transition: transform 0.2s;
+}
+.p-hamburger__button.is-open::before {
+  transform: rotate(45deg);
+  top: 28px;
+}
+.p-hamburger__button.is-open::after {
+  transform: rotate(-45deg);
+  top: 28px;
+}
+.p-hamburger__button.is-open > span {
+  background: none;
+}
+
+body.is-open {
+  position: fixed;
 }
 
 /* Foundation */

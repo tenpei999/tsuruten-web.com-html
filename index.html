@@ -14,15 +14,9 @@
 </head>
 <body>
   <header class="l-header p-header">
-    <div class="l-header__upper">
-      <h1 class="p-header__logo">
-        <img src="img/logo2.png" class="c-margin-center" alt="WebエンジニアTsuruポートフォリオサイトです。">
-      </h1>
-    </div>
-  <ul class="p-header__nav">
-    <p class="c-hamburger"><a href=""><span></span></a></p>
-    <nav>
-      <ul>
+    <ul class="p-hamburger">
+      <button class="p-hamburger__button"><span></span></button>
+      <ul class="p-hamburger__list">
         <li></li>
         <li></li>
         <li></li>
@@ -31,14 +25,18 @@
         <li></li>
         <li></li>
       </ul>
-    </nav>
-  </ul>
-    <div>
+    </ul>
+    <div class="l-header__upper">
+      <h1 class="p-header__logo c-margin-center">
+        <img src="img/logo2.png" alt="WebエンジニアTsuruのポートフォリオサイトです。">
+      </h1>
+    </div>
+    <!-- <div class="l-header__lower"> -->
       <form action="cgi-bin/example.cgi" method="post" class="p-header__form c-margin-center">
         <input type="search" name="search" placeholder="キーワードを入力" class="p-header__form--text">
         <input type="submit" name="submit" value="検索" class="p-header__form--submit">
       </form>
-    </div>
+    <!-- </div> -->
   </header>
 </body>
 </html>
