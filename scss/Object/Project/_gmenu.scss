@@ -26,21 +26,37 @@
     @include m.mq(screen03) {
       width: unset;
       position: static;
-      .item1, .item6, .item7 {
-        display: none;
-      }
     } 
   }
   &__list {
     @include m.mq (screen03) {
-      margin-right: 5rem;
-      padding: 5rem 1rem 0 0;
+      margin: unset;
+      padding: 1rem 1rem 0 0;
       display: flex;
   }
+   .item {
+    font-size: 1.6rem;
+    display: block;
+    width: 10rem;
     @include m.mq (screen03) {
-    li {
+      text-align: center;
       padding-left: 2rem;
+    }
+    .title {
+        color: v.$MenuBlack;
       }
+    }
+  }
+  .middle {
+    .title {
+      font-size: 1.2rem;
+      color: v.$TextBlack;
+      line-height: 4rem;
+    }
+  }
+  .item1, .item6, .item7 {
+    @include m.mq (screen03) {
+      display: none;
     }
   }
 }

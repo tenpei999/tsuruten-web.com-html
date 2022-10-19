@@ -28,7 +28,137 @@ a {
   text-decoration: none;
 }
 
-/* mixin */
+p {
+  margin: 0;
+}
+
+/* mixin */ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role=list], ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} /* font-family */
+/* Color */
+/* font-weight */
 .l-header {
   z-index: 120;
 }
@@ -41,7 +171,7 @@ a {
 @media screen and (min-width: 1220px) {
   .l-header__inner {
     width: 10vw;
-    margin: 2rem 0 0 5rem;
+    margin: 0 0 0 5rem;
     position: static;
   }
 }
@@ -218,6 +348,14 @@ body.is-open {
   position: fixed;
 }
 
+.text {
+  color: red;
+}
+
+.vertical-title {
+  color: red;
+}
+
 .p-header {
   width: 100%;
 }
@@ -271,7 +409,7 @@ body.is-open {
   display: block;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
+  background-color: #000;
   opacity: 0.5;
   position: absolute;
   top: 0;
@@ -298,7 +436,7 @@ body.is-open {
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: #fff;
+  background-color: #FFF;
   left: 100%;
   position: absolute;
   z-index: 150;
@@ -313,20 +451,36 @@ body.is-open {
     width: unset;
     position: static;
   }
-  .p-gmenu--inner .item1, .p-gmenu--inner .item6, .p-gmenu--inner .item7 {
-    display: none;
-  }
 }
 @media screen and (min-width: 1220px) {
   .p-gmenu__list {
-    margin-right: 5rem;
-    padding: 5rem 1rem 0 0;
+    margin: unset;
+    padding: 1rem 1rem 0 0;
     display: flex;
   }
 }
+.p-gmenu__list .item {
+  font-size: 1.6rem;
+  display: block;
+  width: 10rem;
+}
 @media screen and (min-width: 1220px) {
-  .p-gmenu__list li {
+  .p-gmenu__list .item {
+    text-align: center;
     padding-left: 2rem;
+  }
+}
+.p-gmenu__list .item .title {
+  color: #707070;
+}
+.p-gmenu .middle .title {
+  font-size: 1.2rem;
+  color: #000;
+  line-height: 4rem;
+}
+@media screen and (min-width: 1220px) {
+  .p-gmenu .item1, .p-gmenu .item6, .p-gmenu .item7 {
+    display: none;
   }
 }
 
