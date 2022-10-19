@@ -13,17 +13,21 @@ button {
   background-color: unset;
 }
 
-.l-header {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.l-header__upper {
-  margin: 0.5rem 5rem 0 5rem;
+a {
+  text-decoration: none;
 }
 
-.l-main {
-  height: 100%;
+/* mixin */
+.l-header__upper {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 2rem 10vw 0 10vw;
+}
+@media screen and (min-width: 1220px) {
+  .l-header__upper {
+    margin-right: 70%;
+  }
 }
 
 .c-margin-center {
@@ -154,9 +158,11 @@ button {
   display: flex;
   justify-content: flex-end;
   position: relative;
+  z-index: 120;
 }
 .p-header__logo {
   margin: auto;
+  left: 48%;
   width: 50px;
   height: 50px;
 }
@@ -164,8 +170,18 @@ button {
   display: block;
   width: 15rem;
 }
+@media screen and (min-width: 1220px) {
+  .p-header__form {
+    width: 20rem;
+  }
+}
 .p-header__form--text {
   width: 10rem;
+}
+@media screen and (min-width: 1220px) {
+  .p-header__form--text {
+    width: 14rem;
+  }
 }
 .p-header__form--submit {
   margin-left: 0.3rem;
@@ -174,25 +190,48 @@ button {
   font-size: 0.8rem;
   line-height: 1rem;
 }
-
-/* mixin */
-.p-hamburger {
-  position: fixed;
-  margin-top: 0;
-  top: 0.5%;
-  right: 0%;
+@media screen and (min-width: 1220px) {
+  .p-header__form--submit {
+    width: 5.2rem;
+  }
 }
-.p-hamburger__button {
-  width: 60px;
-  height: 60px;
-  position: relative;
+.p-header__gmenu {
+  position: absolute;
+  z-index: 120;
+}
+.p-header__background {
+  transition: all 0s 0.3s;
+  display: none;
+}
+.p-header__background.is-open {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 110;
 }
 @media screen and (min-width: 1220px) {
-  .p-hamburger__button {
+  .p-header__background.is-open {
     display: none;
   }
 }
-.p-hamburger__button::before, .p-hamburger__button::after {
+
+.c-hamburger {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  z-index: 200;
+}
+@media screen and (min-width: 1220px) {
+  .c-hamburger {
+    display: none;
+  }
+}
+.c-hamburger::before, .c-hamburger::after {
   content: "";
   width: 20px;
   height: 2px;
@@ -202,13 +241,13 @@ button {
   display: block;
   transition: transform 0.2s;
 }
-.p-hamburger__button::before {
+.c-hamburger::before {
   top: 22px;
 }
-.p-hamburger__button::after {
+.c-hamburger::after {
   top: 38px;
 }
-.p-hamburger__button > span {
+.c-hamburger > span {
   width: 20px;
   height: 2px;
   font-size: 0;
@@ -219,20 +258,54 @@ button {
   top: 50%;
   transition: transform 0.2s;
 }
-.p-hamburger__button.is-open::before {
+.c-hamburger.is-open::before {
   transform: rotate(45deg);
   top: 28px;
 }
-.p-hamburger__button.is-open::after {
+.c-hamburger.is-open::after {
   transform: rotate(-45deg);
   top: 28px;
 }
-.p-hamburger__button.is-open > span {
+.c-hamburger.is-open > span {
   background: none;
 }
 
 body.is-open {
   position: fixed;
+}
+
+.p-gmenu {
+  position: relative;
+  -webkit-margin-before: unset;
+          margin-block-start: unset;
+}
+.p-gmenu--inner > li {
+  width: 100vw;
+  height: 100vh;
+}
+.p-gmenu__list {
+  position: fixed;
+  background-color: #fff;
+  left: 100vw;
+  top: 0;
+  overflow: hidden;
+  transition: all 400ms 0s ease-in-out;
+}
+.p-gmenu__list li {
+  padding-left: 2rem;
+}
+.p-gmenu__list.is-open {
+  left: 60vw;
+}
+@media screen and (min-width: 1220px) {
+  .p-gmenu__list {
+    position: static;
+    padding: 5rem 1rem 0 0;
+    display: flex;
+  }
+  .p-gmenu__list .item1, .p-gmenu__list .item6, .p-gmenu__list .item7 {
+    display: none;
+  }
 }
 
 /* Foundation */
@@ -241,5 +314,7 @@ body.is-open {
 /* Component
 ------------------------------*/
 /* Project
+------------------------------*/
+/* Utility
 ------------------------------*/
 /*# sourceMappingURL=style.css.map */
