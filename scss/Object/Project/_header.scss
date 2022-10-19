@@ -1,10 +1,13 @@
 @use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
 
 .p-header {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  z-index: 120;
+  width: 100%;
+  @include m.mq (screen03) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
   &__logo {
     margin: auto;
     left: 48%;
@@ -34,10 +37,6 @@
       }
     }
   }
-  &__gmenu {
-    position: absolute;
-    z-index: 120;
-  }
   &__background {
     transition: all 0s 0.3s;
     display: none;
@@ -45,7 +44,7 @@
       display: block;
       width: 100vw;
       height: 100vh;
-      background-color: #000000;
+      background-color: v.$BackgroundBlack;
       opacity: 0.5;
       position: absolute;
       top: 0;

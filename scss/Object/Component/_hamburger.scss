@@ -6,10 +6,6 @@ $btnHeight: 2px;
 $lineColor: #000;
 
 .c-hamburger {
-	width           : 60px;
-	height          : 60px;
-	position        : relative;
-	z-index: 200;
 	@include m.mq(screen03) {
 		display: none;
 	}

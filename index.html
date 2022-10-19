@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>front-page | tsuruten-web.com | common</title>
   <meta name="description" content="WebエンジニアTsuruのポートフォリオサイトです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="img/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css"/>
@@ -13,11 +16,11 @@
   <script src="js/main.js"></script>
 </head>
 <body>
-  <header class="l-header p-header">
-    <article class="p-header__gmenu">
-      <ul class="p-gmenu--inner js-hamburger">
-        <button class="c-hamburger"><span></span></button>
-        <li>
+  <div class="container">
+    <header class="l-header p-header">
+      <article class="p-gmenu">
+        <button class="c-hamburger js-hamburger"><span></span></button>
+        <aside class="p-gmenu--inner">
           <ul class="p-gmenu__list">
             <li class="item1">
               <a href="#">
@@ -65,25 +68,26 @@
               </a>
             </li>
           </ul>
-        </li>
-      </ul>
-    </article>
-    <section class="l-header__upper">
-      <h1 class="p-header__logo c-margin-center">
-        <img src="img/logo2.png" alt="WebエンジニアTsuruのポートフォリオサイトです。">
-      </h1>
-      <form action="cgi-bin/example.cgi" method="post" class="p-header__form c-margin-center">
-        <input type="search" name="search" placeholder="キーワードを入力" class="p-header__form--text">
-        <input type="submit" name="submit" value="検索" class="p-header__form--submit">
-      </form>
-    </section>
-    <span class="p-header__background"></span>
-  </header>
-  <main>
-    
-  </main>
-  <footer>
-
-  </footer>
+        </aside>
+          
+      </article>
+      <section class="l-header__inner">
+        <h1 class="p-header__logo c-margin-center">
+          <img src="img/logo2.png" alt="WebエンジニアTsuruのポートフォリオサイトです。">
+        </h1>
+        <form action="cgi-bin/example.cgi" method="post" class="p-header__form c-margin-center">
+          <input type="search" name="search" placeholder="キーワードを入力" class="p-header__form--text">
+          <input type="submit" name="submit" value="検索" class="p-header__form--submit">
+        </form>
+      </section>
+      <span class="p-header__background"></span>
+    </header>
+    <main>
+      
+    </main>
+    <footer>
+  
+    </footer>
+  </div>
 </body>
 </html>

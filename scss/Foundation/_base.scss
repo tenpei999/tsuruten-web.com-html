@@ -1,3 +1,13 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 1900px;
+}
+.container {
+  overflow-x: hidden;
+  height: 100%;
+}
+
 ul {
   list-style: none;
   padding-inline-start: 0;

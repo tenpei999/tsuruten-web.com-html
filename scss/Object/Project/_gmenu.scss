@@ -1,34 +1,46 @@
 @use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
 
 .p-gmenu {
   position: relative;
-  margin-block-start: unset;
-  &--inner{
-    > li {
-      width: 100vw;
-      height: 100vh;      
-    }
+  .c-hamburger {
+    width           : 60px;
+    height          : 60px;
+    position        : absolute;
+    right: 1rem;
+    z-index: 200;
   }
-  &__list {
-    position: fixed;
-    background-color: #fff;
-    left: 100vw;
+  &--inner{
     top: 0;
+    height: 100vh;   
+    width: 100%;  
+    background-color: v.$BackgroundWhite;
+    left: 100%;
+    position: absolute;
+    z-index: 150;
     overflow: hidden;
     transition: all 400ms 0s ease-in-out;
-    li {
-      padding-left: 2rem;
-    }
     &.is-open {
       left: 60vw;
     }
     @include m.mq(screen03) {
+      width: unset;
       position: static;
-      padding: 5rem 1rem 0 0;
-      display: flex;
       .item1, .item6, .item7 {
         display: none;
       }
     } 
+  }
+  &__list {
+    @include m.mq (screen03) {
+      margin-right: 5rem;
+      padding: 5rem 1rem 0 0;
+      display: flex;
+  }
+    @include m.mq (screen03) {
+    li {
+      padding-left: 2rem;
+      }
+    }
   }
 }

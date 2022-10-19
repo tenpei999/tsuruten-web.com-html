@@ -1,13 +1,16 @@
 @use "../Foundation/mixin" as m;
 
 .l-header {
-  &__upper {
-    display: flex;
-    flex-direction: column;
+  z-index: 120;
+  &__inner {
+    position: absolute;
+    top: 0;
     width: 80vw;
     margin: 2rem 10vw 0 10vw;
     @include m.mq (screen03) {
-      margin-right: 70%;
+      width: 10vw;
+      margin: 2rem 0 0 5rem;
+      position: static;
     }
   }
 }
