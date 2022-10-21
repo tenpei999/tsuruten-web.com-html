@@ -161,12 +161,11 @@ input, button, textarea, select {
 /* font-weight */
 .l-header {
   z-index: 120;
+  top: 0;
 }
 .l-header__inner {
-  position: absolute;
-  top: 0;
   width: 80vw;
-  margin: 2rem 10vw 0 10vw;
+  margin: 0 10vw 0 10vw;
 }
 @media screen and (min-width: 1220px) {
   .l-header__inner {
@@ -178,6 +177,96 @@ input, button, textarea, select {
 
 .c-margin-center {
   margin: auto;
+}
+
+@media screen and (min-width: 1220px) {
+  .c-hamburger {
+    display: none;
+  }
+}
+.c-hamburger::before, .c-hamburger::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: calc(50% - 20px/2);
+  display: block;
+  transition: transform 0.2s;
+}
+.c-hamburger::before {
+  top: 22px;
+}
+.c-hamburger::after {
+  top: 38px;
+}
+.c-hamburger > span {
+  width: 20px;
+  height: 2px;
+  font-size: 0;
+  background: linear-gradient(to right, #000, #000) repeat-x #000;
+  background-size: auto 2px;
+  position: absolute;
+  left: calc(50% - 20px/2);
+  top: 50%;
+  transition: transform 0.2s;
+}
+.c-hamburger.is-open::before {
+  transform: rotate(45deg);
+  top: 28px;
+}
+.c-hamburger.is-open::after {
+  transform: rotate(-45deg);
+  top: 28px;
+}
+.c-hamburger.is-open > span {
+  background: none;
+}
+
+body.is-open {
+  position: fixed;
+}
+
+.menu-checkbox {
+  position: absolute;
+  opacity: 0;
+  left: 11rem;
+  z-index: 1000;
+  width: 8rem;
+  height: 1.5rem;
+  right: 2rem;
+}
+
+.c-drawer {
+  position: absolute;
+  top: 5rem;
+  left: 11rem;
+  height: 100%;
+  width: 8rem;
+  z-index: 400;
+  transform: translateY(-300%);
+  transition: 0.5s;
+}
+.c-drawer li {
+  height: 4rem;
+}
+.c-drawer--label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-checkbox:checked ~ .c-drawer {
+  transform: translateY(0);
+}
+
+.c-text-small--white {
+  color: #fff;
+  font-weight: 300;
+}
+
+.vertical-title {
+  color: red;
 }
 
 .c-to-top .-image1 {
@@ -300,64 +389,24 @@ input, button, textarea, select {
     opacity: 1;
   }
 }
-@media screen and (min-width: 1220px) {
-  .c-hamburger {
-    display: none;
-  }
-}
-.c-hamburger::before, .c-hamburger::after {
-  content: "";
-  width: 20px;
-  height: 2px;
-  background: #000;
-  position: absolute;
-  left: calc(50% - 20px/2);
-  display: block;
-  transition: transform 0.2s;
-}
-.c-hamburger::before {
-  top: 22px;
-}
-.c-hamburger::after {
-  top: 38px;
-}
-.c-hamburger > span {
-  width: 20px;
-  height: 2px;
-  font-size: 0;
-  background: linear-gradient(to right, #000, #000) repeat-x #000;
-  background-size: auto 2px;
-  position: absolute;
-  left: calc(50% - 20px/2);
-  top: 50%;
-  transition: transform 0.2s;
-}
-.c-hamburger.is-open::before {
-  transform: rotate(45deg);
-  top: 28px;
-}
-.c-hamburger.is-open::after {
-  transform: rotate(-45deg);
-  top: 28px;
-}
-.c-hamburger.is-open > span {
-  background: none;
+.c-background-footer {
+  background-image: url(../../../../img/tree-woods.jpg);
+  background-position: center center;
 }
 
-body.is-open {
-  position: fixed;
+.c-background-opacity {
+  background-color: #FFF;
+  opacity: 0.5;
 }
 
-.text {
-  color: red;
-}
-
-.vertical-title {
-  color: red;
+.c-background-opacity {
+  background-color: #FFF;
+  opacity: 0.5;
 }
 
 .p-header {
   width: 100%;
+  position: fixed;
 }
 @media screen and (min-width: 1220px) {
   .p-header {
@@ -422,6 +471,21 @@ body.is-open {
   }
 }
 
+.p-footer {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-footer__copy {
+  width: 20rem;
+  text-align: center;
+}
+.p-footer .c-text-small {
+  font-size: 0.6rem;
+}
+
 .p-gmenu {
   position: relative;
 }
@@ -442,6 +506,12 @@ body.is-open {
   z-index: 150;
   overflow: hidden;
   transition: all 400ms 0s ease-in-out;
+}
+@media screen and (min-width: 1220px) {
+  .p-gmenu--inner {
+    height: 5rem;
+    transition: all 0s 0s;
+  }
 }
 .p-gmenu--inner.is-open {
   left: 60vw;
@@ -472,6 +542,8 @@ body.is-open {
 }
 .p-gmenu__list .item .title {
   color: #707070;
+  position: absolute;
+  z-index: 1000;
 }
 .p-gmenu .middle .title {
   font-size: 1.2rem;
@@ -481,6 +553,91 @@ body.is-open {
 @media screen and (min-width: 1220px) {
   .p-gmenu .item1, .p-gmenu .item6, .p-gmenu .item7 {
     display: none;
+  }
+}
+
+.p-animation-background {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 1400px;
+}
+.p-animation-background .layer-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 2000px;
+  background-image: url(../../../img/sky-and-mountain-base.jpg);
+}
+.p-animation-background .layer-2 {
+  position: absolute;
+  top: 5rem;
+  left: 30%;
+  width: 10rem;
+  height: 10rem;
+  background-size: cover;
+  background-image: url(../../../img/cloud-highest.png);
+  z-index: 200;
+  transition: all 4S 0s ease-in-out;
+}
+@media screen and (min-width: 820px) {
+  .p-animation-background .layer-2 {
+    left: 40%;
+  }
+}
+.p-animation-background .layer-3 {
+  position: absolute;
+  display: block;
+  top: 10%;
+  left: -45%;
+  width: 30rem;
+  height: 30rem;
+  background-size: cover;
+  background-image: url(../../../img/cloud-middle1.png);
+  z-index: 200;
+  transition: all 10S 0s ease-in-out;
+}
+@media screen and (min-width: 820px) {
+  .p-animation-background .layer-3 {
+    left: 5%;
+    width: 40rem;
+    height: 40rem;
+    transition: all 8S 0s ease-in-out;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .p-animation-background .layer-3 {
+    left: 10%;
+  }
+}
+.p-animation-background .layer-4 {
+  position: absolute;
+  display: block;
+  top: -20%;
+  left: 40%;
+  width: 90rem;
+  height: 60rem;
+  background-size: cover;
+  background-image: url(../../../img/cloud-middle2.png);
+  z-index: 200;
+  transition: all 10S 0s ease-in-out;
+}
+@media screen and (min-width: 820px) {
+  .p-animation-background .layer-4 {
+    left: 25%;
+    top: -5%;
+    width: 90rem;
+    height: 60rem;
+    transition: all 8S 0s ease-in-out;
+  }
+}
+@media screen and (min-width: 1220px) {
+  .p-animation-background .layer-4 {
+    left: 25%;
+    top: -5%;
+    width: 90rem;
+    height: 60rem;
   }
 }
 

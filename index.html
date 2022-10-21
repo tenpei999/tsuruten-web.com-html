@@ -16,8 +16,16 @@
   <script src="js/main.js"></script>
 </head>
 <body>
-  <div class="container">
-    <header class="l-header p-header">
+  <section class="container">
+    <aside class="p-animation-background">
+      <ul class="p-animation-background__layer">
+        <li class="layer-1"></li>
+        <li class="layer-2"></li>
+        <li class="layer-3"></li>
+        <li class="layer-4"></li>
+      </ul>
+    </aside>
+    <header class="l-header p-header c-background-color-white">
       <article class="p-gmenu">
         <button class="c-hamburger js-hamburger"><span></span></button>
         <aside class="p-gmenu--inner">
@@ -34,7 +42,9 @@
             </li>
             <li class="item item3">
               <p class="title">スキル</p>
-              <ul class="middle">
+              <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+              <label for="menu-toggle"><span class="c-drawer--label"></span></label>
+              <ul class="middle c-drawer">
                 <li>
                   <a href="#">
                     <p class="title">コーディング</p>
@@ -80,14 +90,14 @@
           <input type="submit" name="submit" value="検索" class="p-header__form--submit">
         </form>
       </section>
-      <span class="p-header__background"></span>
+      <span></span>
     </header>
     <main>
       
     </main>
-    <footer>
-  
+    <footer class="c-background-footer p-footer">
+      <p class="p-footer__copy c-text-small--white">$copy; 2022 tsuruten-web.com</p>
     </footer>
-  </div>
+  </section>
 </body>
 </html>

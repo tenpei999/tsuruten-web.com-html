@@ -1,0 +1,32 @@
+.menu-checkbox {
+  position: absolute;
+    opacity: 0;
+    left: 11rem;
+    z-index: 1000;
+    width: 8rem;
+    height: 1.5rem;
+    right: 2rem;
+}
+
+.c-drawer {
+  position: absolute;
+  top: 5rem;
+  left: 11rem;
+  height: 100%;
+  width: 8rem;
+  z-index: 400;
+  transform: translateY(-300%);
+  transition: 0.5s;
+  li {
+    height: 4rem;
+  }
+  &--label {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.menu-checkbox:checked ~ .c-drawer {
+  transform: translateY(0);
+}

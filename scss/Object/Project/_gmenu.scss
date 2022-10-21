@@ -20,6 +20,10 @@
     z-index: 150;
     overflow: hidden;
     transition: all 400ms 0s ease-in-out;
+    @include m.mq (screen03) {
+      height: 5rem;
+      transition: all 0s 0s;
+    }
     &.is-open {
       left: 60vw;
     }
@@ -44,6 +48,8 @@
     }
     .title {
         color: v.$MenuBlack;
+        position: absolute;
+        z-index: 1000;
       }
     }
   }

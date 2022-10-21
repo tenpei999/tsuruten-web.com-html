@@ -1,0 +1,17 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+.p-footer {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__copy {
+    width: 20rem;
+    text-align: center;
+  }
+  .c-text-small {
+    font-size: 0.6rem;
+  }
+}

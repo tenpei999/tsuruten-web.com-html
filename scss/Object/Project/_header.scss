@@ -3,6 +3,7 @@
 
 .p-header {
   width: 100%;
+  position: fixed;
   @include m.mq (screen03) {
     display: flex;
     justify-content: space-between;
