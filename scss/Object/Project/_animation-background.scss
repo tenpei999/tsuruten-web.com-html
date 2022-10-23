@@ -5,15 +5,7 @@
   position: relative;
   overflow: hidden;
   width: 100vw;
-  height: 1400px;
-  .layer-1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 2000px;
-    background-image: url(../../../img/sky-and-mountain-base.jpg);
-  }
+  height: 1800px;
   .layer-2 {
     position: absolute;
     top: 5rem;
@@ -22,7 +14,7 @@
     height: 10rem;
     background-size: cover;
     background-image: url(../../../img/cloud-highest.png);
-    z-index: 200;
+    z-index: 300;
     transition: all 4S 0s ease-in-out;
     @include m.mq (screen02) {
       left: 40%;
@@ -37,7 +29,7 @@
     height: 30rem;
     background-size: cover;
     background-image: url(../../../img/cloud-middle1.png);
-    z-index: 200;
+    z-index: 300;
     transition: all 10S 0s ease-in-out;
     @include m.mq (screen02) {
       left: 5%;
@@ -58,7 +50,7 @@
     height: 60rem;
     background-size: cover;
     background-image: url(../../../img/cloud-middle2.png);
-    z-index: 200;
+    z-index: 300;
     transition: all 10S 0s ease-in-out;
     @include m.mq (screen02) {
       left: 25%;
@@ -73,5 +65,216 @@
       width: 90rem;
       height: 60rem;
     }
+  }
+  .layer-6 {
+    position: absolute;
+    display: block;
+    top: 300px;
+    width: 2000px;
+    height: 2000px;
+    background-size: cover;
+    background-image: url(../../../img/yama-base.jpg);
+    background-position: center;
+    z-index: 200;
+  }
+  .layer-7 {
+    position: absolute;
+    top: 1400px;
+    left: 2000px;
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: blur(10px) brightness(100%);
+    display: block;
+    height: 150px;
+    width: 100px;
+    transform: skew(142deg, 23deg);
+    z-index: 300;
+    animation: sun-light 18s 0s ease-out infinite;
+  }
+  .layer-8 {
+    position: absolute;
+    top: 1400px;
+    left: 1800px;
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: blur(10px) brightness(100%);
+    display: block;
+    height: 150px;
+    width: 100px;
+    transform: skew(142deg, 23deg);
+    z-index: 300;
+    animation: sun-light2 14.4s 0s ease-out infinite;
+  }
+  .layer-9 {
+    position: absolute;
+    top: 1400px;
+    left: 1600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: blur(10px) brightness(100%);
+    display: block;
+    height: 150px;
+    width: 100px;
+    transform: skew(142deg, 23deg);
+    z-index: 300;
+    animation: sun-light3 10.8s 0s ease-out infinite;
+  }
+  .layer-10 {
+    position: absolute;
+    top: 700px;
+    background-image: url(../../../img/名称未設定\ 2\ \(1\).png);
+    display: block;
+    height: 2202px;
+    width: 2000px;
+    z-index: 300;
+    opacity: 1;
+    background-repeat: no-repeat;
+    animation: cloud-moving 6s 0s ease-in-out infinite;
+  }
+  .layer-11 {
+    position: absolute;
+    top: 700px;
+    background-image: url(../../../img/名称未設定\ 2\ \(1\).png);
+    display: block;
+    height: 2202px;
+    width: 2000px;
+    z-index: 300;
+    opacity: 1;
+    filter: blur(5px) brightness(100%);
+    background-repeat: no-repeat;
+    animation: cloud-moving 6s 1.5s ease-in-out infinite;
+  }
+  .layer-12 {
+    position: absolute;
+    top: 700px;
+    background-image: url(../../../img/名称未設定\ 2\ \(1\).png);
+    display: block;
+    height: 2202px;
+    width: 2000px;
+    z-index: 300;
+    opacity: 1;
+    background-repeat: no-repeat;
+    animation: cloud-moving 6s 3s ease-in-out infinite;
+  }
+  .layer-13 {
+    position: absolute;
+    top: 865px;
+    left: 300px;
+    background-image: url(../../../img/名称未設定\ 2\ \(2\).png);
+    display: block;
+    height: 500px;
+    width: 1500px;
+    z-index: 300;
+    opacity: 1;
+    background-repeat: no-repeat;
+    filter: blur(2px) brightness(100%);
+    animation:  gradually 24s  ease-in-out infinite;
+  }
+  .layer-14 {
+    position: absolute;
+    top: 1350px;
+    /* left: 600px; */
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: blur(10px) brightness(100%);
+    display: block;
+    height: 150px;
+    width: 700px;
+    z-index: 300;
+  } 
+}
+
+@keyframes sun-light {
+  from {
+    left: 2000px;
+    opacity: 1;
+    width: 100px;
+    transform: skew(142deg, 23deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  to {
+    left: 1000px;
+    opacity: 0;
+    width: 50px;
+    transform: skew(120deg, 23deg);
+  }
+}
+@keyframes sun-light2 {
+  from {
+    left: 1800px;
+    opacity: 1;
+    width: 100px;
+    transform: skew(142deg, 23deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  to {
+    left: 1000px;
+    opacity: 0;
+    width: 50px;
+    transform: skew(120deg, 23deg);
+  }
+}
+@keyframes sun-light3 {
+  from {
+    left: 1600px;
+    opacity: 1;
+    width: 100px;
+    transform: skew(142deg, 23deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  to {
+    left: 1000px;
+    opacity: 0;
+    width: 50px;
+    transform: skew(120deg, 23deg);
+  }
+}
+@keyframes cloud-moving {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cloud-moving2 {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cloud-moving3 {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes gradually {
+  from {
+    opacity: 0;
+    filter: blur(2px) brightness(100%);
+  }
+  70% {
+    opacity: 1;
+    filter: blur(5px) brightness(97.5%);
+  }
+  to {
+    opacity: 0;
+    filter: blur(2px) brightness(100%);
   }
 }
