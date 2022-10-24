@@ -54,24 +54,20 @@ $(window).scroll(function () {
 
 // #page-topをクリックした際の設定
 
-$(function () {
-  $(".p-page-top").on("click", function () {
-  console.log("走れいのきち");
-    let scroll = $(window).scrollTop(); 
-      //スクロール値を取得
-      if(scroll > 0){
-        $(this).addClass('floatAnime'); 
-        //クリックしたらfloatAnimeというクラス名が付与
-            $('body,html').animate({
-                scrollTop: 0
-            }, 3000,function(){
-              //スクロールの速さ。数字が大きくなるほど遅くなる
-                $('.p-page-top').removeClass('floatAnime');//上までスクロールしたらfloatAnimeというクラス名を除く
-            }); 
-      }
-        return false;//リンク自体の無効化
+  $(function () {
+    $(".p-page-top").on("click", function () {
+      let scroll = $(window).scrollTop(); 
+        //スクロール値を取得
+        if(scroll > 0){
+          $(this).addClass('floatAnime'); 
+          //クリックしたらfloatAnimeというクラス名が付与
+              $('body,html').animate({
+                  scrollTop: 0
+              }, 3000, function(){
+                //スクロールの速さ。数字が大きくなるほど遅くなる
+                  $('.p-page-top').removeClass('floatAnime');//上までスクロールしたらfloatAnimeというクラス名を除く
+              }); 
+        }
+          return false;//リンク自体の無効化
+    });
   });
-});
-
-
-//エラーレンズ

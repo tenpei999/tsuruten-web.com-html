@@ -963,37 +963,10 @@ body.is-open {
   /*はじめは非表示*/
 }
 
-/*　上に上がる動き　*/
-.p-page-top.UpMove {
-  -webkit-animation: UpAnime 0.5s forwards;
-          animation: UpAnime 0.5s forwards;
-}
-
-@-webkit-keyframes UpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(150px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes UpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(150px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /*　下に下がる動き　*/
 .p-page-top.DownMove {
   -webkit-animation: DownAnime 0.5s forwards;
-          animation: DownAnime 0.5s forwards;
+  animation: DownAnime 0.5s forwards;
 }
 
 @-webkit-keyframes DownAnime {
@@ -1006,7 +979,6 @@ body.is-open {
     transform: translateY(150px);
   }
 }
-
 @keyframes DownAnime {
   from {
     opacity: 1;
@@ -1043,47 +1015,45 @@ body.is-open {
   width: 100px;
   height: 130px;
   /*背景画像の指定*/
-  background: url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/8-1-8/img/pagetop_2.png") no-repeat center;
   background-size: contain;
   /*アニメーションの指定*/
-  -webkit-animation: floatAnime 2s linear infinite;
-          animation: floatAnime 2s linear infinite;
-  opacity: 0;
+  -webkit-animation: floatAnime 0.5s infinite;
+          animation: floatAnime 0.5s infinite;
 }
 
 @-webkit-keyframes floatAnime {
   0% {
-    transform: translateX(0);
-    opacity: 0;
+    background-image: url(../../../img/inoshishi-run2.png);
   }
-  25% {
-    transform: translateX(-6px);
-    opacity: 1;
+  19% {
+    background-image: url(../../../img/inoshishi-run2.png);
   }
-  50% {
-    transform: translateX(0);
+  20% {
+    background-image: url(../../../img/inoshishi-run3.png);
+  }
+  90% {
+    background-image: url(../../../img/inoshishi-run3.png);
   }
   100% {
-    transform: translateX(6px);
-    opacity: 1;
+    background-image: url(../../../img/inoshishi-run1.png);
   }
 }
 
 @keyframes floatAnime {
   0% {
-    transform: translateX(0);
-    opacity: 0;
+    background-image: url(../../../img/inoshishi-run2.png);
   }
-  25% {
-    transform: translateX(-6px);
-    opacity: 1;
+  19% {
+    background-image: url(../../../img/inoshishi-run2.png);
   }
-  50% {
-    transform: translateX(0);
+  20% {
+    background-image: url(../../../img/inoshishi-run3.png);
+  }
+  90% {
+    background-image: url(../../../img/inoshishi-run3.png);
   }
   100% {
-    transform: translateX(6px);
-    opacity: 1;
+    background-image: url(../../../img/inoshishi-run1.png);
   }
 }
 /*Page Topと書かれたテキストの位置*/
