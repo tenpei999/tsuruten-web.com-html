@@ -23,3 +23,11 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
     $(this).addClass('close');//クラス名closeを付与
   }
 });
+
+//画面幅に合わせて左にスライド
+
+let window_w = window.innerWidth;
+
+jQuery(window).resize(function(){
+  $('.p-animation-background__layer').css('margin-left','window_w')
+});
