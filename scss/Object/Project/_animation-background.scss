@@ -2,6 +2,7 @@
 @use "../../Foundation/variable" as v;
 
 .p-animation-background {
+
   overflow: hidden;
   width: 100vw;
   height: 1800px;
@@ -79,39 +80,45 @@
       top: 1100px;
       left: 2000px;
       background-color: rgba(255, 255, 255, 0.1);
-      filter: blur(10px) brightness(100%);
+      -webkit-filter: blur(10px) brightness(100%);
+              filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 100px;
       transform: skew(142deg, 23deg);
       z-index: 300;
-      animation: sun-light 18s 0s ease-out infinite;
+      -webkit-animation: sun-light 18s 0s ease-out infinite;
+              animation: sun-light 18s 0s ease-out infinite;
     }
     .layer-8 {
       position: absolute;
       top: 1100px;
       left: 1800px;
       background-color: rgba(255, 255, 255, 0.1);
-      filter: blur(10px) brightness(100%);
+      -webkit-filter: blur(10px) brightness(100%);
+              filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 100px;
       transform: skew(142deg, 23deg);
       z-index: 300;
-      animation: sun-light2 14.4s 0s ease-out infinite;
+      -webkit-animation: sun-light2 14.4s 0s ease-out infinite;
+              animation: sun-light2 14.4s 0s ease-out infinite;
     }
     .layer-9 {
       position: absolute;
       top: 1100px;
       left: 1600px;
       background-color: rgba(255, 255, 255, 0.1);
-      filter: blur(10px) brightness(100%);
+      -webkit-filter: blur(10px) brightness(100%);
+              filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 100px;
       transform: skew(142deg, 23deg);
       z-index: 300;
-      animation: sun-light3 10.8s 0s ease-out infinite;
+      -webkit-animation: sun-light3 10.8s 0s ease-out infinite;
+              animation: sun-light3 10.8s 0s ease-out infinite;
     }
     .layer-10 {
       position: absolute;
@@ -123,7 +130,8 @@
       z-index: 300;
       opacity: 1;
       background-repeat: no-repeat;
-      animation: cloud-moving 6s 0s ease-in-out infinite;
+      -webkit-animation: cloud-moving 6s 0s ease-in-out infinite;
+              animation: cloud-moving 6s 0s ease-in-out infinite;
     }
     .layer-11 {
       position: absolute;
@@ -134,9 +142,11 @@
       width: 2000px;
       z-index: 300;
       opacity: 1;
-      filter: blur(5px) brightness(100%);
+      -webkit-filter: blur(5px) brightness(100%);
+              filter: blur(5px) brightness(100%);
       background-repeat: no-repeat;
-      animation: cloud-moving 6s 1.5s ease-in-out infinite;
+      -webkit-animation: cloud-moving 6s 1.5s ease-in-out infinite;
+              animation: cloud-moving 6s 1.5s ease-in-out infinite;
     }
     .layer-12 {
       position: absolute;
@@ -148,7 +158,8 @@
       z-index: 300;
       opacity: 1;
       background-repeat: no-repeat;
-      animation: cloud-moving 6s 3s ease-in-out infinite;
+      -webkit-animation: cloud-moving 6s 3s ease-in-out infinite;
+              animation: cloud-moving 6s 3s ease-in-out infinite;
     }
     .layer-13 {
       position: absolute;
@@ -161,15 +172,18 @@
       z-index: 300;
       opacity: 1;
       background-repeat: no-repeat;
-      filter: blur(2px) brightness(100%);
-      animation:  gradually 24s  ease-in-out infinite;
+      -webkit-filter: blur(2px) brightness(100%);
+              filter: blur(2px) brightness(100%);
+      -webkit-animation:  gradually 24s  ease-in-out infinite;
+              animation:  gradually 24s  ease-in-out infinite;
     }
     .layer-14 {
       position: absolute;
       top: 1050px;
       /* left: 600px; */
       background-color: rgba(255, 255, 255, 0.1);
-      filter: blur(10px) brightness(100%);
+      -webkit-filter: blur(10px) brightness(100%);
+              filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 700px;
@@ -177,9 +191,44 @@
     } 
   }
   
+  @-webkit-keyframes sun-light {
+    from {
+      left: 2000px;
+      opacity: 1;
+      width: 100px;
+      transform: skew(142deg, 23deg);
+    }
+    90% {
+      opacity: 0.7;
+    }
+    to {
+      left: 1000px;
+      opacity: 0;
+      width: 50px;
+      transform: skew(120deg, 23deg);
+    }
+  }
+  
   @keyframes sun-light {
     from {
       left: 2000px;
+      opacity: 1;
+      width: 100px;
+      transform: skew(142deg, 23deg);
+    }
+    90% {
+      opacity: 0.7;
+    }
+    to {
+      left: 1000px;
+      opacity: 0;
+      width: 50px;
+      transform: skew(120deg, 23deg);
+    }
+  }
+  @-webkit-keyframes sun-light2 {
+    from {
+      left: 1800px;
       opacity: 1;
       width: 100px;
       transform: skew(142deg, 23deg);
@@ -211,6 +260,23 @@
       transform: skew(120deg, 23deg);
     }
   }
+  @-webkit-keyframes sun-light3 {
+    from {
+      left: 1600px;
+      opacity: 1;
+      width: 100px;
+      transform: skew(142deg, 23deg);
+    }
+    90% {
+      opacity: 0.7;
+    }
+    to {
+      left: 1000px;
+      opacity: 0;
+      width: 50px;
+      transform: skew(120deg, 23deg);
+    }
+  }
   @keyframes sun-light3 {
     from {
       left: 1600px;
@@ -228,7 +294,29 @@
       transform: skew(120deg, 23deg);
     }
   }
+  @-webkit-keyframes cloud-moving {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   @keyframes cloud-moving {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes cloud-moving2 {
     from {
       opacity: 1;
     }
@@ -250,6 +338,17 @@
       opacity: 1;
     }
   }
+  @-webkit-keyframes cloud-moving3 {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   @keyframes cloud-moving3 {
     from {
       opacity: 1;
@@ -261,18 +360,38 @@
       opacity: 1;
     }
   }
-  @keyframes gradually {
+  @-webkit-keyframes gradually {
     from {
       opacity: 0;
-      filter: blur(2px) brightness(100%);
+      -webkit-filter: blur(2px) brightness(100%);
+              filter: blur(2px) brightness(100%);
     }
     70% {
       opacity: 1;
-      filter: blur(5px) brightness(97.5%);
+      -webkit-filter: blur(5px) brightness(97.5%);
+              filter: blur(5px) brightness(97.5%);
     }
     to {
       opacity: 0;
-      filter: blur(2px) brightness(100%);
+      -webkit-filter: blur(2px) brightness(100%);
+              filter: blur(2px) brightness(100%);
+    }
+  }
+  @keyframes gradually {
+    from {
+      opacity: 0;
+      -webkit-filter: blur(2px) brightness(100%);
+              filter: blur(2px) brightness(100%);
+    }
+    70% {
+      opacity: 1;
+      -webkit-filter: blur(5px) brightness(97.5%);
+              filter: blur(5px) brightness(97.5%);
+    }
+    to {
+      opacity: 0;
+      -webkit-filter: blur(2px) brightness(100%);
+              filter: blur(2px) brightness(100%);
     }
   }
 }
