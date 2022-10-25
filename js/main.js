@@ -24,14 +24,6 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
   }
 });
 
-//画面幅に合わせて左にスライド
-
-let window_w = window.innerWidth;
-
-jQuery(window).resize(function(){
-  $('.p-animation-background__layer').css('margin-left','window_w')
-});
-
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
   let scroll = $(window).scrollTop();
@@ -61,9 +53,7 @@ $(window).scroll(function () {
         if(scroll > 0){
           $(this).addClass('floatAnime'); 
           //クリックしたらfloatAnimeというクラス名が付与
-              $('body,html').animate({
-                  scrollTop: 0
-              }, 3000, function(){
+              $('body,html').animate({scrollTop: 0}, 3000, 'swing',function(){
                 //スクロールの速さ。数字が大きくなるほど遅くなる
                   $('.p-page-top').removeClass('floatAnime');//上までスクロールしたらfloatAnimeというクラス名を除く
               }); 
