@@ -10,7 +10,7 @@
   height: 10000px;
   width: 375px;
 
-  background-color: rgba(0, 0, 0, 0.4);
+  // background-color: rgba(0, 0, 0, 0.4);
   @include m.mq (screen02) {
     width: 400px;
   }

@@ -163,7 +163,7 @@ input, button, textarea, select {
   width: 80vw;
   margin: 0 10vw 0 10vw;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .l-header__inner {
     width: 10vw;
     margin: 0 0 0 5rem;
@@ -183,7 +183,6 @@ input, button, textarea, select {
   transform: translateX(-50%);
   height: 10000px;
   width: 375px;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 @media screen and (min-width: 820px) {
   .l-main {
@@ -195,7 +194,7 @@ input, button, textarea, select {
   margin: auto;
 }
 
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .c-hamburger {
     display: none;
   }
@@ -424,7 +423,7 @@ body.is-open {
   position: fixed;
   max-width: 1900px;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-header {
     display: flex;
     justify-content: space-between;
@@ -441,7 +440,7 @@ body.is-open {
   display: block;
   width: 15rem;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-header__form {
     width: 20rem;
   }
@@ -449,7 +448,7 @@ body.is-open {
 .p-header__form--text {
   width: 10rem;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-header__form--text {
     width: 14rem;
   }
@@ -461,7 +460,7 @@ body.is-open {
   font-size: 0.8rem;
   line-height: 1rem;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-header__form--submit {
     width: 5.2rem;
   }
@@ -481,7 +480,7 @@ body.is-open {
   left: 0;
   z-index: 110;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-header__background.is-open {
     display: none;
   }
@@ -523,7 +522,7 @@ body.is-open {
   overflow: hidden;
   transition: all 400ms 0s ease-in-out;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-gmenu--inner {
     height: 5rem;
     transition: all 0s 0s;
@@ -532,13 +531,13 @@ body.is-open {
 .p-gmenu--inner.is-open {
   left: 60vw;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-gmenu--inner {
     width: unset;
     position: static;
   }
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-gmenu__list {
     margin: unset;
     padding: 1rem 1rem 0 0;
@@ -550,7 +549,7 @@ body.is-open {
   display: block;
   width: 10rem;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-gmenu__list .item {
     text-align: center;
     padding-left: 2rem;
@@ -566,7 +565,7 @@ body.is-open {
   color: #000;
   line-height: 4rem;
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-gmenu .item1, .p-gmenu .item6, .p-gmenu .item7 {
     display: none;
   }
@@ -579,7 +578,38 @@ body.is-open {
 }
 .p-animation-background__layer {
   position: relative;
-  margin-left: calc(100% - 1920px);
+  margin-left: calc(100% - 1300px);
+  transition: all 1s ease-in;
+}
+@media screen and (min-width: 767px) {
+  .p-animation-background__layer {
+    margin-left: calc(100% - 1300px);
+  }
+}
+@media screen and (min-width: 820px) {
+  .p-animation-background__layer {
+    margin-left: calc(100% - 1400px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-animation-background__layer {
+    margin-left: calc(100% - 1500px);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .p-animation-background__layer {
+    margin-left: calc(100% - 1650px);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .p-animation-background__layer {
+    margin-left: calc(100% - 1800px);
+  }
+}
+@media screen and (min-width: 1800px) {
+  .p-animation-background__layer {
+    margin-left: calc(100% - 1920px);
+  }
 }
 .p-animation-background__layer .layer-1 {
   position: absolute;
@@ -590,33 +620,6 @@ body.is-open {
   background-image: url(../../../img/yama-base.jpg);
   background-position: center;
   z-index: 200;
-}
-.p-animation-background__layer .layer-2 {
-  position: absolute;
-  top: 400px;
-  background-image: url(../../../img/名称未設定\ 2\ \(1\).png);
-  display: block;
-  height: 2202px;
-  width: 2000px;
-  z-index: 300;
-  opacity: 1;
-  background-repeat: no-repeat;
-  -webkit-animation: cloud-moving 6s 0s ease-in-out infinite;
-  animation: cloud-moving 6s 0s ease-in-out infinite;
-}
-.p-animation-background__layer .layer-3 {
-  position: absolute;
-  top: 400px;
-  background-image: url(../../../img/名称未設定\ 2\ \(1\).png);
-  display: block;
-  height: 2202px;
-  width: 2000px;
-  z-index: 300;
-  opacity: 1;
-  filter: blur(5px) brightness(100%);
-  background-repeat: no-repeat;
-  -webkit-animation: cloud-moving 6s 1.5s ease-in-out infinite;
-  animation: cloud-moving 6s 1.5s ease-in-out infinite;
 }
 .p-animation-background__layer .layer-4 {
   position: absolute;
@@ -648,7 +651,7 @@ body.is-open {
 }
 .p-animation-background__layer .layer-6 {
   position: absolute;
-  top: 1100px;
+  top: 1450px;
   left: 2000px;
   background-color: rgba(255, 255, 255, 0.1);
   filter: blur(10px) brightness(100%);
@@ -662,7 +665,7 @@ body.is-open {
 }
 .p-animation-background__layer .layer-7 {
   position: absolute;
-  top: 1100px;
+  top: 1450px;
   left: 1800px;
   background-color: rgba(255, 255, 255, 0.1);
   filter: blur(10px) brightness(100%);
@@ -676,7 +679,7 @@ body.is-open {
 }
 .p-animation-background__layer .layer-8 {
   position: absolute;
-  top: 1100px;
+  top: 1450px;
   left: 1600px;
   background-color: rgba(255, 255, 255, 0.1);
   filter: blur(10px) brightness(100%);
@@ -717,17 +720,20 @@ body.is-open {
   background-size: cover;
   background-image: url(../../../img/cloud-middle1.png);
   z-index: 300;
-  transition: all 10S 0s ease-in-out;
+}
+.p-animation-background__child .layer-10.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 @media screen and (min-width: 820px) {
   .p-animation-background__child .layer-10 {
     left: 5%;
     width: 40rem;
     height: 40rem;
-    transition: all 8S 0s ease-in-out;
   }
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-animation-background__child .layer-10 {
     left: 10%;
   }
@@ -742,16 +748,14 @@ body.is-open {
   background-size: cover;
   background-image: url(../../../img/cloud-middle2.png);
   z-index: 300;
-  transition: all 10S 0s ease-in-out;
 }
 @media screen and (min-width: 820px) {
   .p-animation-background__child .layer-11 {
     left: 25%;
     top: -5%;
-    transition: all 8S 0s ease-in-out;
   }
 }
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1200px) {
   .p-animation-background__child .layer-11 {
     left: 25%;
     top: -5%;

@@ -24,16 +24,6 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
   }
 });
 
-// // リサイズにより発火する
-// $(window).resize(function(){
-//   //画面サイズを取得する
-//   let centerView = $(window).width()
-//   let center = (centerView - 1920) * 0.5;
-
-//   //取得した画面幅に合わせて左にずれる
-//   $('.p-animation-background').animate({marginLeft: center});
-
-// });
 
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
@@ -70,3 +60,21 @@ $(window).scroll(function () {
           return false;//リンク自体の無効化
     });
   });
+
+//   $(function() {
+//     let $window             = $(window),
+//         $cloud              = $('.layer-10'),
+//         defaultPositionTop = $cloud.css('top'),
+//         setOffsetPosition   = $cloud.offset(),
+//         fixedClassName      = 'fixed';
+ 
+//     $window.on('scroll', function() {
+//         if ($(this).scrollTop() > setOffsetPosition.top) {
+//             $cloud.addClass(fixedClassName).css('top', setOffsetPosition.top);
+//         } else {
+//             if ($cloud.hasClass(fixedClassName)) {
+//                 $cloud.removeClass(fixedClassName).css('top', defaultPositionTop);
+//             }
+//         }
+//     }).trigger('scroll');
+// });

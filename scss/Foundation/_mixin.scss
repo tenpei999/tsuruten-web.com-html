@@ -2,22 +2,49 @@
 $mq-breakpoints: (
 'screen01': 375px,
 //スマホ
-'screen011': 600px,
+'screen011': 767px,
 //スマホ
 'screen02': 820px,
 //タブレット
 'screen021': 1000px,
 //タブレット
-'screen03': 1220px,
+'screen03': 1200px,
 //pc
-'screen31': 1220px,
+'screen31': 1400px,
 //pc
-'screen04': 1900px,
+'screen04': 1920px,
 //pc
 );
 
 @mixin mq($breakpoint: screen01) {
   @media screen and (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+$mq-breakpoints: (
+'screen01': 375px,
+//スマホ
+'screen011': 767px,
+//スマホ
+'screen02': 820px,
+//タブレット
+'screen021': 1000px,
+//タブレット
+'screen03': 1200px,
+//pc
+'screen031': 1400px,
+//pc
+'screen032': 1600px,
+//pc
+'screen033': 1800px,
+//pc
+'screen04': 1920px,
+//pc
+);
+
+@mixin mqw($breakpoint: screen01) {
+  @media screen and (max-width: #{map-get($mq-breakpoints, $breakpoint)}) {
     @content;
   }
 }
