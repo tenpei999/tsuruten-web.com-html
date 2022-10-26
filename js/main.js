@@ -24,6 +24,17 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
   }
 });
 
+// // リサイズにより発火する
+// $(window).resize(function(){
+//   //画面サイズを取得する
+//   let centerView = $(window).width()
+//   let center = (centerView - 1920) * 0.5;
+
+//   //取得した画面幅に合わせて左にずれる
+//   $('.p-animation-background').animate({marginLeft: center});
+
+// });
+
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
   let scroll = $(window).scrollTop();
@@ -43,9 +54,7 @@ $(window).scroll(function () {
   PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 });
 
-
-// #page-topをクリックした際の設定
-
+// .p-page-topをクリックした際の設定
   $(function () {
     $(".p-page-top").on("click", function () {
       let scroll = $(window).scrollTop(); 

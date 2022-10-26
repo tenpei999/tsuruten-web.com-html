@@ -4,6 +4,7 @@
 /* Layout 
 ------------------------------*/
 @forward  "Layout/header"; //ヘッダー
+@forward  "Layout/primary"; //全体を覆う
 @forward  "Layout/main"; //メイン
 @forward  "Layout/footer"; //メイン
 

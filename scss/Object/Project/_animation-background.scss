@@ -1,12 +1,16 @@
 @use "../../Foundation/mixin" as m;
 @use "../../Foundation/variable" as v;
 
+// $WindowWidth: 100 * (window);
+// $PictureWidth: 1920px;
+// $Width: $PictureWidth - $PictureWidth;
+
 .p-animation-background {
 
   overflow: hidden;
-  width: 100vw;
   height: 1800px;
-  max-width: 1900px;
+  max-width: 1920px;
+  margin-left: calc(100% - 1920px);
   &__layer {
     position: relative;
     .layer-2 {
