@@ -578,38 +578,8 @@ body.is-open {
 }
 .p-animation-background__layer {
   position: relative;
-  margin-left: calc(100% - 1300px);
+  margin-left: calc((100% - 1900px) * 0.5);
   transition: all 1s ease-in;
-}
-@media screen and (min-width: 767px) {
-  .p-animation-background__layer {
-    margin-left: calc(100% - 1300px);
-  }
-}
-@media screen and (min-width: 820px) {
-  .p-animation-background__layer {
-    margin-left: calc(100% - 1400px);
-  }
-}
-@media screen and (min-width: 1200px) {
-  .p-animation-background__layer {
-    margin-left: calc(100% - 1500px);
-  }
-}
-@media screen and (min-width: 1400px) {
-  .p-animation-background__layer {
-    margin-left: calc(100% - 1650px);
-  }
-}
-@media screen and (min-width: 1600px) {
-  .p-animation-background__layer {
-    margin-left: calc(100% - 1800px);
-  }
-}
-@media screen and (min-width: 1800px) {
-  .p-animation-background__layer {
-    margin-left: calc(100% - 1920px);
-  }
 }
 .p-animation-background__layer .layer-1 {
   position: absolute;

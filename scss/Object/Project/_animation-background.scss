@@ -8,26 +8,8 @@
   max-width: 1920px;
   &__layer {
     position: relative;
-    margin-left: calc(100% - 1300px);
+    margin-left: calc(calc(100% - 1900px) * 0.5);
     transition: all 1s ease-in;
-    @include m.mq (screen011) {
-      margin-left: calc(100% - 1300px);
-    }
-    @include m.mq (screen02) {
-      margin-left: calc(100% - 1400px);
-    }
-    @include m.mq (screen03) {
-      margin-left: calc(100% - 1500px);
-    }
-    @include m.mq (screen031) {
-      margin-left: calc(100% - 1650px);
-    }
-    @include m.mq (screen032) {
-      margin-left: calc(100% - 1800px);
-    }
-    @include m.mq (screen033) {
-      margin-left: calc(100% - 1920px);
-    }
     .layer-1 {
       position: absolute;
       display: block;
