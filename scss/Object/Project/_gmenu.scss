@@ -18,7 +18,6 @@
     left: 100%;
     position: absolute;
     z-index: 150;
-    overflow: hidden;
     transition: all 400ms 0s ease-in-out;
     @include m.mq (screen03) {
       height: 5rem;
@@ -33,6 +32,21 @@
     } 
   }
   &__list {
+    .middle {
+      display: none;
+      z-index: 1200;
+      .title {
+        font-size: 1.2rem;
+        color: v.$TextBlack;
+        line-height: 4rem;
+        background-color: v.$BackgroundWhite;
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
     @include m.mq (screen03) {
       margin: unset;
       padding: 1rem 1rem 0 0;
@@ -48,16 +62,8 @@
     }
     .title {
         color: v.$MenuBlack;
-        position: absolute;
         z-index: 1000;
       }
-    }
-  }
-  .middle {
-    .title {
-      font-size: 1.2rem;
-      color: v.$TextBlack;
-      line-height: 4rem;
     }
   }
   .item1, .item6, .item7 {
