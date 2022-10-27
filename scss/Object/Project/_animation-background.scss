@@ -118,6 +118,7 @@
       height: 30rem;
       background-size: cover;
       background-image: url(../../../img/cloud-middle1.png);
+      background-repeat: no-repeat;
       z-index: 300;
       // transition: all 10S 0s ease-in-out;
       &.fixed {

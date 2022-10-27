@@ -61,20 +61,14 @@ $(window).scroll(function () {
     });
   });
 
-//   $(function() {
-//     let $window             = $(window),
-//         $cloud              = $('.layer-10'),
-//         defaultPositionTop = $cloud.css('top'),
-//         setOffsetPosition   = $cloud.offset(),
-//         fixedClassName      = 'fixed';
- 
-//     $window.on('scroll', function() {
-//         if ($(this).scrollTop() > setOffsetPosition.top) {
-//             $cloud.addClass(fixedClassName).css('top', setOffsetPosition.top);
-//         } else {
-//             if ($cloud.hasClass(fixedClassName)) {
-//                 $cloud.removeClass(fixedClassName).css('top', defaultPositionTop);
-//             }
-//         }
-//     }).trigger('scroll');
-// });
+  $(window).on('scroll', function(){
+
+    let scrollTop = $(window).scrollTop();
+    let Position = scrollTop / 1.9; //スクロール後のポジションを指定（値を大きくすると移動距離が小さくなる）
+    let Position2 = scrollTop / 4; //スクロール後のポジションを指定（値を大きくすると移動距離が小さくなる）
+  
+    if(Position){
+      $('.layer-10').css('margin-top', Position + 'px');
+      $('.layer-11').css('margin-top', Position2 + 'px');
+    }
+  });
