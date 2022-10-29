@@ -101,13 +101,14 @@ $(window).scroll(function () {
       let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);;
       let scrollElm = scrollElmNo-- + 'px';
       console.log(scrollElm);
+      console.log(scrollElmNo);
       let trigger = 1270 + 'px';
       let triggerNo = 1270;
       let goal = 1602 + 'px';
       let goalNo = 1602;
       
       if(scroll < trigger && scroll < goal){
-        $('.layer-2').addClass('lower').removeClass('up','upper').css('margin-top','2560px');
+        $('.layer-2').addClass('lower').removeClass('up','upper').css('margin-top','2692px');
       } else if (scroll > trigger && scroll < goal ){
         $('.layer-2').addClass('up').removeClass('lower', 'upper').css('margin-top',scrollElm);
       } else if (scroll > goal) {
@@ -123,15 +124,5 @@ $(window).scroll(function () {
 
   window.addEventListener('scroll', function(event) {
     console.log(window.pageYOffset);  // 縦方向のスクロール量
-    console.log(window.pageXOffset);  // 横方向のスクロール量
+  //   console.log(window.pageXOffset);  // 横方向のスクロール量
   });
-
-  // if(scroll < trigger){
-  //   $('.layer-2').addClass('lower').removeClass('up','upper');
-  // } else if (scroll > trigger){
-  //   $('.layer-2').addClass('up').removeClass('lower', 'upper');
-  //   $('this').css('margin-top',YamaUp);
-  // } else if (scroll > goal) {
-  //   console.log(scroll > trigger);
-  //   $('.layer-2').addClass('upper').removeClass('up','lower');
-  // }
