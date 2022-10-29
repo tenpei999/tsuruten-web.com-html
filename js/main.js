@@ -94,25 +94,44 @@ $(window).scroll(function () {
     }
   });
 
-  $(window).on('scroll', function(){
-    let scroll = $(window).scrollTop() + 'px';
-    let trigger = 1602 + 'px';
-
-    if(scroll > trigger){
-      $('.layer-2').addClass('upper').removeClass('lower');
-    } else {
-      $('.layer-2').addClass('lower').removeClass('upper');
-      console.log(scroll > trigger);
-    }
+  $(function(){
+    $(window).on('scroll', function(){
+      let scroll = $(window).scrollTop() + 'px';
+      let scrollNo = $(window).scrollTop();
+      let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);;
+      let scrollElm = scrollElmNo-- + 'px';
+      console.log(scrollElm);
+      let trigger = 1270 + 'px';
+      let triggerNo = 1270;
+      let goal = 1602 + 'px';
+      let goalNo = 1602;
+      
+      if(scroll < trigger && scroll < goal){
+        $('.layer-2').addClass('lower').removeClass('up','upper').css('margin-top','2560px');
+      } else if (scroll > trigger && scroll < goal ){
+        $('.layer-2').addClass('up').removeClass('lower', 'upper').css('margin-top',scrollElm);
+      } else if (scroll > goal) {
+        $('.layer-2').addClass('upper').removeClass('up','lower').css('margin-top','2360px');
+      }
+    });
   });
 
   //数値
-  //移動後の位置 top 2360px
-  //移動前の位置 top 2260px
-  //移動開始位置 $(window).pageYOffset  < 1602 
-  //
+  //移動前の位置 layer-2(margin-top: 2692px;) window(.scrollTop(): 1270px;) -1422px
+  //移動後の位置 layer-2(margin-top: 2360px;) window(.scrollTop(): 1602px;) -758px
+  //                                 -332px                        +332px   -664
 
-  // window.addEventListener('scroll', function(event) {
-  //   console.log(window.pageYOffset);  // 縦方向のスクロール量
-  //   console.log(window.pageXOffset);  // 横方向のスクロール量
-  // });
+  window.addEventListener('scroll', function(event) {
+    console.log(window.pageYOffset);  // 縦方向のスクロール量
+    console.log(window.pageXOffset);  // 横方向のスクロール量
+  });
+
+  // if(scroll < trigger){
+  //   $('.layer-2').addClass('lower').removeClass('up','upper');
+  // } else if (scroll > trigger){
+  //   $('.layer-2').addClass('up').removeClass('lower', 'upper');
+  //   $('this').css('margin-top',YamaUp);
+  // } else if (scroll > goal) {
+  //   console.log(scroll > trigger);
+  //   $('.layer-2').addClass('upper').removeClass('up','lower');
+  // }
