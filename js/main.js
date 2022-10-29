@@ -1,8 +1,48 @@
-$(function(){
-  $(".p-gmenu__list .item").hover(function(){
-    $(this).children(".middle").stop().slideToggle();
-  });
+//ハンバーガー
+window.addEventListener('DOMContentLoaded', ()=>{
+  document.querySelector( '.js-hamburger' ).addEventListener(
+    'click',
+    () => {
+      document.querySelector( 'body' ).classList.toggle( 'is-open' );
+      document.querySelector( '.js-hamburger' ).classList.toggle( 'is-open' );
+      document.querySelector( '.p-gmenu--inner' ).classList.toggle( 'is-open' );
+      // document.querySelector( '.p-header__background' ).classList.toggle( 'is-open' );
+      document.querySelector( '.c-hamburger' ).classList.toggle( 'is-open' );
+    }
+  );
 });
+
+media();
+$(window).on("resize", function(){ media(); });
+
+// メディアクエリ
+function media() {
+  // 横幅を取得
+  let width = $(window).width();
+  if(width > 1200) {
+    // 画面幅が1200pxより上の時
+    
+    //pcドロワー
+    $(function(){
+      $(".p-gmenu__list .item").hover(function(){
+        $(this).children(".middle").stop().slideToggle();
+      });
+    });
+
+  } else if(width <= 1200) {
+  // 画面幅が1200px以下での時
+
+    //アコーディオンメニュー
+    $(function(){
+      //クリックで動く
+      $('.item3').click(function(){
+        $(this).toggleClass('active');
+        $(this).next('nav').slideToggle();
+        $(this).children(".middle").stop().slideToggle();
+      });
+    });
+  }
+}
 
 
 //スクロールした際の動きを関数でまとめる
@@ -41,14 +81,38 @@ $(window).scroll(function () {
     });
   });
 
+  //視線に追従する雲
   $(window).on('scroll', function(){
 
     let scrollTop = $(window).scrollTop();
     let Position = scrollTop / 1.9; //スクロール後のポジションを指定（値を大きくすると移動距離が小さくなる）
-    let Position2 = scrollTop / 4; //スクロール後のポジションを指定（値を大きくすると移動距離が小さくなる）
+    let Position2 = scrollTop / 1.5;
   
     if(Position){
       $('.layer-10').css('margin-top', Position + 'px');
       $('.layer-11').css('margin-top', Position2 + 'px');
     }
   });
+
+  $(window).on('scroll', function(){
+    let scroll = $(window).scrollTop() + 'px';
+    let trigger = 1602 + 'px';
+
+    if(scroll > trigger){
+      $('.layer-2').addClass('upper').removeClass('lower');
+    } else {
+      $('.layer-2').addClass('lower').removeClass('upper');
+      console.log(scroll > trigger);
+    }
+  });
+
+  //数値
+  //移動後の位置 top 2360px
+  //移動前の位置 top 2260px
+  //移動開始位置 $(window).pageYOffset  < 1602 
+  //
+
+  // window.addEventListener('scroll', function(event) {
+  //   console.log(window.pageYOffset);  // 縦方向のスクロール量
+  //   console.log(window.pageXOffset);  // 横方向のスクロール量
+  // });

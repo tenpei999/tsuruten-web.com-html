@@ -52,7 +52,7 @@
       padding: 1rem 1rem 0 0;
       display: flex;
   }
-   .item {
+  .item {
     font-size: 1.6rem;
     display: block;
     width: 10rem;
@@ -64,6 +64,26 @@
         color: v.$MenuBlack;
         z-index: 1000;
       }
+    }
+    .item3 {
+      &::before {
+        content: "＋";
+        position: absolute;
+        left: 25vw;
+      }
+      &.active::before {
+        content: "－";
+      }
+      @include m.mq(screen03) {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 20px;
+        }
+        &.active::before {
+          content: "";
+        }
+      } 
     }
   }
   .item1, .item6, .item7 {
