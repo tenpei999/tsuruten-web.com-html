@@ -587,6 +587,7 @@ body.is-open {
 }
 .p-animation-background__layer .layer-2 {
   position: absolute;
+  top: 146.11rem;
   display: block;
   width: 1585px;
   height: 681px;
