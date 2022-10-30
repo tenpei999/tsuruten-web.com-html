@@ -96,26 +96,34 @@ $(window).scroll(function () {
 
   $(function(){
     $(window).on('scroll', function(){
-      let scroll = $(window).scrollTop() + 'px';
-      let scrollNo = $(window).scrollTop();
+      let scroll = $(window).height() + 'px'; //間違い？
+      // 上端からの距離の取得
+      let scrollNo = $(window).height();
       let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);;
       let scrollElm = scrollElmNo-- + 'px';
-      console.log(scrollElm);
-      console.log(scrollElmNo);
       let trigger = 1270 + 'px';
       let triggerNo = 1270;
+      console.log(triggerNo - scrollNo);
       let goal = 1602 + 'px';
       let goalNo = 1602;
-      
-      if(scroll < trigger && scroll < goal){
-        $('.layer-2').addClass('lower').removeClass('up','upper').css('margin-top','2692px');
-      } else if (scroll > trigger && scroll < goal ){
-        $('.layer-2').addClass('up').removeClass('lower', 'upper').css('margin-top',scrollElm);
-      } else if (scroll > goal) {
-        $('.layer-2').addClass('upper').removeClass('up','lower').css('margin-top','2360px');
+      let IsMiddle = scroll >=trigger && scroll < goal;
+      let IsLower = scroll >= goal;
+      let IsUpper = IsMiddle == false && IsLower == false;
+      console.log(`isUpper = ${IsUpper}`);
+
+      if(IsUpper){
+        $('.layer-2').addClass('upper').removeClass('up').removeClass('lower').css('margin-top','2692px');
+      } else if (IsMiddle){
+        $('.layer-2').addClass('up').removeClass('lower').removeClass('upper').css('margin-top',scrollElm);
+      } else if (IsLower) {
+        $('.layer-2').addClass('lower').removeClass('up').removeClass('upper').css('margin-top','2360px');
       }
     });
   });
+
+//ブール値 true or foals //データ型 ○ ストリング(文字列)　イント(数字) //リスト型○ //タイプスプリクト //視認性が悪い ○ //条件式 //イベントトリガー
+//`hoge = ${scroll < trigger && scroll < goal
+//リスト型
 
   //数値
   //移動前の位置 layer-2(margin-top: 2692px;) window(.scrollTop(): 1270px;) -1422px

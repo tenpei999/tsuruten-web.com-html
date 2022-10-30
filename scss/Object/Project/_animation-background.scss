@@ -30,11 +30,11 @@
       background-image: url(../../../img/yama-front@0.75x.png);
       background-position: center;
       z-index: 200;
-      &.upper {
+      &.lower {
         margin-top: 2360px; 
         transition: 0.5s;
       }
-      &.lower {
+      &.upper {
         margin-top: 2692px; 
         transition: 0.5s;
       }
