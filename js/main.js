@@ -94,33 +94,35 @@ $(window).scroll(function () {
     }
   });
   
+  //前景の山が迫り上がる。
   $(function(){
     $(window).on('scroll load', function(){
-      let scroll = $(window).scrollTop() + 'px'; //間違い？
-      console.log(scroll);
-      // 上端からの距離の取得
-      let scrollNo = $(window).height();
-      let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);
-      console.log(scrollElmNo);
-      let scrollElm = --scrollElmNo + 'px';
-      console.log(scrollElm);
-      let trigger = 1270 + 'px';
-      let triggerNo = 1270;
-      let goal = 1602 + 'px';
-      let goalNo = 1602;
-      let IsUpper = scroll < trigger && scroll < goal;
-      let IsMiddle = scroll >= trigger && scroll < goal;
-      let IsLower = scroll >= goal;
+      let scroll = $(window).scrollTop() + 'px';                          //ページ上端からの距離を検知
+      let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);    //'.layer-2'のmargin-topの値を取得
+      let scrollElm = --scrollElmNo + 'px';                               //'.layer-2'が1pxづつ上昇する動きを格納
+      let trigger = 1270 + 'px';                                          // アニメーションが開始する位置
+      let goal = 1602 + 'px';                                             // アニメーションが終了する位置
+      let IsUpper = scroll < trigger && scroll < goal;                    // if else文の条件式1
+      let IsMiddle = scroll >= trigger && scroll < goal;                  // if else文の条件式2
+      let IsLower = scroll >= goal;                                       // if else文の条件式3
+
+      // console.log(scroll);
+      // console.log(scrollElmNo);
+      // console.log(scrollElm);
       // console.log(`isUpper = ${IsUpper}`);
       // console.log(`isMiddle = ${IsMiddle}`);
       // console.log(`isLower = ${IsLower}`);
 
+      //アニメーションさせるための条件分岐
       if( IsUpper ) {
         $('.layer-2').addClass('upper').removeClass('up').removeClass('lower').css('margin-top','2450px');
+        //アニメーションをする前の状態を表すクラス名'.upper'を付与し、合わせて'layer-2'を下方に待機させる。
       } else if ( IsMiddle ){ 
         $('.layer-2').addClass('up').removeClass('lower').removeClass('upper').css('margin-top',scrollElm);
+        //アニメーションしている状態を示すClass('up')を付与し、margin-topの値にscrollElmを呼び出し。
       } else if ( IsLower) {
         $('.layer-2').addClass('lower').removeClass('up').removeClass('upper');
+        //指定の位置に達したらアニメーション完了後を示すクラス('lower')を付与。
       } else {
         return false;
       }
