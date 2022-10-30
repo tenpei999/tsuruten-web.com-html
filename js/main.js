@@ -93,44 +93,69 @@ $(window).scroll(function () {
       $('.layer-11').css('margin-top', Position2 + 'px');
     }
   });
+  
+  $(window).on('scroll load', function(){
+    let scrollTop = $(window).scrollTop();
+    let winH = $(window).height();
+    let background_front_pos = $('.layer-2').offset();
+   // 公式
+    let background_front_now = (1 - (background_front_pos - scrollTop) / winH) * 2 * 100; 
+  
+    $('.layer-2').css('top', background_front_now + 'rem');
+});
 
-  $(function(){
-    $(window).on('scroll', function(){
-      let scroll = $(window).height() + 'px'; //間違い？
-      // 上端からの距離の取得
-      let scrollNo = $(window).height();
-      let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);;
-      let scrollElm = scrollElmNo-- + 'px';
-      let trigger = 1270 + 'px';
-      let triggerNo = 1270;
-      console.log(triggerNo - scrollNo);
-      let goal = 1602 + 'px';
-      let goalNo = 1602;
-      let IsMiddle = scroll >=trigger && scroll < goal;
-      let IsLower = scroll >= goal;
-      let IsUpper = IsMiddle == false && IsLower == false;
-      console.log(`isUpper = ${IsUpper}`);
+//
 
-      if(IsUpper){
-        $('.layer-2').addClass('upper').removeClass('up').removeClass('lower').css('margin-top','2692px');
-      } else if (IsMiddle){
-        $('.layer-2').addClass('up').removeClass('lower').removeClass('upper').css('margin-top',scrollElm);
-      } else if (IsLower) {
-        $('.layer-2').addClass('lower').removeClass('up').removeClass('upper').css('margin-top','2360px');
-      }
-    });
-  });
+// $(window).on('scroll load', function(){
+//   let scrollTop = $(window).scrollTop();
+//   let winH = $(window).height();
+//   let section_bar_pos = $('.section_bar').offset().top;
+//  // 公式
+//   let section_bar_now = (1 - (section_bar_pos - scrollTop) / winH) * 5 * 100;
+
+//   $('.section_bar').css('width', section_bar_now + 'rem');
+// });
+
+
 
 //ブール値 true or foals //データ型 ○ ストリング(文字列)　イント(数字) //リスト型○ //タイプスプリクト //視認性が悪い ○ //条件式 //イベントトリガー
 //`hoge = ${scroll < trigger && scroll < goal
 //リスト型
 
   //数値
-  //移動前の位置 layer-2(margin-top: 2692px;) window(.scrollTop(): 1270px;) -1422px
-  //移動後の位置 layer-2(margin-top: 2360px;) window(.scrollTop(): 1602px;) -758px
+  //移動前の位置 layer-2(top: 2337.76px;) window(.scrollTop(): 1270px;) -1422px
+  //移動後の位置 layer-2(top: 2337.76px;) window(.scrollTop(): 1602px;) -758px
   //                                 -332px                        +332px   -664
 
-  window.addEventListener('scroll', function(event) {
-    console.log(window.pageYOffset);  // 縦方向のスクロール量
+  // window.addEventListener('scroll', function(event) {
+  //   console.log(window.pageYOffset);  // 縦方向のスクロール量
   //   console.log(window.pageXOffset);  // 横方向のスクロール量
-  });
+  // });
+
+//   $(window).on('scroll load', function(){
+//     let scrollTop = $(window).scrollTop();
+//     let winH = $('p-animation-background').height();
+//     console.log(winH);
+//     let background_front_pos = $('.layer-2').offset().top;
+//    // 公式
+//     let background_front_now = (1 - (background_front_pos - scrollTop) / winH); 
+
+//     // 76(%) = (1 - (background_front_pos{変数} - scrollTop{変数}) / winH(3076px))
+//     // scrollTop = 0 
+//     //76(%) : 2.21056(%) = 34.3798064 : 1
+//     //
+//     //background_front_pos 2337.76px 146.11rem|| scrollTop 0 ~ 1602px || winH 3076px || background_front_now = (1 - (background_front_pos - scrollTop) / winH); = 0.9860869565217392 ~ 2.2105512360446573 → (76 + X)% ~ 76%
+    
+//     //146.11rem(2337.76px) = (1 - (146.11rem - scrollTop(1830px) / 3076px)
+//     //146.11rem(2337.76px) = scrollTop(1830px) * 1.27746448 =X
+//     //X = scrollTop(0) * 1600
+//     //100rem(1600px) = scrollTop(0) * 1600
+//     //scrollTop(1830px)  
+//     //winH(3076px)
+//     //scrollTop(0) * 1600 * 0.00079842 = 146.11rem
+  
+//     $('.layer-2').css('top', background_front_now + 'rem');
+//     console.log(background_front_pos);
+//     console.log(background_front_now);
+//     console.log(scrollTop);
+// });

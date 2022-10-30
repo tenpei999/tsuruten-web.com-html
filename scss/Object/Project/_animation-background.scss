@@ -8,6 +8,7 @@
   max-width: 1920px;
   &__layer {
     position: relative;
+    height: 100%;
     margin-left: calc(calc(100% - 1900px) * 0.5);
     transition: all 1s ease-in;
     .layer-1 {
@@ -25,17 +26,17 @@
       display: block;
       width: 1585px;
       height: 681px;
-      margin-top: 2260px; //230px
+      // margin-top: 2692px; 
       background-size: cover;
       background-image: url(../../../img/yama-front@0.75x.png);
       background-position: center;
       z-index: 200;
       &.lower {
-        margin-top: 2360px; 
+        // margin-top: 2360px; 
         transition: 0.5s;
       }
       &.upper {
-        margin-top: 2692px; 
+        // margin-top: 2692px; 
         transition: 0.5s;
       }
     }
