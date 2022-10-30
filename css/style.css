@@ -571,7 +571,6 @@ body.is-open {
 }
 .p-animation-background__layer {
   position: relative;
-  height: 100%;
   margin-left: calc((100% - 1900px) * 0.5);
   transition: all 1s ease-in;
 }
@@ -587,10 +586,10 @@ body.is-open {
 }
 .p-animation-background__layer .layer-2 {
   position: absolute;
-  top: 146.11rem;
   display: block;
   width: 1585px;
   height: 681px;
+  margin-top: 2450px;
   background-size: cover;
   background-image: url(../../../img/yama-front@0.75x.png);
   background-position: center;
@@ -683,7 +682,7 @@ body.is-open {
   height: 10rem;
   background-size: cover;
   background-image: url(../../../img/cloud-highest.png);
-  z-index: 300;
+  z-index: 400;
   transition: all 4S 0s ease-in-out;
 }
 @media screen and (min-width: 820px) {
@@ -701,7 +700,7 @@ body.is-open {
   background-size: cover;
   background-image: url(../../../img/cloud-middle-flont.png);
   background-repeat: no-repeat;
-  z-index: 300;
+  z-index: 400;
   opacity: 1;
   transition: left 8S 0s ease-in-out;
 }

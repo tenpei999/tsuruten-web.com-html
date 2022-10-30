@@ -101,25 +101,26 @@ $(window).scroll(function () {
       // 上端からの距離の取得
       let scrollNo = $(window).height();
       let scrollElmNo = parseInt($('.layer-2').css('margin-top'), 10);
-      let scrollElm = scrollElmNo-- + 'px';
+      console.log(scrollElmNo);
+      let scrollElm = --scrollElmNo + 'px';
+      console.log(scrollElm);
       let trigger = 1270 + 'px';
-      console.log(trigger);
       let triggerNo = 1270;
       let goal = 1602 + 'px';
       let goalNo = 1602;
-      let IsUpper = scroll < trigger && scroll < goal ;
+      let IsUpper = scroll < trigger && scroll < goal;
       let IsMiddle = scroll >= trigger && scroll < goal;
       let IsLower = scroll >= goal;
-      console.log(`isUpper = ${IsUpper}`);
-      console.log(`isMiddle = ${IsMiddle}`);
-      console.log(`isLower = ${IsLower}`);
+      // console.log(`isUpper = ${IsUpper}`);
+      // console.log(`isMiddle = ${IsMiddle}`);
+      // console.log(`isLower = ${IsLower}`);
 
       if( IsUpper ) {
-        $('.layer-2').addClass('upper').removeClass('up').removeClass('lower').css('margin-top','2692px');
+        $('.layer-2').addClass('upper').removeClass('up').removeClass('lower').css('margin-top','2450px');
       } else if ( IsMiddle ){ 
         $('.layer-2').addClass('up').removeClass('lower').removeClass('upper').css('margin-top',scrollElm);
       } else if ( IsLower) {
-        $('.layer-2').addClass('lower').removeClass('up').removeClass('upper').css('margin-top','2360px');
+        $('.layer-2').addClass('lower').removeClass('up').removeClass('upper');
       } else {
         return false;
       }
