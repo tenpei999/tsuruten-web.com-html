@@ -1,6 +1,6 @@
 @use "../../../Foundation/variable" as v;
 
 .c-background-opacity {
-  background-color: v.$BackgroundWhite;
-  opacity: 0.5;
+  background-color: v.$BackgroundWhiteOpacity;
+  filter: brightness(1.05);
 }

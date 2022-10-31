@@ -1,0 +1,9 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+.p-catchphrase {
+  display: inline-block;
+  color: v.$TextWhite;
+  font-weight: v.$SerifSemiBold;
+  font-size: 1.9rem;
+}

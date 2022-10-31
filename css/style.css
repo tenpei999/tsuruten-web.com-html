@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* font-family */
+/* Color */
+/* font-weight */
+/* size */
 html:focus-within {
   scroll-behavior: auto;
 }
@@ -6,12 +10,19 @@ html:focus-within {
 body {
   width: 100vw;
   height: 100vh;
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: unset;
+  font-size: 1rem;
   max-width: 1900px;
 }
 
 .container {
   overflow-x: hidden;
   height: 100%;
+}
+
+h1 {
+  font-weight: unset;
 }
 
 ul {
@@ -31,6 +42,7 @@ button {
 
 a {
   text-decoration: none;
+  color: unset;
 }
 
 p {
@@ -152,9 +164,7 @@ input, button, textarea, select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-} /* font-family */
-/* Color */
-/* font-weight */
+}
 .l-header {
   z-index: 1000;
   top: 0;
@@ -179,12 +189,11 @@ input, button, textarea, select {
 
 .l-main {
   position: absolute;
-  z-index: 2000;
+  margin-top: 10rem;
+  z-index: 500;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 10000px;
-  width: 375px;
 }
 @media screen and (min-width: 820px) {
   .l-main {
@@ -247,6 +256,13 @@ body.is-open {
 .c-text-small--white {
   color: #fff;
   font-weight: 300;
+}
+
+.c-text {
+  font-family: "Noto Sans JP", sans-serif;
+}
+.c-text--sentence {
+  font-size: 1rem;
 }
 
 .vertical-title {
@@ -379,12 +395,15 @@ body.is-open {
 
 .c-background-opacity {
   background-color: #FFF;
-  opacity: 0.5;
 }
 
 .c-background-opacity {
-  background-color: #FFF;
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: brightness(1.05);
+}
+
+.c-shadow {
+  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .p-header {
@@ -959,8 +978,22 @@ body.is-open {
   }
 }
 
-.p-catch-copy {
-  position: absolute;
+.p-catchphrase {
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+
+.p-intro__logo img {
+  width: 11rem;
+}
+.p-intro__logo .c-text--sentence {
+  text-align: center;
+  margin-top: -1rem;
+}
+.p-intro__button-special {
+  display: block;
 }
 
 .p-page-top {
@@ -1015,7 +1048,7 @@ body.is-open {
   text-decoration: none;
   font-size: 0.6rem;
   /*背景画像の指定*/
-  background: url(../../../img/inoshishi-run1.png) no-repeat center;
+  background: url(../../../img/inoshishi_run1_negate.png) no-repeat center;
   background-size: contain;
 }
 
@@ -1031,37 +1064,37 @@ body.is-open {
 
 @-webkit-keyframes floatAnime {
   0% {
-    background-image: url(../../../img/inoshishi-run2.png);
+    background-image: url(../../../img/inoshishi_run1_negate.png);
   }
   19% {
-    background-image: url(../../../img/inoshishi-run2.png);
+    background-image: url(../../../img/inoshishi_run2_negate.png);
   }
   20% {
-    background-image: url(../../../img/inoshishi-run3.png);
+    background-image: url(../../../img/inoshishi_run3_negate.png);
   }
   90% {
-    background-image: url(../../../img/inoshishi-run3.png);
+    background-image: url(../../../img/inoshishi_run3_negate.png);
   }
   100% {
-    background-image: url(../../../img/inoshishi-run1.png);
+    background-image: url(../../../img/inoshishi_run1_negate.png);
   }
 }
 
 @keyframes floatAnime {
   0% {
-    background-image: url(../../../img/inoshishi-run2.png);
+    background-image: url(../../../img/inoshishi_run1_negate.png);
   }
   19% {
-    background-image: url(../../../img/inoshishi-run2.png);
+    background-image: url(../../../img/inoshishi_run2_negate.png);
   }
   20% {
-    background-image: url(../../../img/inoshishi-run3.png);
+    background-image: url(../../../img/inoshishi_run3_negate.png);
   }
   90% {
-    background-image: url(../../../img/inoshishi-run3.png);
+    background-image: url(../../../img/inoshishi_run3_negate.png);
   }
   100% {
-    background-image: url(../../../img/inoshishi-run1.png);
+    background-image: url(../../../img/inoshishi_run1_negate.png);
   }
 }
 /*Page Topと書かれたテキストの位置*/
@@ -1073,6 +1106,90 @@ body.is-open {
 }
 
 /*========= レイアウトのためのCSS ===============*/
+.u-button-special {
+  position: relative;
+  display: block;
+  font-size: 1.3rem;
+  padding: 0.2rem 1.2rem;
+  margin: auto;
+  color: #fff;
+  background-color: #0190EE;
+  border-radius: 0.5rem;
+}
+.u-button-special img {
+  position: absolute;
+  left: 7.5rem;
+  top: -2rem;
+  rotate: 35deg;
+  -webkit-animation: poking 1.5s infinite;
+          animation: poking 1.5s infinite;
+}
+
+@-webkit-keyframes poking {
+  from {
+    rotate: 35deg;
+  }
+  12.4% {
+    rotate: 35deg;
+  }
+  12.5% {
+    rotate: 0deg;
+  }
+  15% {
+    rotate: 0deg;
+  }
+  16% {
+    rotate: 35deg;
+  }
+  17% {
+    rotate: 35deg;
+  }
+  25% {
+    rotate: 0deg;
+  }
+  27.5% {
+    rotate: 0deg;
+  }
+  28.5% {
+    rotate: 35deg;
+  }
+  to {
+    rotate: 35deg;
+  }
+}
+
+@keyframes poking {
+  from {
+    rotate: 35deg;
+  }
+  12.4% {
+    rotate: 35deg;
+  }
+  12.5% {
+    rotate: 0deg;
+  }
+  15% {
+    rotate: 0deg;
+  }
+  16% {
+    rotate: 35deg;
+  }
+  17% {
+    rotate: 35deg;
+  }
+  25% {
+    rotate: 0deg;
+  }
+  27.5% {
+    rotate: 0deg;
+  }
+  28.5% {
+    rotate: 35deg;
+  }
+  to {
+    rotate: 35deg;
+  }
+}
 /* Foundation */
 /* Layout 
 ------------------------------*/

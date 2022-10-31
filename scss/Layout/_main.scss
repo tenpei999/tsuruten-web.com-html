@@ -3,12 +3,11 @@
 
 .l-main {
   position: absolute;
-  z-index: 2000;
+  margin-top: 10rem;
+  z-index: 500;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 10000px;
-  width: 375px;
 
   // background-color: rgba(0, 0, 0, 0.4);
   @include m.mq (screen02) {

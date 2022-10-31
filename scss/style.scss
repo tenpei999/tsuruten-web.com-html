@@ -18,6 +18,7 @@
 @use "object/Component/button"; //ボタン
 @use "object/Component/icon"; //アイコン
 @use "object/Component/background"; //背景
+@use "object/Component/shadow"; //
 
 
 /* Project
@@ -26,8 +27,10 @@
 @use "object/project/footer"; //ヘッダー
 @use "object/project/gmenu"; //メニュー
 @use "object/project/animation-background"; //メニュー
-@use "object/project/catchCopy"; //キャッチコピー
-@use "object/project/page-top"; //キャッチコピー
+@use "object/project/catchphrase"; //キャッチコピー
+@use "object/project/intro"; //イントロダクション
+@use "object/project/page-top"; //トップページ
 
 /* Utility
 ------------------------------*/
+@use "object/Utility/button-special";
