@@ -1113,77 +1113,175 @@ body.is-open {
   padding: 0.2rem 1.2rem;
   margin: auto;
   color: #fff;
-  background-color: #0190EE;
   border-radius: 0.5rem;
+  background-size: 200%;
+  background-repeat: repeat;
+  background-position: 0% 0%;
+  background-image: linear-gradient(90deg, rgb(197, 125, 233), rgb(61, 200, 194), rgb(197, 125, 233), rgb(61, 200, 194), rgb(197, 125, 233));
+  box-shadow: 0 5px 0 #117cc2; /* 影の太さ・色 */
+  -webkit-animation: tap-click 1s ease-in-out infinite;
+          animation: tap-click 1s ease-in-out infinite;
+  -webkit-animation: Rainbow 10s infinite;
+          animation: Rainbow 10s infinite;
 }
-.u-button-special img {
+.u-button-special__img {
   position: absolute;
-  left: 7.5rem;
-  top: -2rem;
+  left: 9.4rem;
+  top: 7.8rem;
   rotate: 35deg;
-  -webkit-animation: poking 1.5s infinite;
-          animation: poking 1.5s infinite;
+  -webkit-animation: poking 1s ease-in infinite;
+          animation: poking 1s ease-in infinite;
 }
 
+@-webkit-keyframes tap-click {
+  from {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  5% {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  17.5% {
+    border-bottom-width: 2px;
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  30% {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  42.5% {
+    border-bottom-width: 2px;
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  55% {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  to {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes tap-click {
+  from {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  5% {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  17.5% {
+    border-bottom-width: 2px;
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  30% {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  42.5% {
+    border-bottom-width: 2px;
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  55% {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+  to {
+    border-bottom-width: 4px;
+    box-shadow: 0 5px 0 #117cc2;
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes Rainbow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+@keyframes Rainbow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
 @-webkit-keyframes poking {
   from {
     rotate: 35deg;
   }
-  12.4% {
+  11.5% {
     rotate: 35deg;
   }
   12.5% {
     rotate: 0deg;
   }
-  15% {
-    rotate: 0deg;
-  }
-  16% {
-    rotate: 35deg;
-  }
-  17% {
-    rotate: 35deg;
-  }
   25% {
     rotate: 0deg;
   }
-  27.5% {
+  26% {
+    rotate: 35deg;
+  }
+  36.5% {
+    rotate: 35deg;
+  }
+  37.5% {
     rotate: 0deg;
   }
-  28.5% {
+  50% {
+    rotate: 0deg;
+  }
+  51% {
     rotate: 35deg;
   }
   to {
     rotate: 35deg;
   }
 }
-
 @keyframes poking {
   from {
     rotate: 35deg;
   }
-  12.4% {
+  11.5% {
     rotate: 35deg;
   }
   12.5% {
     rotate: 0deg;
   }
-  15% {
-    rotate: 0deg;
-  }
-  16% {
-    rotate: 35deg;
-  }
-  17% {
-    rotate: 35deg;
-  }
   25% {
     rotate: 0deg;
   }
-  27.5% {
+  26% {
+    rotate: 35deg;
+  }
+  36.5% {
+    rotate: 35deg;
+  }
+  37.5% {
     rotate: 0deg;
   }
-  28.5% {
+  50% {
+    rotate: 0deg;
+  }
+  51% {
     rotate: 35deg;
   }
   to {
