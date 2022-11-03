@@ -65,7 +65,8 @@
         z-index: 1000;
       }
     }
-    .item3 {
+    .item3,
+    .p-gmenu__button {
       &::before {
         content: "＋";
         position: absolute;

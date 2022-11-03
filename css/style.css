@@ -269,6 +269,10 @@ body.is-open {
   font-size: 1rem;
 }
 
+.c-section-title.scss {
+  font-size: 1.7rem;
+}
+
 .vertical-title {
   color: red;
 }
@@ -564,21 +568,25 @@ body.is-open {
   color: #707070;
   z-index: 1000;
 }
-.p-gmenu__list .item3::before {
+.p-gmenu__list .item3::before,
+.p-gmenu__list .p-gmenu__button::before {
   content: "＋";
   position: absolute;
   left: 25vw;
 }
-.p-gmenu__list .item3.active::before {
+.p-gmenu__list .item3.active::before,
+.p-gmenu__list .p-gmenu__button.active::before {
   content: "－";
 }
 @media screen and (min-width: 1200px) {
-  .p-gmenu__list .item3::before {
+  .p-gmenu__list .item3::before,
+.p-gmenu__list .p-gmenu__button::before {
     content: "";
     position: absolute;
     right: 20px;
   }
-  .p-gmenu__list .item3.active::before {
+  .p-gmenu__list .item3.active::before,
+.p-gmenu__list .p-gmenu__button.active::before {
     content: "";
   }
 }
@@ -613,7 +621,6 @@ body.is-open {
   display: block;
   width: 1585px;
   height: 681px;
-  margin-top: 2450px;
   background-size: cover;
   background-image: url(../../../img/yama-front@0.75x.png);
   background-position: center;
@@ -1155,53 +1162,6 @@ body.is-open {
     left: 15rem;
   }
 }
-.u-button-special__speech-bubble {
-  display: block;
-  position: absolute;
-  line-height: 2.5rem;
-  rotate: 45deg;
-  top: -0.5rem;
-  left: -0.8rem;
-  opacity: 0;
-  -webkit-animation: bubble 1s ease-in infinite;
-          animation: bubble 1s ease-in infinite;
-}
-@media screen and (min-width: 820px) {
-  .u-button-special__speech-bubble {
-    left: 6rem;
-  }
-}
-.u-button-special__speech-bubble::before {
-  content: "";
-  rotate: 45deg;
-  position: absolute;
-  display: block;
-  width: 100%;
-  left: 20%;
-  border-bottom: 1px solid #000;
-}
-.u-button-special__speech-bubble::after {
-  content: "";
-  rotate: -45deg;
-  position: absolute;
-  display: block;
-  width: 100%;
-  left: 20%;
-  border-top: 1px solid #000;
-}
-.u-button-special__speech-bubble.is-pc {
-  display: none;
-}
-@media screen and (min-width: 1200px) {
-  .u-button-special__speech-bubble.is-pc {
-    display: block;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .u-button-special__speech-bubble.is-mq {
-    display: none;
-  }
-}
 
 @-webkit-keyframes button {
   from {
@@ -1356,76 +1316,6 @@ body.is-open {
   }
   to {
     rotate: 35deg;
-  }
-}
-@-webkit-keyframes bubble {
-  from {
-    opacity: 0;
-  }
-  5% {
-    opacity: 0;
-  }
-  6% {
-    opacity: 0;
-  }
-  17.5% {
-    opacity: 0;
-  }
-  18.5% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  31% {
-    opacity: 0;
-  }
-  42.5% {
-    opacity: 1;
-  }
-  89% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes bubble {
-  from {
-    opacity: 0;
-  }
-  5% {
-    opacity: 0;
-  }
-  6% {
-    opacity: 0;
-  }
-  17.5% {
-    opacity: 0;
-  }
-  18.5% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  31% {
-    opacity: 0;
-  }
-  42.5% {
-    opacity: 1;
-  }
-  89% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
   }
 }
 /* Foundation */

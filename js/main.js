@@ -24,7 +24,7 @@ function media() {
     
     //pcドロワー
     $(function(){
-      $(".p-gmenu__list .item").hover(function(){
+      $(".item").hover(function(){
         $(this).children(".middle").stop().slideToggle();
       });
     });
@@ -35,7 +35,7 @@ function media() {
     //アコーディオンメニュー
     $(function(){
       //クリックで動く
-      $('.item3').click(function(){
+      $(".item3, .p-gmenu--table").click(function(){
         $(this).toggleClass('active');
         $(this).next('nav').slideToggle();
         $(this).children(".middle").stop().slideToggle();
@@ -43,7 +43,6 @@ function media() {
     });
   }
 }
-
 
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
@@ -98,39 +97,21 @@ $(window).scroll(function () {
   $(function(){
     $(window).on('scroll load', function(){
       let winHeight = window.pageYOffset;                              //ページ上端からの距離を検知
-      let offsetTop = $('.layer-2').get(0).offsetTop;                  //'.layer-2'のY座標における絶対位置
-      let offsetElm = offsetTop + 1602;                                //'.layer-2'のY座標の終点 + その時のwindow.pageYoffset
-      let offsetMove = --offsetElm;                                    // 'layer-2'のmargin-top を求める条件式
-      let min = offsetMove < 2360;                                     //  ???
-      let trigger = 1000;                                              // アニメーションが開始する位置(仮)
-      let goal = 1992;                                                 // アニメーションが終了する位置
-      let IsUpper = winHeight < trigger && winHeight < goal;           // if else文の条件式1
-      let IsMiddle = winHeight >= trigger && winHeight < goal;         // if else文の条件式2
-      let IsLower = winHeight >= goal;                                 // if else文の条件式3
+      let elmOffsetY = 2360;                                            //'.layer-2'のY座標における絶対位置
+      let winMath = 2360 + elmOffsetY;
+      let offsetMove = winMath - winHeight;                             // 'layer-2'のmargin-top を求める条件式
       
-      // console.log(winHeight);
-      // console.log(offsetTop);
-      // console.log(offsetElm);
-      // console.log(offsetMove);
-      // console.log( typeof trigger );                                        
-      // console.log(offsetElm);
-      // console.log(`isUpper = ${IsUpper}`);
-      // console.log(`isMiddle = ${IsMiddle}`);
-      // console.log(`isLower = ${IsLower}`);
+      console.log(winHeight);
+      console.log(winMath);
+      console.log(elmOffsetY);
+      console.log(offsetMove);
 
       //アニメーションさせるための条件分岐
-      if( IsUpper ) {
-        $('.layer-2').addClass('upper').removeClass('up').removeClass('lower').css('margin-top','2701px');
+      if( winHeight < 2360 ) {
+        $('.layer-2').addClass('up').css('margin-top', offsetMove + 'px');
         //アニメーションをする前の状態を表すクラス名'.upper'を付与し、合わせて'layer-2'を下方に待機させる。
-      } else if ( IsMiddle ) { 
-        $('.layer-2').addClass('up').removeClass('lower').removeClass('upper').css('margin-top','2300px');
-        //アニメーションしている状態を示すClass('up')を付与し、margin-topの値にscrollElmを呼び出し。
-        if( min ) {}
-      } else if ( IsLower) {
-        $('.layer-2').addClass('lower').removeClass('up').removeClass('upper').css('margin-top','2360px');
-        //指定の位置に達したらアニメーション完了後を示すクラス('lower')を付与。
       } else {
-        return false;
+        $('.layer-2').removeClass('up').css('margin-top', '2360px');
       }
     });
   });
@@ -143,8 +124,3 @@ $(window).scroll(function () {
   //移動前の位置 layer-2(margin-top: 2692px;) window(.scrollTop(): 1270px;) -1422px
   //移動後の位置 layer-2(margin-top: 2360px;) window(.scrollTop(): 1602px;) -758px
   //                                 -332px                        +332px   -664
-
-  // window.addEventListener('scroll', function(event) {
-  //   console.log(window.pageYOffset);  // 縦方向のスクロール量
-  //   console.log(window.pageXOffset);  // 横方向のスクロール量
-  // });

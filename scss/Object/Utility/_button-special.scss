@@ -27,49 +27,6 @@
       left: 15rem;
     }
   }
-  &__speech-bubble {
-    display: block;
-    position: absolute;
-    line-height: 2.5rem;
-    rotate: 45deg;
-    top: -0.5rem;
-    left: -0.8rem;
-    opacity: 0;
-    animation: bubble 1s ease-in infinite;
-    @include m.mq(screen02) {
-      left: 6rem;
-    }
-    &::before {
-      content: "";
-      rotate: 45deg;
-      position: absolute;
-      display: block;
-      width: 100%;
-      left: 20%;
-      border-bottom: 1px solid #000;
-    }
-    &::after {
-      content: "";
-      rotate: -45deg;
-      position: absolute;
-      display: block;
-      width: 100%;
-      left: 20%;
-      border-top: 1px solid #000;
-    }
-
-    &.is-pc {
-      display: none;
-      @include m.mq(screen03) {
-        display: block;
-      }
-    }
-    &.is-mq {
-      @include m.mq(screen03) {
-        display: none;
-      } 
-    }
-  }
 }
 
 @keyframes button {
@@ -150,41 +107,5 @@
   }
   to {
     rotate: 35deg;
-  }
-}
-
-@keyframes bubble {
-  from {
-    opacity: 0;
-  }
-  5% {
-    opacity: 0;
-  }
-  6% {
-    opacity: 0;
-  }
-  17.5% {
-    opacity: 0;
-  }
-  18.5% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  31% {
-    opacity: 0;
-  }
-  42.5% {
-    opacity: 1;
-  }
-  89% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
   }
 }

@@ -1,0 +1,32 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+// .p-table-of-contents {
+//   &__title {
+//     width: 100%;
+//     &::before {
+//       content: "＋";
+//       position: absolute;
+//       left: 9.5rem;
+//       @include m.mq(screen02) {
+//         left: 22rem;
+//       }
+//     }
+//     &.active::before {
+//       content: "－";
+//     }
+//     @include m.mq(screen03) {
+//       &::before {
+//         content: "";
+//         position: absolute;
+//         right: 20px;
+//       }
+//       &.active::before {
+//         content: "";
+//       }
+//     } 
+//   }
+//   &__ul {
+//     display: none;
+//   }
+// }
