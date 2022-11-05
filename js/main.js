@@ -101,10 +101,10 @@ $(window).scroll(function () {
       let winMath = 2360 + elmOffsetY;
       let offsetMove = winMath - winHeight;                             // 'layer-2'のmargin-top を求める条件式
       
-      console.log(winHeight);
-      console.log(winMath);
-      console.log(elmOffsetY);
-      console.log(offsetMove);
+      // console.log(winHeight);
+      // console.log(winMath);
+      // console.log(elmOffsetY);
+      // console.log(offsetMove);
 
       //アニメーションさせるための条件分岐
       if( winHeight < 2360 ) {
