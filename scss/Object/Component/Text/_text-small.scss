@@ -1,8 +1,0 @@
-@use "../../../Foundation/variable" as v;
-
-.c-text-small {
- &--white {
-   color: v.$TextWhite;
-   font-weight: v.$Light;
- }
-}
