@@ -27,8 +27,7 @@ h1 {
 
 ul {
   list-style: none;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
 }
 
 li {
@@ -85,8 +84,7 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -110,12 +108,10 @@ select {
     scroll-behavior: auto;
   }
   *,
-*::before,
-*::after {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -139,8 +135,7 @@ body {
 }
 
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 img, picture {
@@ -157,10 +152,8 @@ input, button, textarea, select {
     scroll-behavior: auto;
   }
   *, *::before, *::after {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -580,13 +573,13 @@ body.is-open {
 }
 @media screen and (min-width: 1200px) {
   .p-gmenu__list .item3::before,
-.p-gmenu__list .p-gmenu__button::before {
+  .p-gmenu__list .p-gmenu__button::before {
     content: "";
     position: absolute;
     right: 20px;
   }
   .p-gmenu__list .item3.active::before,
-.p-gmenu__list .p-gmenu__button.active::before {
+  .p-gmenu__list .p-gmenu__button.active::before {
     content: "";
   }
 }
@@ -642,8 +635,7 @@ body.is-open {
   display: block;
   z-index: 300;
   opacity: 1;
-  -webkit-animation: gradually2 15s ease-in-out infinite;
-          animation: gradually2 15s ease-in-out infinite;
+  animation: gradually2 15s ease-in-out infinite;
 }
 .p-animation-background__layer .layer-5 {
   position: absolute;
@@ -665,6 +657,7 @@ body.is-open {
   top: 2300px;
   left: 2000px;
   background-color: rgba(255, 255, 255, 0.1);
+  -webkit-filter: blur(10px) brightness(100%);
   filter: blur(10px) brightness(100%);
   display: block;
   height: 150px;
@@ -679,6 +672,7 @@ body.is-open {
   top: 2300px;
   left: 1800px;
   background-color: rgba(255, 255, 255, 0.1);
+  -webkit-filter: blur(10px) brightness(100%);
   filter: blur(10px) brightness(100%);
   display: block;
   height: 150px;
@@ -693,6 +687,7 @@ body.is-open {
   top: 2300px;
   left: 1600px;
   background-color: rgba(255, 255, 255, 0.1);
+  -webkit-filter: blur(10px) brightness(100%);
   filter: blur(10px) brightness(100%);
   display: block;
   height: 150px;
@@ -941,40 +936,35 @@ body.is-open {
 @-webkit-keyframes gradually {
   from {
     opacity: 0;
+    -webkit-filter: blur(2px) brightness(100%);
     filter: blur(2px) brightness(100%);
   }
   70% {
     opacity: 1;
+    -webkit-filter: blur(5px) brightness(97.5%);
     filter: blur(5px) brightness(97.5%);
   }
   to {
     opacity: 0;
+    -webkit-filter: blur(2px) brightness(100%);
     filter: blur(2px) brightness(100%);
   }
 }
 @keyframes gradually {
   from {
     opacity: 0;
+    -webkit-filter: blur(2px) brightness(100%);
     filter: blur(2px) brightness(100%);
   }
   70% {
     opacity: 1;
+    -webkit-filter: blur(5px) brightness(97.5%);
     filter: blur(5px) brightness(97.5%);
   }
   to {
     opacity: 0;
+    -webkit-filter: blur(2px) brightness(100%);
     filter: blur(2px) brightness(100%);
-  }
-}
-@-webkit-keyframes gradually2 {
-  from {
-    filter: blur(0px);
-  }
-  50% {
-    filter: blur(5px);
-  }
-  to {
-    filter: blur(0px);
   }
 }
 @keyframes gradually2 {
@@ -1084,26 +1074,7 @@ body.is-open {
   /*背景画像の指定*/
   background-size: contain;
   /*アニメーションの指定*/
-  -webkit-animation: floatAnime 0.5s infinite;
-          animation: floatAnime 0.5s infinite;
-}
-
-@-webkit-keyframes floatAnime {
-  0% {
-    background-image: url(../../../img/inoshishi_run1_negate.png);
-  }
-  19% {
-    background-image: url(../../../img/inoshishi_run2_negate.png);
-  }
-  20% {
-    background-image: url(../../../img/inoshishi_run3_negate.png);
-  }
-  90% {
-    background-image: url(../../../img/inoshishi_run3_negate.png);
-  }
-  100% {
-    background-image: url(../../../img/inoshishi_run1_negate.png);
-  }
+  animation: floatAnime 0.5s infinite;
 }
 
 @keyframes floatAnime {
@@ -1146,58 +1117,18 @@ body.is-open {
   background-repeat: repeat;
   background-position: 0% 0%;
   background-image: linear-gradient(90deg, rgb(197, 125, 233), rgb(61, 200, 194), rgb(197, 125, 233), rgb(61, 200, 194), rgb(197, 125, 233));
-  -webkit-animation: button 1s ease-in-out infinite, Rainbow 7.5s infinite;
-          animation: button 1s ease-in-out infinite, Rainbow 7.5s infinite;
+  animation: button 1s ease-in-out infinite, Rainbow 7.5s infinite;
 }
 .u-button-special__img {
   position: absolute;
   left: 8.5rem;
   top: -0.2rem;
   rotate: 35deg;
-  -webkit-animation: poking 1s ease-in infinite;
-          animation: poking 1s ease-in infinite;
+  animation: poking 1s ease-in infinite;
 }
 @media screen and (min-width: 820px) {
   .u-button-special__img {
     left: 15rem;
-  }
-}
-
-@-webkit-keyframes button {
-  from {
-    border-bottom-width: 4px;
-    transform: translateY(0px);
-    filter: drop-shadow(2px 10px 5px rgba(0, 0, 0, 0.5));
-  }
-  5% {
-    border-bottom-width: 4px;
-    transform: translateY(0px);
-    filter: drop-shadow(2px 10px 5px rgba(0, 0, 0, 0.5));
-  }
-  17.5% {
-    border-bottom-width: 2px;
-    transform: translateY(5px);
-    filter: drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.5));
-  }
-  30% {
-    border-bottom-width: 4px;
-    transform: translateY(0px);
-    filter: drop-shadow(2px 10px 5px rgba(0, 0, 0, 0.5));
-  }
-  42.5% {
-    border-bottom-width: 2px;
-    transform: translateY(5px);
-    filter: drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.5));
-  }
-  55% {
-    border-bottom-width: 4px;
-    transform: translateY(0px);
-    filter: drop-shadow(2px 10px 5px rgba(0, 0, 0, 0.5));
-  }
-  to {
-    border-bottom-width: 4px;
-    transform: translateY(0px);
-    filter: drop-shadow(2px 10px 5px rgba(0, 0, 0, 0.5));
   }
 }
 
@@ -1238,52 +1169,12 @@ body.is-open {
     filter: drop-shadow(2px 10px 5px rgba(0, 0, 0, 0.5));
   }
 }
-@-webkit-keyframes Rainbow {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
-}
 @keyframes Rainbow {
   0% {
     background-position: 0% 0%;
   }
   100% {
     background-position: 100% 0%;
-  }
-}
-@-webkit-keyframes poking {
-  from {
-    rotate: 35deg;
-  }
-  11.5% {
-    rotate: 35deg;
-  }
-  12.5% {
-    rotate: 0deg;
-  }
-  25% {
-    rotate: 0deg;
-  }
-  26% {
-    rotate: 35deg;
-  }
-  36.5% {
-    rotate: 35deg;
-  }
-  37.5% {
-    rotate: 0deg;
-  }
-  50% {
-    rotate: 0deg;
-  }
-  51% {
-    rotate: 35deg;
-  }
-  to {
-    rotate: 35deg;
   }
 }
 @keyframes poking {
@@ -1327,4 +1218,3 @@ body.is-open {
 ------------------------------*/
 /* Utility
 ------------------------------*/
-/*# sourceMappingURL=style.css.map */
