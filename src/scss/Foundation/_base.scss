@@ -1,0 +1,47 @@
+@use "../Foundation/variable" as v;
+
+html:focus-within {
+  scroll-behavior: auto;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: v.$Horizontal;
+  font-family: unset;
+  font-size: 1rem;
+  max-width: 1900px;
+}
+.container {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+h1 {
+  font-weight: unset;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+p {
+  margin: 0;
+}
+
+

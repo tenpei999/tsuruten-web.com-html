@@ -1,0 +1,17 @@
+@use "../Foundation/mixin" as m;
+@use "../Foundation/variable" as v;
+
+.l-main {
+  position: absolute;
+  margin-top: 10rem;
+  z-index: 500;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  // background-color: rgba(0, 0, 0, 0.4);
+  @include m.mq (screen02) {
+    width: 400px;
+  }
+}
+

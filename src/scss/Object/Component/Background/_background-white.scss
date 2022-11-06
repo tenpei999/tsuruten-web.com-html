@@ -1,0 +1,5 @@
+@use "../../../Foundation/variable" as v;
+
+.c-background-opacity {
+  background-color: v.$BackgroundWhite;
+}

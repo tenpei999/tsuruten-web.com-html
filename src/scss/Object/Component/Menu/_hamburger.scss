@@ -1,0 +1,57 @@
+@use "../../../Foundation/mixin" as m;
+@use "sass:math";
+
+$btnWidth: 20px;
+$btnHeight: 2px;
+$lineColor: #000;
+
+.c-hamburger {
+	@include m.mq(screen03) {
+		display: none;
+	}
+	&::before,
+	&::after {
+		content   : "";
+		width     : $btnWidth;
+		height    : $btnHeight;
+		background: $lineColor;
+		position  : absolute;
+		left      : calc( 50% - math.div( #{$btnWidth}, 2 ) );
+		display   : block;
+		transition: transform 0.2s;
+	}
+	&::before {
+		top: 22px;
+	}
+	&::after {
+		top: 38px;
+	}
+	> span {
+		width          : $btnWidth;
+		height         : $btnHeight;
+		font-size      : 0;
+		background     : linear-gradient( to right, $lineColor, $lineColor ) repeat-x $lineColor;
+		background-size: auto $btnHeight;
+		position       : absolute;
+		left           : calc( 50% - math.div( #{$btnWidth}, 2 ) );
+		top            : 50%;
+		transition     : transform 0.2s;
+	}
+	&.is-open {
+		&::before {
+			transform: rotate( 45deg );
+			top      : 28px;
+		}
+		&::after {
+			transform: rotate( -45deg );
+			top      : 28px;
+		}
+		> span {
+			background: none;
+		}
+	}
+}
+
+body.is-open {
+	position: fixed;
+}

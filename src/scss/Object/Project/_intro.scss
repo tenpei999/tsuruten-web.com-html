@@ -1,0 +1,32 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+.p-intro {
+  &__logo {
+    img {
+      width: 11rem;
+    }
+    .c-text--sentence {
+      text-align: center;
+      margin-top: -1rem;
+    }
+  }
+  &__button-special {
+    position: relative;
+    display: block;
+    margin: 1rem;
+    padding: 2rem 0 2rem 0;
+    &--wrap {
+      position: absolute;
+      top: 0;
+      left: 25%;
+      width: 50%;
+      height: 100%;
+      margin: auto;
+      &:hover {
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

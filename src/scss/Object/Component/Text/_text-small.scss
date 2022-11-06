@@ -1,0 +1,10 @@
+@use "../../../Foundation/variable" as v;
+
+.c-text-small {
+  font-size: 0.7rem;
+  text-align: center;
+  &--white {
+    color: v.$TextWhite;
+    font-weight: v.$Light;
+  }
+}

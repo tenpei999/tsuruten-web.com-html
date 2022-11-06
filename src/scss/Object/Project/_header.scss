@@ -1,0 +1,62 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+.p-header {
+  width: 100%;
+  position: fixed;
+  max-width: 1900px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.6));
+  @include m.mq (screen03) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  &__logo {
+    margin: auto;
+    left: 48%;
+    width: 50px;
+    height: 50px;
+  }
+  &__form {
+    display: block;
+    width: 15rem;
+    @include m.mq (screen03) {
+      width: 20rem;
+    }
+    &--text {
+      width: 10rem;
+      @include m.mq (screen03) {
+        width: 14rem;
+      }
+    }
+    &--submit {
+      margin-left: 0.3rem;
+      padding: 0.22rem;
+      width: 4.2rem;
+      font-size: 0.8rem;
+      line-height: 1rem;
+      @include m.mq (screen03) {
+        width: 5.2rem;
+      }
+    }
+  }
+  &__background {
+    transition: all 0s 0.3s;
+    display: none;
+    &.is-open {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background-color: v.$BackgroundBlack;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 110;
+      @include m.mq (screen03) {
+        display: none;
+      }
+    }
+  }
+}
+

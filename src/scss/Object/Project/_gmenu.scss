@@ -1,0 +1,95 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+.p-gmenu {
+  position: relative;
+  .c-hamburger {
+    width           : 60px;
+    height          : 60px;
+    position        : absolute;
+    right: 1rem;
+    z-index: 200;
+  }
+  &--inner{
+    top: 0;
+    height: 100vh;   
+    width: 100%;  
+    background-color: v.$BackgroundWhite;
+    left: 100%;
+    position: absolute;
+    z-index: 150;
+    transition: all 400ms 0s ease-in-out;
+    @include m.mq (screen03) {
+      height: 5rem;
+      transition: all 0s 0s;
+    }
+    &.is-open {
+      left: 60vw;
+    }
+    @include m.mq(screen03) {
+      width: unset;
+      position: static;
+    } 
+  }
+  &__list {
+    .middle {
+      display: none;
+      z-index: 1200;
+      .title {
+        font-size: 1.2rem;
+        color: v.$TextBlack;
+        line-height: 4rem;
+        background-color: v.$BackgroundWhite;
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    @include m.mq (screen03) {
+      margin: unset;
+      padding: 1rem 1rem 0 0;
+      display: flex;
+  }
+  .item {
+    font-size: 1.6rem;
+    display: block;
+    width: 10rem;
+    @include m.mq (screen03) {
+      text-align: center;
+      padding-left: 2rem;
+    }
+    .title {
+        color: v.$MenuBlack;
+        z-index: 1000;
+      }
+    }
+    .item3,
+    .p-gmenu__button {
+      &::before {
+        content: "＋";
+        position: absolute;
+        left: 25vw;
+      }
+      &.active::before {
+        content: "－";
+      }
+      @include m.mq(screen03) {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 20px;
+        }
+        &.active::before {
+          content: "";
+        }
+      } 
+    }
+  }
+  .item1, .item6, .item7 {
+    @include m.mq (screen03) {
+      display: none;
+    }
+  }
+}

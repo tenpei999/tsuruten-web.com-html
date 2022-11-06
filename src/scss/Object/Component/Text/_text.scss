@@ -1,0 +1,8 @@
+@use "../../../Foundation/variable" as v;
+
+.c-text {
+  font-family: v.$Horizontal;
+  &--sentence {
+    font-size: 1rem;
+  }
+}
