@@ -1,37 +1,34 @@
-/* Foundation */
-@use "Foundation";
+@charset "utf-8";
 
-/* Layout 
-------------------------------*/
-@forward  "Layout/header"; //ヘッダー
-@forward  "Layout/primary"; //全体を覆う
-@forward  "Layout/main"; //メイン
-@forward  "Layout/footer"; //メイン
+// ==========================================================================
+// Foundation
+// ==========================================================================
+@forward  "foundation/*";
 
-/* Component
-------------------------------*/
-@use "object/Component/margin-center"; // センター
-@use "object/Component/under-line"; //アンダーライン
-@use "object/Component/menu"; //
-@use "object/Component/text"; //テキスト
-@use "object/Component/Title"; //タイトル
-@use "object/Component/button"; //ボタン
-@use "object/Component/icon"; //アイコン
-@use "object/Component/background"; //背景
-@use "object/Component/shadow"; //
+// ==========================================================================
+// Layout
+// ==========================================================================
+@forward "layout/*";
 
+// ==========================================================================
+// Object
+// ==========================================================================
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
+@forward "object/component/*";
+@forward "object/Component/menu/*";           //
+@forward "object/Component/text/*";           //テキスト
+@forward "object/Component/Title/*";          //タイトル
+@forward "object/Component/button/*";         //ボタン
+@forward "object/Component/icon/*";           //アイコン
+@forward "object/Component/background/*"; 
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
+@forward "object/project/*";
 
-/* Project
-------------------------------*/
-@use "object/project/header"; //ヘッダー
-@use "object/project/footer"; //ヘッダー
-@use "object/project/gmenu"; //メニュー
-@use "object/project/animation-background"; //メニュー
-@use "object/project/catchphrase"; //キャッチコピー
-@use "object/project/intro"; //イントロダクション
-@use "object/project/page-top"; //トップページ
-@use "object/project/table-of-contents"; //トップページ
-
-/* Utility
-------------------------------*/
-@use "object/Utility/button-special";
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------
+@forward "object/utility/*";
