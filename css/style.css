@@ -213,7 +213,7 @@ select {
   }
 }
 .c-hamburger::before, .c-hamburger::after {
-  content: "";
+  content: "うんち";
   width: 20px;
   height: 2px;
   background: #000;
@@ -1113,7 +1113,7 @@ body.is-open {
 
 /*========= レイアウトのためのCSS ===============*/
 .u-button-special {
-  content: "カーカーかっかっかっか";
+  content: "かっかっかっか";
   position: relative;
   display: block;
   font-size: 1.3rem;
