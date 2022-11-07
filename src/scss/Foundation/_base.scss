@@ -1,4 +1,4 @@
-@use "../Foundation/variable" as v;
+@use "./Foundation/variable" as v;
 
 html:focus-within {
   scroll-behavior: auto;
