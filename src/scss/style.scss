@@ -1,34 +1,33 @@
 @charset "utf-8";
 
-// ==========================================================================
-// Foundation
-// ==========================================================================
-@forward  "foundation/*";
 
-// ==========================================================================
-// Layout
-// ==========================================================================
+/*Foundation*/
+
+// @forward  "foundation/*";
+
+
+/*Layout*/
+
 @forward "layout/*";
 
-// ==========================================================================
-// Object
-// ==========================================================================
-// -----------------------------------------------------------------
-// Component
-// -----------------------------------------------------------------
+
+/*Object*/
+
+/*Component*/
+
 @forward "object/component/*";
-@forward "object/Component/menu/*";           //
-@forward "object/Component/text/*";           //テキスト
-@forward "object/Component/Title/*";          //タイトル
-@forward "object/Component/button/*";         //ボタン
-@forward "object/Component/icon/*";           //アイコン
+@forward "object/Component/menu/*";          
+@forward "object/Component/text/*";       
+@forward "object/Component/Title/*";        
+@forward "object/Component/button/*";        
+@forward "object/Component/icon/*";          
 @forward "object/Component/background/*"; 
-// -----------------------------------------------------------------
-// Project
-// -----------------------------------------------------------------
+
+/*Project*/
+
 @forward "object/project/*";
 
-// -----------------------------------------------------------------
-// Utility
-// -----------------------------------------------------------------
+
+/*Utility*/
+
 @forward "object/utility/*";
