@@ -158,10 +158,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
-/* font-family */
-/* Color */
-/* font-weight */
-/* size */
 /* mixin */
 .l-header {
   z-index: 1000;
@@ -179,6 +175,10 @@ select {
   }
 }
 
+/* font-family */
+/* Color */
+/* font-weight */
+/* size */
 .l-main {
   position: absolute;
   margin-top: 10rem;
@@ -213,7 +213,6 @@ select {
   }
 }
 .c-hamburger::before, .c-hamburger::after {
-  content: "うんち";
   width: 20px;
   height: 2px;
   background: #000;
@@ -1113,8 +1112,8 @@ body.is-open {
 
 /*========= レイアウトのためのCSS ===============*/
 .u-button-special {
-  content: "かっかっかっか";
   position: relative;
+  content: "車車yしゃっysj";
   display: block;
   font-size: 1.3rem;
   padding: 0.2rem 1.2rem;

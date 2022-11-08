@@ -1,11 +1,12 @@
-@use "./Foundation/variable" as v;
+@use "./variable" as v;
 
 html:focus-within {
-  scroll-behavior: auto;
+  scroll-behavior: auto
 }
 
 body {
   width: 100vw;
+  
   height: 100vh;
   font-family: v.$Horizontal;
   font-family: unset;

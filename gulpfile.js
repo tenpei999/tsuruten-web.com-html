@@ -1,29 +1,31 @@
-const gulp = require('gulp');                                    //gulpパッケージを変数に格納
-const plumber = require("gulp-plumber");                         // エラーが発生しても強制終了させない
-const notify = require("gulp-notify"); // エラー発生時のアラート出力
-const sassGlob = require("gulp-sass-glob-use-forward");
-const sass = require('gulp-sass')(require('sass'));              //gulp-sassパッケージを変数に格納
+const gulp = require('gulp')                                    //gulpパッケージを変数に格納
+const sassGlob = require('gulp-sass-glob-use-forward')
+const postcss = require('postcss-scss')
+const sass = require('gulp-dart-sass')       //gulp-sassパッケージを変数に格納
+const autoprefixer = require('autoprefixer')
 
-//タスクの記述
-gulp.task('sass', function() {
-	return gulp.src('./src/scss/style.scss')
-  .pipe(
-    //エラーが出ても処理を止めない
-    plumber({
-      errorHandler: notify.onError('Error:<%= error.message %>')
-    }))
-    .pipe( sassGlob() )
-		.pipe(sass({outputStyle: 'expanded'}))
-		.pipe(gulp.dest('./css'));
-});
+const autoprefixerOption = {
+  grid: true
+}
+console.log(postcss)
 
-// sassコマンドをデフォルトにする
-gulp.task('default', gulp.series(['sass']));
+const postcssOption = [autoprefixer(autoprefixerOption)]
+/**
+ * sass
+ *
+ */
+const cssSass = () => {
+  return gulp.src('./src/scss/**/*.scss')
+  .pipe(postcss(postcssOption))
+  .pipe( sassGlob() )
+  .pipe(sass({ outputStyle: 'expanded' })) //指定できるキー expanded compressed
+  .pipe(gulp.dest('./css'))
+}
 
 /**
  * seriesは「順番」に実行
  * parallelは並列で実行
  */
 exports.default = gulp.series(
-  gulp.parallel('sass'),
-);
+  gulp.parallel(cssSass),
+)
