@@ -29,4 +29,9 @@
   &__ul {
     display: none;
   }
+  &__li {
+    .item {
+      font-size: 1rem;
+    }
+  }
 }

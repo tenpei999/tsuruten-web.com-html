@@ -41,6 +41,9 @@ function media() {
         $(this).children(".middle").stop().slideToggle();
       });
     });
+    $('p-gmenu__button').on('click', function(){
+      
+    })
   }
 }
 

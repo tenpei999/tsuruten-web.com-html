@@ -31,9 +31,12 @@
       position: static;
     } 
   }
+  &--table {
+    .active {
+    }
+  }
   &__list {
     .middle {
-      display: none;
       z-index: 1200;
       .title {
         font-size: 1.2rem;
@@ -85,6 +88,11 @@
           content: "";
         }
       } 
+    }
+    &.in-table {
+      .item {
+        font-size: 1rem;
+      }
     }
   }
   .item1, .item6, .item7 {

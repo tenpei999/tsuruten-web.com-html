@@ -5,35 +5,30 @@ const sassGlob = require('gulp-sass-glob-use-forward')
 const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
 const notify = require("gulp-notify"); // エラー発生時のアラート出力
 const browserSync = require("browser-sync"); //ブラウザリロード
-const autoprefixer = require('gulp-autoprefixer'); // ベンダープレフィックス付与
-const sourcemaps = require('gulp-sourcemaps'); // ソースマップ出力
-const changed = require('gulp-changed')
-const cached  = require('gulp-cached'); // ファイルキャッシュ
-const imageMin = require('gulp-imagemin')
-const purgecss  = require ( 'gulp-purgecss' )
-const cleanCss  = require ( 'gulp-clean-css' )
+const changed = require('gulp-changed');
+const imageMin = require('gulp-imagemin');
 
+const paths = {
+  rootDir   : {root: './', html: './index.html'},
+  srcDir    : {css: './src/scss/**/*.scss', js: './src/js/**/*.js', img: './src/img/min/*.{jpg,jpeg,png,svg,gif}', imgmin: './src/img/min/*.{jpg,jpeg,png,svg,gif}' },
+  dstDir    : { css: './css', js: './js', img: './img' },
+  serverDir : 'localhost',
+};
 
 /**
  * sass
  *
  */
 const cssSass = () => {
-  return gulp.src('./src/scss/**/*.scss')
+  return gulp.src(paths.srcDir.css)
   .pipe(
     //エラーが出ても処理を止めない
     plumber({
       errorHandler: notify.onError('Error:<%= error.message %>')
     }))
-  .pipe(cached('scss')) // ファイルをキャッシュ
-  .pipe(sourcemaps.init())
   .pipe( sassGlob() )
   .pipe(sass({ outputStyle: 'expanded' })) //指定できるキー expanded compressed
-  .pipe(autoprefixer({
-    cascade: true
-  }))
-  .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('./css'))
+  .pipe(gulp.dest(paths.dstDir.css))
   .pipe(browserSync.stream())
   .pipe(notify({
     message: 'Sassをコンパイルしました！',
@@ -45,7 +40,7 @@ const cssSass = () => {
  * html
  */
 const html = () => {
-  return gulp.src('./index.html')
+  return gulp.src(paths.rootDir.html)
   }
 
 /**
@@ -56,7 +51,7 @@ const browserSyncFunc = () => {
 }
 
 const browserSyncOption = {
-  server: './'
+  server: paths.rootDir
 }
 
 /**
@@ -68,9 +63,25 @@ const browserSyncReload = (done) => {
 }
 
 const watchFiles = () => {
-  gulp.watch('./src/scss/**/*.scss', gulp.series(cssSass))
-  gulp.watch('./index.html', gulp.series(html, browserSyncReload))
+  gulp.watch(paths.srcDir.css, gulp.series(cssSass))
+  gulp.watch(paths.rootDir.html, gulp.series(html, browserSyncReload))
 }
+
+const imagemin = (done) => {
+  gulp.src(paths.srcDir.imgmin)
+  .pipe(
+    changed(paths.srcDir.imgmin),
+    imageMin([
+      // imageMin.svgo(),
+      // imageMin.optipng(),
+      // imageMin.gifsicle({ optimizationLevel: 3 }),
+    ])
+  )
+  .pipe(gulp.dest(paths.dstDir.img));
+  done();
+}
+
+exports.imagemin = imagemin;
 
 /**
  * seriesは「順番」に実行
@@ -78,31 +89,7 @@ const watchFiles = () => {
  */
 exports.default = gulp.series(
   gulp.parallel(html, cssSass),
-  gulp.parallel(watchFiles, browserSyncFunc),
+  gulp.parallel(watchFiles, browserSyncFunc)
 );
 
-function imagemin(done) {
-  gulp.src("./src/img/min/*")
-    .pipe(
-      changed("./src/img/**"),
-      imageMin([
-        imageMin.svgo(),
-        imageMin.optipng(),
-        imageMin.gifsicle({ optimizationLevel: 3 }),
-      ])
-    )
-    .pipe(gulp.dest("./dist/img/"));
-  done();
-}
 
-gulp.task('css', () => {
-  return gulp.src('./css/*.css')
-      .pipe(purgecss({
-          content: ['./*.html']
-      }))
-      .pipe(cleanCss())
-      .pipe(gulp.dest('./css/build'))
-})
-
-exports.imagemin = imagemin
-exports.css = gulp.css
