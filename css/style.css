@@ -19,7 +19,8 @@ body {
 }
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 img, picture {
@@ -77,7 +78,8 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -240,40 +242,20 @@ body.is-open {
 .c-to-top .-image1 {
   position: relative;
   opacity: 1;
-  -webkit-animation: run1 0.5s infinite;
-  animation: run1 0.5s infinite;
 }
 .c-to-top .-image2 {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 1;
-  -webkit-animation: run2 0.5s infinite;
-  animation: run2 0.5s infinite;
 }
 .c-to-top .-image3 {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 1;
-  -webkit-animation: run3 0.5s infinite;
-  animation: run3 0.5s infinite;
 }
 
-@-webkit-keyframes run1 {
-  from {
-    opacity: 1;
-  }
-  19% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-  }
-}
 @keyframes run1 {
   from {
     opacity: 1;
@@ -282,26 +264,6 @@ body.is-open {
     opacity: 1;
   }
   20% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes run2 {
-  from {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  21% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  41% {
     opacity: 0;
   }
   to {
@@ -326,20 +288,6 @@ body.is-open {
   }
   to {
     opacity: 0;
-  }
-}
-@-webkit-keyframes run3 {
-  from {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  41% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
   }
 }
 @keyframes run3 {
@@ -432,7 +380,6 @@ body.is-open {
   opacity: 1;
   background-repeat: no-repeat;
   filter: blur(2px) brightness(100%);
-  -webkit-animation: gradually 24s ease-in-out infinite;
   animation: gradually 24s ease-in-out infinite;
 }
 .p-animation-background__layer .layer-6 {
@@ -440,14 +387,12 @@ body.is-open {
   top: 2300px;
   left: 2000px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-filter: blur(10px) brightness(100%);
   filter: blur(10px) brightness(100%);
   display: block;
   height: 150px;
   width: 100px;
   transform: skew(142deg, 23deg);
   z-index: 300;
-  -webkit-animation: sun-light 18s 0s ease-out infinite;
   animation: sun-light 18s 0s ease-out infinite;
 }
 .p-animation-background__layer .layer-7 {
@@ -455,14 +400,12 @@ body.is-open {
   top: 2300px;
   left: 1800px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-filter: blur(10px) brightness(100%);
   filter: blur(10px) brightness(100%);
   display: block;
   height: 150px;
   width: 100px;
   transform: skew(142deg, 23deg);
   z-index: 300;
-  -webkit-animation: sun-light2 14.4s 0s ease-out infinite;
   animation: sun-light2 14.4s 0s ease-out infinite;
 }
 .p-animation-background__layer .layer-8 {
@@ -470,14 +413,12 @@ body.is-open {
   top: 2300px;
   left: 1600px;
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-filter: blur(10px) brightness(100%);
   filter: blur(10px) brightness(100%);
   display: block;
   height: 150px;
   width: 100px;
   transform: skew(142deg, 23deg);
   z-index: 300;
-  -webkit-animation: sun-light3 10.8s 0s ease-out infinite;
   animation: sun-light3 10.8s 0s ease-out infinite;
 }
 .p-animation-background__child {
@@ -548,43 +489,9 @@ body.is-open {
     left: 25%;
   }
 }
-@-webkit-keyframes sun-light {
-  from {
-    left: 2000px;
-    opacity: 1;
-    width: 100px;
-    transform: skew(142deg, 23deg);
-  }
-  90% {
-    opacity: 0.7;
-  }
-  to {
-    left: 1000px;
-    opacity: 0;
-    width: 50px;
-    transform: skew(120deg, 23deg);
-  }
-}
 @keyframes sun-light {
   from {
     left: 2000px;
-    opacity: 1;
-    width: 100px;
-    transform: skew(142deg, 23deg);
-  }
-  90% {
-    opacity: 0.7;
-  }
-  to {
-    left: 1000px;
-    opacity: 0;
-    width: 50px;
-    transform: skew(120deg, 23deg);
-  }
-}
-@-webkit-keyframes sun-light2 {
-  from {
-    left: 1800px;
     opacity: 1;
     width: 100px;
     transform: skew(142deg, 23deg);
@@ -616,23 +523,6 @@ body.is-open {
     transform: skew(120deg, 23deg);
   }
 }
-@-webkit-keyframes sun-light3 {
-  from {
-    left: 1600px;
-    opacity: 1;
-    width: 100px;
-    transform: skew(142deg, 23deg);
-  }
-  90% {
-    opacity: 0.7;
-  }
-  to {
-    left: 1000px;
-    opacity: 0;
-    width: 50px;
-    transform: skew(120deg, 23deg);
-  }
-}
 @keyframes sun-light3 {
   from {
     left: 1600px;
@@ -650,29 +540,7 @@ body.is-open {
     transform: skew(120deg, 23deg);
   }
 }
-@-webkit-keyframes cloud-moving {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes cloud-moving {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes cloud-moving2 {
   from {
     opacity: 1;
   }
@@ -694,17 +562,6 @@ body.is-open {
     opacity: 1;
   }
 }
-@-webkit-keyframes cloud-moving3 {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes cloud-moving3 {
   from {
     opacity: 1;
@@ -716,37 +573,17 @@ body.is-open {
     opacity: 1;
   }
 }
-@-webkit-keyframes gradually {
-  from {
-    opacity: 0;
-    -webkit-filter: blur(2px) brightness(100%);
-    filter: blur(2px) brightness(100%);
-  }
-  70% {
-    opacity: 1;
-    -webkit-filter: blur(5px) brightness(97.5%);
-    filter: blur(5px) brightness(97.5%);
-  }
-  to {
-    opacity: 0;
-    -webkit-filter: blur(2px) brightness(100%);
-    filter: blur(2px) brightness(100%);
-  }
-}
 @keyframes gradually {
   from {
     opacity: 0;
-    -webkit-filter: blur(2px) brightness(100%);
     filter: blur(2px) brightness(100%);
   }
   70% {
     opacity: 1;
-    -webkit-filter: blur(5px) brightness(97.5%);
     filter: blur(5px) brightness(97.5%);
   }
   to {
     opacity: 0;
-    -webkit-filter: blur(2px) brightness(100%);
     filter: blur(2px) brightness(100%);
   }
 }
@@ -989,19 +826,7 @@ body.is-open {
 
 /*　下に下がる動き　*/
 .p-page-top.DownMove {
-  -webkit-animation: DownAnime 0.5s forwards;
   animation: DownAnime 0.5s forwards;
-}
-
-@-webkit-keyframes DownAnime {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(150px);
-  }
 }
 @keyframes DownAnime {
   from {
@@ -1212,3 +1037,4 @@ body.is-open {
 /*Component*/
 /*Project*/
 /*Utility*/
+/*# sourceMappingURL=style.css.map */

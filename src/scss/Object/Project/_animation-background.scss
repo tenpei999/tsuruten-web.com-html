@@ -62,7 +62,6 @@
       opacity: 1;
       background-repeat: no-repeat;
       filter: blur(2px) brightness(100%);
-      -webkit-animation: gradually 24s ease-in-out infinite;
       animation: gradually 24s ease-in-out infinite;
     }
     .layer-6 {
@@ -70,14 +69,12 @@
       top: 2300px;
       left: 2000px;
       background-color: rgba(255, 255, 255, 0.1);
-      -webkit-filter: blur(10px) brightness(100%);
               filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 100px;
       transform: skew(142deg, 23deg);
       z-index: 300;
-      -webkit-animation: sun-light 18s 0s ease-out infinite;
               animation: sun-light 18s 0s ease-out infinite;
     }
     .layer-7 {
@@ -85,14 +82,12 @@
       top: 2300px;
       left: 1800px;
       background-color: rgba(255, 255, 255, 0.1);
-      -webkit-filter: blur(10px) brightness(100%);
               filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 100px;
       transform: skew(142deg, 23deg);
       z-index: 300;
-      -webkit-animation: sun-light2 14.4s 0s ease-out infinite;
               animation: sun-light2 14.4s 0s ease-out infinite;
     }
     .layer-8 {
@@ -100,14 +95,12 @@
       top: 2300px;
       left: 1600px;
       background-color: rgba(255, 255, 255, 0.1);
-      -webkit-filter: blur(10px) brightness(100%);
               filter: blur(10px) brightness(100%);
       display: block;
       height: 150px;
       width: 100px;
       transform: skew(142deg, 23deg);
       z-index: 300;
-      -webkit-animation: sun-light3 10.8s 0s ease-out infinite;
               animation: sun-light3 10.8s 0s ease-out infinite;
     }
   }
