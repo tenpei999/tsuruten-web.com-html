@@ -44,6 +44,8 @@ function media() {
   }
 }
 
+console.log()
+
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
   let scroll = $(window).scrollTop();

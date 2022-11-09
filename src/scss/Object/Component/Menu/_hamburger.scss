@@ -11,7 +11,6 @@ $lineColor: #000;
 	}
 	&::before,
 	&::after {
-		content   : "うんち";
 		width     : $btnWidth;
 		height    : $btnHeight;
 		background: $lineColor;
