@@ -4,6 +4,7 @@
 .p-header {
   width: 100%;
   position: fixed;
+  display: flex;
   max-width: 1900px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.6));
   @include m.mq (screen03) {

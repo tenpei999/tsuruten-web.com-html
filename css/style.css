@@ -207,27 +207,16 @@ select {
   text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
+.c-hamburger {
+  position: relative;
+}
 @media screen and (min-width: 1200px) {
   .c-hamburger {
     display: none;
   }
 }
-.c-hamburger::before, .c-hamburger::after {
-  width: 20px;
-  height: 2px;
-  background: #000;
-  position: absolute;
-  left: calc(50% - 20px/2);
-  display: block;
-  transition: transform 0.2s;
-}
-.c-hamburger::before {
-  top: 22px;
-}
-.c-hamburger::after {
-  top: 38px;
-}
 .c-hamburger > span {
+  display: block;
   width: 20px;
   height: 2px;
   font-size: 0;
@@ -237,6 +226,18 @@ select {
   left: calc(50% - 20px/2);
   top: 50%;
   transition: transform 0.2s;
+}
+.c-hamburger > span::before, .c-hamburger > span::after {
+  background: #000;
+  position: absolute;
+  display: block;
+  transition: transform 0.2s;
+}
+.c-hamburger > span::before {
+  top: 22px;
+}
+.c-hamburger > span::after {
+  top: 38px;
 }
 .c-hamburger.is-open::before {
   transform: rotate(45deg);
@@ -768,9 +769,6 @@ body.is-open {
   font-size: 0.6rem;
 }
 
-.p-gmenu {
-  position: relative;
-}
 .p-gmenu .c-hamburger {
   width: 60px;
   height: 60px;
@@ -803,17 +801,47 @@ body.is-open {
     position: static;
   }
 }
-.p-gmenu__list .middle {
-  z-index: 1200;
+.p-gmenu--table {
+  text-align: center;
 }
-.p-gmenu__list .middle .title {
-  font-size: 1.2rem;
-  color: #000;
-  line-height: 4rem;
-  background-color: #FFF;
+.p-gmenu--table .p-gmenu__button::before {
+  content: "＋";
+  position: absolute;
+  left: 10rem;
 }
-.p-gmenu__list .middle .title a:hover {
-  text-decoration: none;
+@media screen and (min-width: 820px) {
+  .p-gmenu--table .p-gmenu__button::before {
+    left: 20rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-gmenu--table .p-gmenu__button::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+  }
+  .p-gmenu--table .p-gmenu__button.active::before {
+    content: "";
+  }
+}
+.p-gmenu--table .middle {
+  display: none;
+}
+.p-gmenu--table.active {
+  display: block;
+}
+.p-gmenu--table.active .p-gmenu__button::before {
+  content: "－";
+}
+@media screen and (min-width: 1200px) {
+  .p-gmenu--table.active .p-gmenu__button::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+  }
+  .p-gmenu--table.active .p-gmenu__button.active::before {
+    content: "";
+  }
 }
 @media screen and (min-width: 1200px) {
   .p-gmenu__list {
@@ -827,6 +855,10 @@ body.is-open {
   display: block;
   width: 10rem;
 }
+.p-gmenu__list .item:hover .middle {
+  height: 8rem;
+  transition: all 0.3s ease;
+}
 @media screen and (min-width: 1200px) {
   .p-gmenu__list .item {
     text-align: center;
@@ -837,25 +869,36 @@ body.is-open {
   color: #707070;
   z-index: 1000;
 }
-.p-gmenu__list .item3::before,
-.p-gmenu__list .p-gmenu__button::before {
+.p-gmenu__list .item .middle {
+  z-index: 1200;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+.p-gmenu__list .item .middle .title {
+  font-size: 1.2rem;
+  color: #000;
+  line-height: 4rem;
+  background-color: #FFF;
+}
+.p-gmenu__list .item .middle .title a:hover {
+  text-decoration: none;
+}
+.p-gmenu__list .item3::before {
   content: "＋";
   position: absolute;
   left: 25vw;
 }
-.p-gmenu__list .item3.active::before,
-.p-gmenu__list .p-gmenu__button.active::before {
+.p-gmenu__list .item3.active::before {
   content: "－";
 }
 @media screen and (min-width: 1200px) {
-  .p-gmenu__list .item3::before,
-  .p-gmenu__list .p-gmenu__button::before {
+  .p-gmenu__list .item3::before {
     content: "";
     position: absolute;
     right: 20px;
   }
-  .p-gmenu__list .item3.active::before,
-  .p-gmenu__list .p-gmenu__button.active::before {
+  .p-gmenu__list .item3.active::before {
     content: "";
   }
 }
@@ -871,6 +914,7 @@ body.is-open {
 .p-header {
   width: 100%;
   position: fixed;
+  display: flex;
   max-width: 1900px;
   background: linear-gradient(180deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.6));
 }
@@ -1003,7 +1047,6 @@ body.is-open {
 .p-page-top-test {
   width: 100px;
   height: 100px;
-  background-color: red;
 }
 
 .p-page-top a {

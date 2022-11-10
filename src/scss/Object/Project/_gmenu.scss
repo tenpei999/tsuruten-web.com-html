@@ -2,7 +2,6 @@
 @use "../../Foundation/variable" as v;
 
 .p-gmenu {
-  position: relative;
   .c-hamburger {
     width           : 60px;
     height          : 60px;
@@ -32,44 +31,92 @@
     } 
   }
   &--table {
-    .active {
+    .p-gmenu__button {
+      &::before {
+        content: "＋";
+        position: absolute;
+        left: 10rem;
+        @include m.mq(screen02) {
+          left: 20rem;
+        }
+      }
+      @include m.mq(screen03) {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 20px;
+        }
+        &.active::before {
+          content: "";
+        }
+      } 
+    }
+    text-align: center;
+    .middle {
+      display: none;
+    }
+    &.active {
+      display: block;
+      .p-gmenu__button {
+        &::before {
+          content: "－";
+        }
+        @include m.mq(screen03) {
+          &::before {
+            content: "";
+            position: absolute;
+            right: 20px;
+          }
+          &.active::before {
+            content: "";
+          }
+        } 
+      }
     }
   }
   &__list {
-    .middle {
-      z-index: 1200;
-      .title {
-        font-size: 1.2rem;
-        color: v.$TextBlack;
-        line-height: 4rem;
-        background-color: v.$BackgroundWhite;
-        a {
-          &:hover {
-            text-decoration: none;
-          }
-        }
-      }
-    }
     @include m.mq (screen03) {
       margin: unset;
       padding: 1rem 1rem 0 0;
       display: flex;
-  }
-  .item {
-    font-size: 1.6rem;
-    display: block;
-    width: 10rem;
-    @include m.mq (screen03) {
-      text-align: center;
-      padding-left: 2rem;
-    }
-    .title {
-        color: v.$MenuBlack;
-        z-index: 1000;
+    } 
+    .item {
+      font-size: 1.6rem;
+      display: block;
+      width: 10rem;
+      &:hover {
+        .middle {
+          height: 8rem;
+          transition: all 0.3s ease;
+        }
+      }
+      @include m.mq (screen03) {
+        text-align: center;
+        padding-left: 2rem;
+      }
+      .title {
+          color: v.$MenuBlack;
+          z-index: 1000;
+      }
+      .middle {
+        z-index: 1200;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in;
+        .title {
+          font-size: 1.2rem;
+          color: v.$TextBlack;
+          line-height: 4rem;
+          background-color: v.$BackgroundWhite;
+          a {
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
       }
     }
-    .item3,
-    .p-gmenu__button {
+    .item3 {
       &::before {
         content: "＋";
         position: absolute;

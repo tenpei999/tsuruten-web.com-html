@@ -6,26 +6,12 @@ $btnHeight: 2px;
 $lineColor: #000;
 
 .c-hamburger {
+	position: relative;
 	@include m.mq(screen03) {
 		display: none;
 	}
-	&::before,
-	&::after {
-		width     : $btnWidth;
-		height    : $btnHeight;
-		background: $lineColor;
-		position  : absolute;
-		left      : calc( 50% - math.div( #{$btnWidth}, 2 ) );
-		display   : block;
-		transition: transform 0.2s;
-	}
-	&::before {
-		top: 22px;
-	}
-	&::after {
-		top: 38px;
-	}
 	> span {
+		display: block;
 		width          : $btnWidth;
 		height         : $btnHeight;
 		font-size      : 0;
@@ -35,6 +21,19 @@ $lineColor: #000;
 		left           : calc( 50% - math.div( #{$btnWidth}, 2 ) );
 		top            : 50%;
 		transition     : transform 0.2s;
+		&::before,
+		&::after {
+			background: $lineColor;
+			position  : absolute;
+			display   : block;
+			transition: transform 0.2s;
+		}
+		&::before {
+			top: 22px;
+		}
+		&::after {
+			top: 38px;
+		}
 	}
 	&.is-open {
 		&::before {

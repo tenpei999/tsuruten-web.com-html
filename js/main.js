@@ -22,12 +22,6 @@ function media() {
   if(width > 1200) {
     // 画面幅が1200pxより上の時
     
-    //pcドロワー
-    $(function(){
-      $(".item").hover(function(){
-        $(this).children(".middle").stop().slideToggle();
-      });
-    });
 
   } else if(width <= 1200) {
   // 画面幅が1200px以下での時
@@ -40,10 +34,7 @@ function media() {
         $(this).next('nav').slideToggle();
         $(this).children(".middle").stop().slideToggle();
       });
-    });
-    $('p-gmenu__button').on('click', function(){
-      
-    })
+    }); 
   }
 }
 
