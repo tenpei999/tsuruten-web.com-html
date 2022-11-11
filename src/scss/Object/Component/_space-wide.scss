@@ -4,9 +4,22 @@
 .c-space-wide {
   transform: translateX(-25%);
   width: 100vw;
-
-  @include m.mq (screen02) {
-    transform: translateX(0%);
+  @include m.mq(screen012) {
+    transform: translateX(0);
     width: 400px;
   }
+  @include m.mq(screen02) {
+    transform: translateX(-25%);
+    width: 800px;
+  }
 }
+/*
+400px  transitionX(-25%    = 100px)  * -4  *4
+500px  transitionX(-19%    = 95px )  * -5  *5
+600px  transitionX(-12.5%  = 75px)   * -6
+700px  transitionX(-5%     = 35px)   * -5
+800px  transitionX(0       = 0px)    * 0
+
+
+100vw  
+*/

@@ -9,7 +9,7 @@
   top: 0;
   left: 25%;
 
-  @include m.mq (screen02) {
+  @include m.mq (screen012) {
     width: 400px;
     left: calc((100vw - 400px) * 0.5);
   }
