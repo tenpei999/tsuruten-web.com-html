@@ -1,11 +1,13 @@
+@use "../../Foundation/mixin" as m;
+
 .p-profile {
   margin-top: 13rem;
+  padding: 0 1.5rem;
   .title {
     text-align: center;
   }
   &__date {
     display: flex;
-    flex-direction: column-reverse;
     .img {
       margin: auto;
       height: 5rem;
@@ -13,6 +15,28 @@
       border-radius: 50%;
       background-size: cover;
       background-image: url(../../../../img/ape-g5b12a4480_1280.jpg);
+    }
+  }
+  &__infomation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; @include m.mq(screen02) {
+      flex-direction: row-reverse;
+    }
+    .self-introduction {
+      margin: auto;
+      a {
+      }
+      .c-text {
+        display: none;
+        @include m.mq(screen02) {
+          display: block;
+        }
+      }
+    }
+    .sns-link {
+      display: flex;
+      justify-content: space-around;
     }
   }
 }

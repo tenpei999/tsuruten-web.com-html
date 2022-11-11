@@ -199,6 +199,11 @@ select {
   margin-top: -1rem;
 }
 
+.c-icon--sns {
+  width: 3rem;
+  height: 3rem;
+}
+
 .c-margin-center {
   margin: auto;
 }
@@ -1118,13 +1123,13 @@ body.is-open {
 /*========= レイアウトのためのCSS ===============*/
 .p-profile {
   margin-top: 13rem;
+  padding: 0 1.5rem;
 }
 .p-profile .title {
   text-align: center;
 }
 .p-profile__date {
   display: flex;
-  flex-direction: column-reverse;
 }
 .p-profile__date .img {
   margin: auto;
@@ -1133,6 +1138,31 @@ body.is-open {
   border-radius: 50%;
   background-size: cover;
   background-image: url(../../../../img/ape-g5b12a4480_1280.jpg);
+}
+.p-profile__infomation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 820px) {
+  .p-profile__infomation {
+    flex-direction: row-reverse;
+  }
+}
+.p-profile__infomation .self-introduction {
+  margin: auto;
+}
+.p-profile__infomation .self-introduction .c-text {
+  display: none;
+}
+@media screen and (min-width: 820px) {
+  .p-profile__infomation .self-introduction .c-text {
+    display: block;
+  }
+}
+.p-profile__infomation .sns-link {
+  display: flex;
+  justify-content: space-around;
 }
 
 .p-table-of-contents__title {
