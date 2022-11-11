@@ -5,9 +5,9 @@
   position: absolute;
   margin-top: 10rem;
   z-index: 500;
+  width: 50vw;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 25%;
 
   @include m.mq (screen02) {
     width: 400px;

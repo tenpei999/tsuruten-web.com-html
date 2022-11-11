@@ -1,0 +1,12 @@
+@use "../../Foundation/mixin" as m;
+@use "../../Foundation/variable" as v;
+
+.c-space-wide {
+  transform: translateX(-25%);
+  width: 100vw;
+
+  @include m.mq (screen02) {
+    transform: translateX(0%);
+    width: 400px;
+  }
+}

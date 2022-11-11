@@ -21,7 +21,7 @@ body {
   height: 100%;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: unset;
 }
 
@@ -183,9 +183,9 @@ select {
   position: absolute;
   margin-top: 10rem;
   z-index: 500;
+  width: 50vw;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 25%;
 }
 @media screen and (min-width: 820px) {
   .l-main {
@@ -205,6 +205,17 @@ select {
 
 .c-shadow {
   text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.c-space-wide {
+  transform: translateX(-25%);
+  width: 100vw;
+}
+@media screen and (min-width: 820px) {
+  .c-space-wide {
+    transform: translateX(0%);
+    width: 400px;
+  }
 }
 
 .c-hamburger {
@@ -271,8 +282,10 @@ body.is-open {
   font-size: 1rem;
 }
 
-.c-section-title.scss {
-  font-size: 1.7rem;
+.c-title--section {
+  color: #817878;
+  font-size: 1.5rem;
+  padding-top: 1rem;
 }
 
 .vertical-title {
@@ -802,7 +815,11 @@ body.is-open {
   }
 }
 .p-gmenu--table {
+  margin-top: 10rem;
   text-align: center;
+}
+.p-gmenu--table .p-gmenu__button .c-title--section {
+  padding-top: 0;
 }
 .p-gmenu--table .p-gmenu__button::before {
   content: "＋";
@@ -1099,6 +1116,25 @@ body.is-open {
 }
 
 /*========= レイアウトのためのCSS ===============*/
+.p-profile {
+  margin-top: 13rem;
+}
+.p-profile .title {
+  text-align: center;
+}
+.p-profile__date {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.p-profile__date .img {
+  margin: auto;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-image: url(../../../../img/ape-g5b12a4480_1280.jpg);
+}
+
 .p-table-of-contents__title {
   width: 100%;
 }

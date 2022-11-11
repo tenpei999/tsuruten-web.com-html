@@ -31,7 +31,11 @@
     } 
   }
   &--table {
+    margin-top: 10rem;
     .p-gmenu__button {
+      .c-title--section {
+        padding-top: 0;
+      }
       &::before {
         content: "＋";
         position: absolute;
