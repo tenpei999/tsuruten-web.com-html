@@ -2,19 +2,40 @@
 
 .p-profile {
   margin-top: 13rem;
-  padding: 0 1.5rem;
+  padding: 0 5vw;
   .title {
     text-align: center;
   }
   &__date {
     display: flex;
+    .nameAndAddress {
+      width: 45vw;
+      .name {
+        display: inline-block;
+      }
+      .address {
+        .c-title--content {
+          padding-top: 0.2rem;
+          margin-bottom: -0.5rem;
+        }
+        .contact-link {
+          display: inline-block;
+          font-size: 0.75rem;
+        }
+      }
+    }
     .img {
-      margin: auto;
-      height: 5rem;
-      width: 5rem;
-      border-radius: 50%;
-      background-size: cover;
-      background-image: url(../../../../img/ape-g5b12a4480_1280.jpg);
+      width: 45vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .img__child {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        background-size: cover;
+        background-image: url(../../../../img/ape-g5b12a4480_1280.jpg);
+      }
     }
   }
   &__infomation {
@@ -24,8 +45,17 @@
       flex-direction: row-reverse;
     }
     .self-introduction {
-      margin: auto;
-      a {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 10rem;
+      .hidden {
+        font-size: 1rem;
+        @include m.mq(screen02) {
+          display: none;
+        }
       }
       .c-text {
         display: none;
@@ -37,8 +67,7 @@
     .sns-link {
       display: flex;
       justify-content: space-around;
+      padding-bottom: 1.5rem;
     }
   }
-}
-.nameAndAddress {
 }

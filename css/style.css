@@ -11,7 +11,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Noto Sans JP", sans-serif;
-  font-family: unset;
+  color: #817878;
   font-size: 1rem;
   max-width: 1900px;
 }
@@ -285,6 +285,11 @@ body.is-open {
 }
 .c-text--sentence {
   font-size: 1rem;
+  color: #000;
+}
+.c-text--link {
+  line-height: 2;
+  border-bottom: 1px solid;
 }
 
 .c-title--section {
@@ -1123,7 +1128,7 @@ body.is-open {
 /*========= レイアウトのためのCSS ===============*/
 .p-profile {
   margin-top: 13rem;
-  padding: 0 1.5rem;
+  padding: 0 5vw;
 }
 .p-profile .title {
   text-align: center;
@@ -1131,8 +1136,27 @@ body.is-open {
 .p-profile__date {
   display: flex;
 }
+.p-profile__date .nameAndAddress {
+  width: 45vw;
+}
+.p-profile__date .nameAndAddress .name {
+  display: inline-block;
+}
+.p-profile__date .nameAndAddress .address .c-title--content {
+  padding-top: 0.2rem;
+  margin-bottom: -0.5rem;
+}
+.p-profile__date .nameAndAddress .address .contact-link {
+  display: inline-block;
+  font-size: 0.75rem;
+}
 .p-profile__date .img {
-  margin: auto;
+  width: 45vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-profile__date .img .img__child {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
@@ -1150,7 +1174,20 @@ body.is-open {
   }
 }
 .p-profile__infomation .self-introduction {
-  margin: auto;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 10rem;
+}
+.p-profile__infomation .self-introduction .hidden {
+  font-size: 1rem;
+}
+@media screen and (min-width: 820px) {
+  .p-profile__infomation .self-introduction .hidden {
+    display: none;
+  }
 }
 .p-profile__infomation .self-introduction .c-text {
   display: none;
@@ -1163,6 +1200,7 @@ body.is-open {
 .p-profile__infomation .sns-link {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 1.5rem;
 }
 
 .p-table-of-contents__title {
