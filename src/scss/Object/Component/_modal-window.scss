@@ -1,0 +1,18 @@
+.c-modal-window {
+  display: none;
+  position: fixed;
+  &__button-open {
+    display: block;
+    cursor: pointer;
+  }
+  /* 閉じるボタン */
+  &__button-close {
+    margin: 2rem 2rem 1rem 2rem;
+    width: 200px;
+    padding: 1em;
+    background-color: #c96931;
+    color: #eaeaea;
+    border-radius: 20rem;
+    cursor: pointer;
+  }
+}

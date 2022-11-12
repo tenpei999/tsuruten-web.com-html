@@ -16,6 +16,16 @@
   <script src="js/main.js"></script>
 </head>
 <body>
+  <div id="overlay" class="c-overlay p-modal__overlay"></div>
+  <div class="c-modal-window p-modal-window">
+    <p class="c-text c-text--sentence">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <button class="js-close p-modal-window__button-close">Close</button>
+  </div>
+  <div class="c-modal-window p-modal-window--small">
+    <p>コンタクトページに飛びますか</p>
+    <button class="c-button js-close">はい</button>
+    <a href="#" class="button-top js-close">戻る</a>
+  </div>
   <section class="l-primary">
     <aside class="p-animation-background">
       <ul class="p-animation-background__layer">
@@ -183,7 +193,7 @@
               </li>
               <li class="address">
                 <p class="c-title--content">Mail</p>
-                <a href="#" alt="">
+                <a alt="" class="c-contact-link">
                   <p class="c-text--link contact-link">tenpei999@gmail.com</p>
                 </a>
               </li>
@@ -194,9 +204,8 @@
           </article>
           <article class="p-profile__infomation">
             <div class="self-introduction">
-              <a href="#"><p class="c-text--link">自己紹介</p></a>
+              <button class="c-text--link c-modal-window__button-open js-open">自己紹介</button>
               <p class="hidden">タップで表示</p>
-              <p class="c-text c-text--sentence">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
             <div class="sns-link">
               <a href="#">

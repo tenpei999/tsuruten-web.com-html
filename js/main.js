@@ -22,6 +22,12 @@ function media() {
   if(width > 1200) {
     // 画面幅が1200pxより上の時
     
+    //pcドロワー
+    $(function(){
+      $(".item").hover(function(){
+        $(this).children(".middle").stop().slideToggle();
+      });
+    });
 
   } else if(width <= 1200) {
   // 画面幅が1200px以下での時
@@ -34,9 +40,11 @@ function media() {
         $(this).next('nav').slideToggle();
         $(this).children(".middle").stop().slideToggle();
       });
-    }); 
+    });
   }
 }
+
+console.log()
 
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
@@ -92,13 +100,13 @@ $(window).scroll(function () {
     $(window).on('scroll load', function(){
       let winHeight = window.pageYOffset;                              //ページ上端からの距離を検知
       let elmOffsetY = 2360;                                            //'.layer-2'のY座標における絶対位置
-      let winMath = 2060 + elmOffsetY;
+      let winMath = 2360 + elmOffsetY;
       let offsetMove = winMath - winHeight;                             // 'layer-2'のmargin-top を求める条件式
       
-      // console.log(winHeight);
-      // console.log(winMath);
-      // console.log(elmOffsetY);
-      // console.log(offsetMove);
+      console.log(winHeight);
+      console.log(winMath);
+      console.log(elmOffsetY);
+      console.log(offsetMove);
 
       //アニメーションさせるための条件分岐
       if( winHeight < 2360 ) {
@@ -118,3 +126,20 @@ $(window).scroll(function () {
   //移動前の位置 layer-2(margin-top: 2692px;) window(.scrollTop(): 1270px;) -1422px
   //移動後の位置 layer-2(margin-top: 2360px;) window(.scrollTop(): 1602px;) -758px
   //                                 -332px                        +332px   -664
+
+  $(function () {
+    $('.js-open').click(function () {
+      $('.c-overlay, .p-modal-window').fadeIn();
+    });
+    $('.js-close').click(function () {
+      $('.c-overlay, .p-modal-window').fadeOut();
+    });
+  });
+  $(function () {
+    $('.contact-link').click(function () {
+      $('.c-overlay, .p-modal-window--small').fadeIn();
+    });
+    $('.js-close').click(function () {
+      $('.c-overlay, .p-modal-window--small').fadeOut();
+    });
+  });

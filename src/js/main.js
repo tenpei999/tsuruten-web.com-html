@@ -126,3 +126,20 @@ $(window).scroll(function () {
   //移動前の位置 layer-2(margin-top: 2692px;) window(.scrollTop(): 1270px;) -1422px
   //移動後の位置 layer-2(margin-top: 2360px;) window(.scrollTop(): 1602px;) -758px
   //                                 -332px                        +332px   -664
+
+  $(function () {
+    $('.js-open').click(function () {
+      $('.c-overlay, .p-modal-window').fadeIn();
+    });
+    $('.js-close').click(function () {
+      $('.c-overlay, .p-modal-window').fadeOut();
+    });
+  });
+  $(function () {
+    $('.contact-link').click(function () {
+      $('.c-overlay, .p-modal-window--small').fadeIn();
+    });
+    $('.js-close').click(function () {
+      $('.c-overlay, .p-modal-window--small').fadeOut();
+    });
+  });
