@@ -29,14 +29,15 @@ function media() {
       });
     });
 
-    $(function() {
-      if($('.p-modal-window').hasClass(':not(.c-text)'));
-        $('.c-text.c-text--sentence').insertAfter('.self-introduction .c-text--link');
-        
+
+  $(function(){
+    if($('.self-introduction .c-text--link.c-modal-window__button-open').children(':not(.c-text)'));
+      $('.c-text.c-text--sentence').insertAfter('.c-text--link.c-modal-window__button-open');    
   });
-  //   $(function() {
-  //     $('.p-modal-window .c-text').insertAfter('.p-profile .self-introduction .c-text--link');
-  // });
+  // $(function() {
+  //   if($('.p-modal-window').children(':not(.c-text.c-text--sentence)'));
+  //     $('.c-text.c-text--sentence').insertAfter('.p-modal-window');      
+  //   });
 
   } else if(width <= 1200) {
   // 画面幅が1200px以下での時
@@ -51,10 +52,14 @@ function media() {
       });
     });
 
-    $(function(){
-      if($('.self-introduction .c-text--link.c-modal-window__button-open').hasClass(':not(.c-text)'));
-        $('.c-text.c-text--sentence').insertAfter('.p-introduction');    
-    });
+    $(function() {
+      if($('.p-modal-window').children(':not(.c-text.c-text--sentence)'));
+        $('.c-text.c-text--sentence').insertBefore('.p-modal-window__button-close');      
+      });
+    // $(function(){
+    //   if($('.self-introduction .c-text--link.c-modal-window__button-open').children(':not(.c-text)'));
+    //     $('.c-text.c-text--sentence').insertAfter('.p-introduction');    
+    // });
     
     $(function () {
       $('.js-open').click(function () {
