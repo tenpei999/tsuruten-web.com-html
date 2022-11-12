@@ -2,7 +2,7 @@
 
 .p-profile {
   margin-top: 13rem;
-  padding: 0 5vw;
+  padding: 0 2.5rem;
   .title {
     text-align: center;
   }
@@ -53,21 +53,27 @@
       height: 10rem;
       .hidden {
         font-size: 1rem;
-        @include m.mq(screen02) {
-          display: none;
-        }
       }
       .c-text {
         display: none;
-        @include m.mq(screen02) {
-          display: block;
-        }
       }
     }
     .sns-link {
       display: flex;
       justify-content: space-around;
       padding-bottom: 1.5rem;
+      @include m.mq(screen02) {
+        width: 40%;
+        padding-top: 3.5rem;
+      }
+      .c-icon--sns {
+        width: 3rem;
+        height: 3rem;
+        @include m.mq(screen02) {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
     }
   }
 }

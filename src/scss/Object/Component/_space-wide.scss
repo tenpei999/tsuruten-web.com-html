@@ -8,10 +8,6 @@
     transform: translateX(0);
     width: 400px;
   }
-  @include m.mq(screen02) {
-    transform: translateX(-25%);
-    width: 800px;
-  }
 }
 /*
 400px  transitionX(-25%    = 100px)  * -4  *4

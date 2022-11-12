@@ -92,7 +92,7 @@ $(window).scroll(function () {
     $(window).on('scroll load', function(){
       let winHeight = window.pageYOffset;                              //ページ上端からの距離を検知
       let elmOffsetY = 2360;                                            //'.layer-2'のY座標における絶対位置
-      let winMath = 2360 + elmOffsetY;
+      let winMath = 2060 + elmOffsetY;
       let offsetMove = winMath - winHeight;                             // 'layer-2'のmargin-top を求める条件式
       
       // console.log(winHeight);
