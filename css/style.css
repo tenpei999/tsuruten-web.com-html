@@ -1247,6 +1247,11 @@ body.is-open {
     flex-direction: row-reverse;
   }
 }
+@media screen and (min-width: 1200px) {
+  .p-profile__infomation {
+    flex-direction: column-reverse;
+  }
+}
 .p-profile__infomation .self-introduction {
   font-size: 1.5rem;
   display: flex;
@@ -1255,11 +1260,26 @@ body.is-open {
   flex-direction: column;
   height: 10rem;
 }
+@media screen and (min-width: 1200px) {
+  .p-profile__infomation .self-introduction {
+    height: unset;
+  }
+}
 .p-profile__infomation .self-introduction .hidden {
   font-size: 1rem;
 }
+@media screen and (min-width: 1200px) {
+  .p-profile__infomation .self-introduction .hidden {
+    display: none;
+  }
+}
 .p-profile__infomation .self-introduction .c-text {
   display: none;
+}
+@media screen and (min-width: 1200px) {
+  .p-profile__infomation .self-introduction .c-text {
+    display: block;
+  }
 }
 .p-profile__infomation .sns-link {
   display: flex;
@@ -1270,6 +1290,11 @@ body.is-open {
   .p-profile__infomation .sns-link {
     width: 40%;
     padding-top: 3.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-profile__infomation .sns-link {
+    width: 100%;
   }
 }
 .p-profile__infomation .sns-link .c-icon--sns {

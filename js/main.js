@@ -29,6 +29,15 @@ function media() {
       });
     });
 
+    $(function() {
+      if($('.p-modal-window').hasClass(':not(.c-text)'));
+        $('.c-text.c-text--sentence').insertAfter('.self-introduction .c-text--link');
+        
+  });
+  //   $(function() {
+  //     $('.p-modal-window .c-text').insertAfter('.p-profile .self-introduction .c-text--link');
+  // });
+
   } else if(width <= 1200) {
   // 画面幅が1200px以下での時
 
@@ -39,6 +48,28 @@ function media() {
         $(this).toggleClass('active');
         $(this).next('nav').slideToggle();
         $(this).children(".middle").stop().slideToggle();
+      });
+    });
+
+    $(function(){
+      if($('.self-introduction .c-text--link.c-modal-window__button-open').hasClass(':not(.c-text)'));
+        $('.c-text.c-text--sentence').insertAfter('.p-introduction');    
+    });
+    
+    $(function () {
+      $('.js-open').click(function () {
+        $('.c-overlay, .p-modal-window').fadeIn();
+      });
+      $('.js-close').click(function () {
+        $('.c-overlay, .p-modal-window').fadeOut();
+      });
+    });
+    $(function () {
+      $('.contact-link').click(function () {
+        $('.c-overlay, .p-modal-window--small').fadeIn();
+      });
+      $('.js-close').click(function () {
+        $('.c-overlay, .p-modal-window--small').fadeOut();
       });
     });
   }
@@ -127,19 +158,3 @@ $(window).scroll(function () {
   //移動後の位置 layer-2(margin-top: 2360px;) window(.scrollTop(): 1602px;) -758px
   //                                 -332px                        +332px   -664
 
-  $(function () {
-    $('.js-open').click(function () {
-      $('.c-overlay, .p-modal-window').fadeIn();
-    });
-    $('.js-close').click(function () {
-      $('.c-overlay, .p-modal-window').fadeOut();
-    });
-  });
-  $(function () {
-    $('.contact-link').click(function () {
-      $('.c-overlay, .p-modal-window--small').fadeIn();
-    });
-    $('.js-close').click(function () {
-      $('.c-overlay, .p-modal-window--small').fadeOut();
-    });
-  });
