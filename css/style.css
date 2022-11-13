@@ -22,12 +22,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: unset;
   font-weight: unset;
+  font-size: unset;
 }
 
 ul {
   list-style: none;
   padding-inline-start: 0;
+  margin-block-start: unset;
 }
 
 li {
@@ -340,7 +343,9 @@ body.is-open {
   font-size: 1.5rem;
   padding-top: 1rem;
 }
-
+.c-title--content {
+  font-size: 1.2rem;
+}
 .vertical-title {
   color: red;
 }
@@ -1106,6 +1111,63 @@ body.is-open {
   color: #eaeaea;
   border-radius: 20rem;
   cursor: pointer;
+}
+
+.p-skill {
+  margin-top: 10rem;
+  padding: 0 2.5rem;
+}
+.p-skill .title {
+  text-align: center;
+}
+.p-skill__site-building {
+  padding-top: 1rem;
+}
+.p-skill__site-building .title {
+  padding-bottom: 1rem;
+}
+.p-skill__cell .title {
+  text-align: unset;
+  padding-top: 1rem;
+}
+.p-skill__cell .cell {
+  display: flex;
+  flex-wrap: wrap;
+}
+.p-skill__cell .cell__li {
+  padding-top: 1.5rem;
+  width: 50%;
+}
+.p-skill__cell .cell__li .title {
+  text-align: center;
+  padding-top: unset;
+}
+.p-skill__cell .cell__li .img img {
+  height: 75px;
+  width: 75px;
+  margin: auto;
+}
+.p-skill__cell .cell__li .hour {
+  display: flex;
+  justify-content: center;
+}
+.p-skill__cell .cell__li .hour__description {
+  font-size: 1rem;
+  line-height: 1rem;
+  padding-top: 0.5rem;
+}
+.p-skill__cell .cell__li .hour__length {
+  font-size: 2rem;
+}
+.p-skill__cell .cell .detail {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.p-skill__link {
+  display: block;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 2rem 2rem 5rem 2rem;
 }
 
 .p-page-top {

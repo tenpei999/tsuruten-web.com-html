@@ -1,0 +1,61 @@
+.p-skill {
+  margin-top: 10rem;
+  padding: 0 2.5rem;
+  .title {
+    text-align: center;
+  }
+  &__site-building {
+    padding-top: 1rem;
+    .title {
+      padding-bottom: 1rem;
+    }
+  }
+  &__cell {
+    .title {
+      text-align: unset;
+      padding-top: 1rem;
+    }
+    .cell {
+      display: flex;
+      flex-wrap: wrap;
+      &__li {
+        padding-top: 1.5rem;
+        width: 50%;
+        .title {
+          text-align: center;
+          padding-top: unset;
+        }
+        .img {
+          img {
+            height: 75px;
+            width: 75px;
+            margin: auto;
+          }
+        }
+        .hour {
+          display: flex;
+          justify-content: center;
+          &__description {
+            font-size: 1rem;
+            line-height: 1rem;
+            padding-top: 0.5rem;
+          }
+          &__length {
+            font-size: 2rem;
+          }
+        }
+      }
+      .detail {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 2rem 2rem 5rem 2rem;
+    
+  }
+}

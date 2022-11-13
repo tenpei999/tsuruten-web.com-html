@@ -18,12 +18,15 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
+  margin: unset;
   font-weight: unset;
+  font-size: unset;
 }
 
 ul {
   list-style: none;
   padding-inline-start: 0;
+  margin-block-start: unset;
 }
 
 li {
