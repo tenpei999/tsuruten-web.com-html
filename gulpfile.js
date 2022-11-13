@@ -7,7 +7,9 @@ const plumber = require("gulp-plumber"); // エラーが発生しても強制終
 const notify = require("gulp-notify"); // エラー発生時のアラート出力
 const browserSync = require("browser-sync"); //ブラウザリロード
 const changed = require('gulp-changed');
-const imageMin = require('gulp-imagemin')
+const imageMin = require('gulp-imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant')
 
 const paths = {
   rootDir   : {root: './', html: './index.html'},
@@ -83,6 +85,8 @@ const imagemin = (done) => {
   .pipe(
     changed(paths.srcDir.imgmin),
     imageMin([
+      mozjpeg(),
+      pngquant(),
       // imageMin.svgo(),
       // imageMin.optipng(),
       // imageMin.gifsicle({ optimizationLevel: 3 }),
