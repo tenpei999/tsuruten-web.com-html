@@ -29,6 +29,12 @@ function media() {
       });
     });
 
+
+  $(function(){
+    if($('.self-introduction .c-text--link.c-modal-window__button-open').children(':not(.c-text)'));
+      $('.c-text.c-text--sentence').insertAfter('.c-text--link.c-modal-window__button-open');    
+  });
+
   } else if(width <= 1200) {
   // 画面幅が1200px以下での時
 
@@ -41,6 +47,11 @@ function media() {
         $(this).children(".middle").stop().slideToggle();
       });
     });
+
+    $(function() {
+      if($('.p-modal-window').children(':not(.c-text.c-text--sentence)'));
+        $('.c-text.c-text--sentence').insertBefore('.p-modal-window__button-close');      
+      });
     
     $(function () {
       $('.js-open').click(function () {
@@ -60,8 +71,6 @@ function media() {
     });
   }
 }
-
-console.log()
 
 //スクロールした際の動きを関数でまとめる
 function PageTopAnime() {
@@ -120,10 +129,11 @@ $(window).scroll(function () {
       let winMath = 2360 + elmOffsetY;
       let offsetMove = winMath - winHeight;                             // 'layer-2'のmargin-top を求める条件式
       
-      console.log(winHeight);
-      console.log(winMath);
-      console.log(elmOffsetY);
-      console.log(offsetMove);
+      // console.log(winHeight);
+      // console.log(winMath);
+      // console.log(elmOffsetY);
+      // console.log(offsetMove);     
+      // console.log("hoge");     
 
       //アニメーションさせるための条件分岐
       if( winHeight < 2360 ) {

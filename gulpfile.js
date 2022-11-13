@@ -2,11 +2,12 @@ const gulp = require('gulp')                                    //gulpパッケ�
 //scss
 const sass = require('gulp-dart-sass');//Dart Sass はSass公式が推奨 @use構文などが使える
 const sassGlob = require('gulp-sass-glob-use-forward')
+const gulpUglify = require('gulp-uglify'); 
 const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
 const notify = require("gulp-notify"); // エラー発生時のアラート出力
 const browserSync = require("browser-sync"); //ブラウザリロード
 const changed = require('gulp-changed');
-const imageMin = require('gulp-imagemin');
+const imageMin = require('gulp-imagemin')
 
 const paths = {
   rootDir   : {root: './', html: './index.html'},
@@ -34,6 +35,15 @@ const cssSass = () => {
     message: 'Sassをコンパイルしました！',
     onLast: true
   }))
+}
+
+const uglify = () => {
+  return gulp.src(paths.srcDir.js)
+  .pipe(gulpUglify())
+  // .pipe(rename({
+  //     extname: '.min.js'
+  // }))
+  .pipe(gulp.dest(paths.dstDir.js));
 }
 
 /**
@@ -64,6 +74,7 @@ const browserSyncReload = (done) => {
 
 const watchFiles = () => {
   gulp.watch(paths.srcDir.css, gulp.series(cssSass))
+  gulp.watch(paths.srcDir.js, gulp.series(uglify))
   gulp.watch(paths.rootDir.html, gulp.series(html, browserSyncReload))
 }
 
@@ -89,6 +100,7 @@ exports.imagemin = imagemin;
  */
 exports.default = gulp.series(
   gulp.parallel(html, cssSass),
+  gulp.parallel(uglify),
   gulp.parallel(watchFiles, browserSyncFunc)
 );
 
